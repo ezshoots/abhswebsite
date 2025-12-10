@@ -1,40 +1,122 @@
-# Play Astro - Free Astro Template for Startup, SaaS and App Sites
-Play Astro is a fantastic free and open-source Astro template, built for startups, SaaS companies, apps, businesses, and more. With its premium design and comprehensive range of essential components and pages, it's your all-in-one solution for launching a full-fledged website.
+Above and Beyond Home Solutions – Professional Home Inspections in Southwest Florida
 
-### Play Astro is crafted using 🥞 [TailGrids](https://tailgrids.com/) UI Components
+Above and Beyond Home Solutions, LLC is a licensed, InterNACHI-certified home inspection company serving Lehigh Acres, Fort Myers, Cape Coral, Naples, and the surrounding Southwest Florida region. We are committed to providing top-quality, detail-driven inspections backed by modern tools, cutting-edge technology, and a customer-focused approach.
 
-### [🚀 View Demo](https://play-astro.tailgrids.com/)
+Our mission is simple: deliver accurate, reliable, and easy-to-understand home inspection reports that protect your investment and help you make confident decisions.
 
-[![play-astro](https://github.com/TailGrids/play-astro/blob/main/play-astro.png)](https://play-astro.tailgrids.com/)
+✨ Built for Home Buyers, Sellers & Real Estate Professionals
 
-### ✍️ Crafted for Startup, SaaS and App Websites
-Play Astro is an incredibly versatile and free open-source Astro template. It's been crafted to cater to startups, SaaS, and app websites. This template carries all the essential sections, pages, and components necessary to launch a comprehensive business website. It's perfect for those who want to create a robust online platform without the hassle of starting from scratch.
+Above and Beyond Home Solutions was founded on the belief that clarity, transparency, and professionalism should define the home inspection experience. Whether you're purchasing a new home, evaluating an investment property, or preparing to list your current home, our inspections provide the insight you need—without the confusion.
 
-### ✍️ Awesome Blog with Markdown
-Moreover, it features a functional blog system, powered by Markdown, providing everything you need to operate a complete business website.
+We take pride in:
 
-### ✅ Astro + Tailwind CSS Starter
-Crafted using Tailwind CSS with TailGrids components, this high-quality free Astro + Tailwind CSS starter offers unparalleled flexibility. If you're on the lookout for the perfect choice to kickstart your next venture, look no further than Play Astro!
+📝 Clear, easy-to-understand digital reports
 
-### 🚀 Installation and Deployment Instructions
+⚡ Same-day delivery on most inspections
 
-All commands are run from the root of the project, from a terminal:
+🛠️ Advanced tools including moisture meters, thermal imaging, drones, and more
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+🤝 Honest, unbiased feedback you can rely on
 
-### 📄 License for Play Astro Template
-Play Astro is an open-source template and you are free to utilize it for both personal and commercial projects without the need for any attribution or backlink.
+🛠️ Comprehensive Home Inspection Services
 
-### 💖 How to Support
-You can demonstrate your support for this project by giving a Star ⭐ to this repository and sharing it with your friends. If you encounter any bugs, please open an issue. Feel free to contribute to the project through pull requests if you fix an issue or if you believe you can add more value to the project.
+We offer a full range of residential inspection services tailored to the needs of Florida homeowners, buyers, and agents:
 
-## 👀 Want to learn more?
+✔️ General Home Inspections
 
-You are welcome to peruse [our documentation](https://tailgrids.com/astro) or join the conversation on our [Discord server](https://pimjo.com/discord).
+Roof-to-foundation inspections covering structural components, systems, appliances, and safety issues.
+
+✔️ 4-Point Insurance Inspections
+
+HVAC, electrical, plumbing, and roofing documentation for Florida insurance requirements.
+
+✔️ Wind Mitigation Inspections
+
+Verification of building features that help reduce hurricane risk and may lower insurance premiums.
+
+✔️ New Construction Phase Inspections
+
+Foundation, pre-drywall, and final walkthrough inspections to ensure proper building practices and workmanship.
+
+✔️ 11-Month Warranty Inspections
+
+Document builder defects before your warranty expires.
+
+✔️ Well Water Testing
+
+Certified water sampling for real estate or health purposes.
+
+✔️ Home Watch Services
+
+Routine home checks for seasonal residents and out-of-state homeowners.
+
+✔️ Additional Services
+
+Sewer scope (when applicable)
+
+Roof inspections (including drone)
+
+Re-inspections
+
+Moisture intrusion assessments
+
+💡 Powered by Modern Tools & Technology
+
+At Above and Beyond, we believe professionalism means staying ahead of the curve. That’s why we embrace the latest innovations both in the field and on the web.
+
+🧰 Inspection Technology
+
+High-resolution drones for inaccessible roofs
+
+Thermal imaging for hidden moisture & insulation issues
+
+Digital moisture meters and laser temperature tools
+
+Smart reporting software with annotated images
+
+Mobile-friendly web reports for agents and clients
+
+🖥️ Website & Digital Presence
+
+Our online experience is designed using modern frameworks and developer-friendly tools, including:
+
+Astro for a blazing-fast, content-driven website
+
+Tailwind CSS & premium UI components for clean, professional UI
+
+Markdown-powered blog system for inspection guides & homeowner education
+
+Cloudflare Pages + Workers AI for dynamic and intelligent features
+
+SEO-optimized content for high visibility in Southwest Florida
+
+Technology improves accuracy, speed, and communication—and we use it to ensure our clients always receive the best.
+
+📍 Proudly Serving Southwest Florida
+
+We provide home inspections across:
+
+Lehigh Acres
+
+Fort Myers
+
+Cape Coral
+
+Naples
+
+North Port
+
+Estero
+
+Port Charlotte
+
+Punta Gorda
+
+Alva
+
+LaBelle
+
+Sanibel Island
+…and surrounding communities.
+
+If you’re nearby, we’ll go above and beyond to get to you.

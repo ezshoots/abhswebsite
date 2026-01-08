@@ -1,6 +1,27 @@
 <!-- ====== CTA Section Start -->
-<section class="relative z-10 overflow-hidden bg-primary py-20 lg:py-[115px]">
-  <div class="container mx-auto">
+<section class="relative z-10 overflow-hidden py-20 lg:py-[115px]">
+  <!-- Concrete-style blue background (no image) -->
+  <div
+    class="absolute inset-0 bg-slate-950"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Blue overlay + concrete texture layers -->
+  <div class="absolute inset-0" aria-hidden="true">
+    <!-- base blue gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-700 via-blue-800 to-blue-950 opacity-95"></div>
+
+    <!-- “concrete clouding” -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.10)_0,rgba(255,255,255,0)_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.08)_0,rgba(255,255,255,0)_50%),radial-gradient(circle_at_40%_80%,rgba(0,0,0,0.25)_0,rgba(0,0,0,0)_55%)]"></div>
+
+    <!-- subtle speckle grain approximation -->
+    <div class="absolute inset-0 opacity-30 mix-blend-overlay bg-[radial-gradient(rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:14px_14px]"></div>
+
+    <!-- vignette to make it feel like a slab -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0,rgba(0,0,0,0.35)_70%,rgba(0,0,0,0.55)_100%)]"></div>
+  </div>
+
+  <div class="container mx-auto relative">
     <div class="relative overflow-hidden">
       <div class="flex flex-wrap items-stretch -mx-4">
         <div class="w-full px-4">
@@ -9,11 +30,15 @@
               <span>Schedule your Home Inspection Today!</span>
               <span class="font-normal text-3xl md:text-[40px]"> Get Started Now </span>
             </h2>
-            <p class="mb-6 mx-auto max-w-[515px] text-base leading-[1.5] text-white">
+
+            <p class="mb-6 mx-auto max-w-[515px] text-base leading-[1.5] text-white/90">
               With our easily accessible online schedule system, booking your home inspection has never been simpler. Click the button below to get started!
             </p>
-            <a href="javascript:void(0)"
-              class="inline-block py-3 text-base font-medium text-white transition border border-transparent rounded-md bg-secondary px-7 hover:bg-[#0BB489]">
+
+            <a
+              href="/#quote"
+              class="inline-flex items-center justify-center rounded-md bg-blue-600 px-7 py-3 text-base font-medium text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:bg-blue-800 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60"
+            >
               Schedule Home Inspection
             </a>
           </div>
@@ -21,23 +46,123 @@
       </div>
     </div>
   </div>
-  <div>
-    <span class="absolute top-0 left-0">
-      <svg width="495" height="470" viewBox="0 0 495 470" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="55" cy="442" r="138" stroke="white" stroke-opacity="0.04" stroke-width="50" />
-        <circle cx="446" r="39" stroke="white" stroke-opacity="0.04" stroke-width="20" />
-        <path d="M245.406 137.609L233.985 94.9852L276.609 106.406L245.406 137.609Z" stroke="white"
-          stroke-opacity="0.08" stroke-width="12" />
-      </svg>
-    </span>
-    <span class="absolute bottom-0 right-0">
-      <svg width="493" height="470" viewBox="0 0 493 470" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="462" cy="5" r="138" stroke="white" stroke-opacity="0.04" stroke-width="50" />
-        <circle cx="49" cy="470" r="39" stroke="white" stroke-opacity="0.04" stroke-width="20" />
-        <path d="M222.393 226.701L272.808 213.192L259.299 263.607L222.393 226.701Z" stroke="white"
-          stroke-opacity="0.06" stroke-width="13" />
-      </svg>
-    </span>
-  </div>
+
+  <!-- Keep your existing decorative SVGs -->
+<div aria-hidden="true">
+  <!-- Top-left: inspection pattern (house + magnifier + clipboard) -->
+  <span class="absolute top-0 left-0 opacity-80">
+    <svg width="560" height="440" viewBox="0 0 560 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Blueprint grid (very subtle) -->
+        <pattern id="bpGridTL" width="28" height="28" patternUnits="userSpaceOnUse">
+          <path d="M28 0H0V28" stroke="white" stroke-opacity="0.04" stroke-width="1" />
+        </pattern>
+
+        <!-- Repeating inspection icons pattern -->
+        <pattern id="inspectPatternTL" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+          <!-- House + roof -->
+          <path d="M34 68V96H78V68" stroke="white" stroke-opacity="0.10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28 70L56 44L84 70" stroke="white" stroke-opacity="0.12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M52 96V82H60V96" stroke="white" stroke-opacity="0.10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Magnifying glass (inspection) -->
+          <circle cx="98" cy="56" r="12" stroke="white" stroke-opacity="0.10" stroke-width="2.2"/>
+          <path d="M107 65L118 76" stroke="white" stroke-opacity="0.10" stroke-width="2.2" stroke-linecap="round"/>
+
+          <!-- Clipboard + check -->
+          <path d="M92 92H116C120 92 122 94 122 98V120C122 124 120 126 116 126H92C88 126 86 124 86 120V98C86 94 88 92 92 92Z"
+                stroke="white" stroke-opacity="0.08" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M96 90C96 86 99 84 104 84C109 84 112 86 112 90"
+                stroke="white" stroke-opacity="0.08" stroke-width="2" stroke-linecap="round"/>
+          <path d="M94 110L100 116L112 104" stroke="white" stroke-opacity="0.10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Roof shingle hint (small chevrons) -->
+          <path d="M30 112L38 104L46 112" stroke="white" stroke-opacity="0.06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M46 112L54 104L62 112" stroke="white" stroke-opacity="0.06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M62 112L70 104L78 112" stroke="white" stroke-opacity="0.06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </pattern>
+
+        <radialGradient id="glowTL" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(170 140) rotate(90) scale(260)">
+          <stop stop-color="white" stop-opacity="0.10" />
+          <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <!-- Base blueprint grid -->
+      <rect width="560" height="440" fill="url(#bpGridTL)" />
+
+      <!-- Icon pattern overlay -->
+      <rect width="560" height="440" fill="url(#inspectPatternTL)" />
+
+      <!-- Soft glow -->
+      <circle cx="170" cy="140" r="260" fill="url(#glowTL)" />
+
+      <!-- Subtle “plan line” arc -->
+      <path
+        d="M-40 160C90 70 220 70 350 160"
+        stroke="white"
+        stroke-opacity="0.08"
+        stroke-width="12"
+        stroke-linecap="round"
+      />
+    </svg>
+  </span>
+
+  <!-- Bottom-right: inspection pattern (moisture + checklist + roofline) -->
+  <span class="absolute bottom-0 right-0 opacity-80">
+    <svg width="560" height="440" viewBox="0 0 560 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Blueprint grid -->
+        <pattern id="bpGridBR" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M24 0H0V24" stroke="white" stroke-opacity="0.04" stroke-width="1" />
+        </pattern>
+
+        <!-- Repeating inspection icons pattern -->
+        <pattern id="inspectPatternBR" x="0" y="0" width="160" height="160" patternUnits="userSpaceOnUse">
+          <!-- Roofline / gable -->
+          <path d="M36 70L64 44L92 70" stroke="white" stroke-opacity="0.12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M44 70H84" stroke="white" stroke-opacity="0.08" stroke-width="2.2" stroke-linecap="round"/>
+
+          <!-- Checklist card -->
+          <path d="M104 54H132C136 54 138 56 138 60V90C138 94 136 96 132 96H104C100 96 98 94 98 90V60C98 56 100 54 104 54Z"
+                stroke="white" stroke-opacity="0.08" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M106 68H126" stroke="white" stroke-opacity="0.06" stroke-width="2" stroke-linecap="round"/>
+          <path d="M106 80H122" stroke="white" stroke-opacity="0.06" stroke-width="2" stroke-linecap="round"/>
+          <path d="M106 88L112 92L122 82" stroke="white" stroke-opacity="0.10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Moisture drop (Florida-relevant) -->
+          <path
+            d="M58 118C58 110 66 104 66 96C66 104 74 110 74 118C74 126 70 132 66 132C62 132 58 126 58 118Z"
+            stroke="white"
+            stroke-opacity="0.09"
+            stroke-width="2.2"
+            stroke-linejoin="round"
+          />
+
+          <!-- Small magnifier variant -->
+          <circle cx="118" cy="118" r="10" stroke="white" stroke-opacity="0.08" stroke-width="2.2"/>
+          <path d="M125 125L136 136" stroke="white" stroke-opacity="0.08" stroke-width="2.2" stroke-linecap="round"/>
+        </pattern>
+
+        <radialGradient id="glowBR" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(390 300) rotate(90) scale(280)">
+          <stop stop-color="white" stop-opacity="0.08" />
+          <stop offset="1" stop-color="white" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <rect width="560" height="440" fill="url(#bpGridBR)" />
+      <rect width="560" height="440" fill="url(#inspectPatternBR)" />
+      <circle cx="390" cy="300" r="280" fill="url(#glowBR)" />
+
+      <!-- Blueprint corner / measurement lines -->
+      <path d="M560 330H360" stroke="white" stroke-opacity="0.08" stroke-width="12" stroke-linecap="round" />
+      <path d="M430 440V240" stroke="white" stroke-opacity="0.08" stroke-width="12" stroke-linecap="round" />
+      <path d="M560 440H300" stroke="white" stroke-opacity="0.05" stroke-width="7" stroke-linecap="round" />
+      <path d="M560 440V190" stroke="white" stroke-opacity="0.05" stroke-width="7" stroke-linecap="round" />
+    </svg>
+  </span>
+</div> 
+
 </section>
+
 <!-- ====== CTA Section End -->

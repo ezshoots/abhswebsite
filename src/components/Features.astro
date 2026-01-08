@@ -3,93 +3,115 @@ const features = [
   {
     icon: 'assets/features/icon-01.svg',
     title: 'General Home Inspection (Existing & New Construction)',
-    ref: 'javascript:void(0)',
-    refTitle: 'Learn More',
+    slug: 'general-home-inspection',
+    ref: '/services/general-home-inspection',
+    refTitle: 'Learn more',
     description:
       'Whether you’re buying or selling, our detailed inspections uncover hidden defects and give you the confidence to move forward with peace of mind.',
   },
   {
     icon: 'assets/features/icon-02.svg',
     title: '4 Point / Wind Mitigation Inspections',
-    ref: 'javascript:void(0)',
-    refTitle: 'Learn More',
+    slug: '4-point-wind-mitigation',
+    ref: '/services/4-point-wind-mitigation',
+    refTitle: 'Learn more',
     description:
       'Essential for insurance coverage, our 4-Point and Wind Mitigation inspections evaluate your home’s key systems and storm-resistant features—helping you save on premiums and stay protected.',
   },
   {
     icon: 'assets/features/icon-03.svg',
     title: 'Lateral Sewer Scope Inspections',
-    ref: 'javascript:void(0)',
-    refTitle: 'Learn More',
+    slug: 'lateral-sewer-scope',
+    ref: '/services/lateral-sewer-scope',
+    refTitle: 'Learn more',
     description:
-      'Our later sewer scope inspection uses a high-resolution camera to evaluate the condition of the main sewer line, identifying potential issues like blockages, root intrusion, and pipe damage. This service is valuable for homes of any age, as even newer properties can experience sewer line problems due to poor installation or construction debris.',
+      'Our lateral sewer scope inspection uses a high-resolution camera to evaluate the main sewer line, identifying concerns like blockages, root intrusion, and pipe damage—even in newer homes due to installation issues or debris.',
   },
   {
     icon: 'assets/features/icon-04.svg',
     title: 'Water / Air Quality Sampling',
-    ref: 'javascript:void(0)',
-    refTitle: 'Learn More',
+    slug: 'water-air-quality',
+    ref: '/services/water-air-quality',
+    refTitle: 'Learn more',
     description:
-      'We offer friendly, thorough water & air testing services right here in Florida, checking for contaminants like bacteria, lead, and other substances that could affect your family’s well-being. We’ll walk you through the results and offer straightforward solutions to keep your water & air clean and your family safe.',
+      'We offer friendly, thorough water & air testing services in Florida, checking for contaminants like bacteria, lead, and other substances that may affect your family’s well-being.',
   },
   {
     icon: 'assets/features/icon-04.svg',
     title: 'Home Watch Services',
-    ref: 'javascript:void(0)',
-    refTitle: 'Learn More',
+    slug: 'home-watch',
+    ref: '/services/home-watch',
+    refTitle: 'Learn more',
     description:
-      'Our home watch service offers peace of mind while you’re away. We perform routine, scheduled checks on your property—looking for signs of water damage, mold, HVAC issues, pests, and security concerns. Each visit is thoroughly documented with photos and reports, so you’re always informed. Whether you’re a seasonal resident or frequent traveler, you can count on us to help protect your investment with reliable eyes on your home.',
+      'Routine scheduled property checks while you’re away—looking for water damage, mold, HVAC issues, pests, and security concerns. Every visit is documented with photos and reports.',
   },
 ];
 ---
 
 <!-- ====== Features Section Start -->
-<section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px] dark:bg-dark">
-  <div class="container">
-    <div class="-mx-4 flex flex-wrap">
-      <div class="w-full px-4">
-        <div class="mb-12 mx-auto max-w-[485px] lg:mb-[70px] text-center">
-          <span class="mb-2 block text-lg font-semibold text-primary">
-            Home Inspection Services
-          </span>
-          <h2 class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
-            Making an Impact Through Honest, Reliable, and Professional Home Inspections
-          </h2>
-          <p class="text-base text-body-color dark:text-dark-6">
-            At Above and Beyond Home Solutions, we make a meaningful impact by delivering thorough, trustworthy home inspections that empower homeowners and buyers to make informed decisions. With advanced tools, industry expertise, and a commitment to excellence, we’re helping shape safer homes and stronger communities—one inspection at a time.
-          </p>
-        </div>
-      </div>
+<section class="relative py-20 lg:py-[120px] dark:bg-dark">
+  <!-- subtle background treatment -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-24 left-1/2 h-72 w-[38rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-primary/5 blur-2xl"></div>
+  </div>
+
+  <div class="container relative">
+    <div class="mx-auto mb-12 max-w-2xl text-center lg:mb-[70px]">
+      <span class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+        Home Inspection Services
+      </span>
+
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
+        Making an Impact Through Honest, Reliable, and Professional Home Inspections
+      </h2>
+
+      <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+        At Above and Beyond Home Solutions, we deliver thorough, trustworthy inspections that empower homeowners and buyers to make informed decisions. With advanced tools and a commitment to excellence, we help shape safer homes—one inspection at a time.
+      </p>
     </div>
-    <div class="-mx-4 flex flex-wrap">
-      {
-        features.map((feature) => (
-          <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-            <div class="wow fadeInUp group mb-12" data-wow-delay=".1s">
-              <div
-                class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary"
-              >
-                <span
-                  class="absolute top-0 left-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[180deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
-                ></span>
-                <img src={feature.icon} alt="icon" />
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">
-                {feature.title}
-              </h4>
-              <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                {feature.description}
-              </p>
-              <a
-                href={feature.ref}
-                class="text-base font-medium text-dark dark:text-white hover:text-primary dark:hover:text-primary"
-              >
-                {feature.refTitle}
-              </a>
+
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+  {
+    features.map((feature) => (
+      <article>
+        <div class="group h-full rounded-2xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primary/20 dark:border-white/10 dark:bg-dark/40">
+          <div class="mb-5 inline-flex items-center gap-4">
+            <div class="relative grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-[1.03]">
+              <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent opacity-70"></div>
+              <img
+                src={feature.icon}
+                alt={`${feature.title} icon`}
+                class="relative h-6 w-6"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+
+            <h3 class="text-lg font-semibold leading-snug text-dark dark:text-white">
+              {feature.title}
+            </h3>
           </div>
-        ))
-      }
+
+          <p class="mb-6 text-sm leading-relaxed text-body-color dark:text-dark-6">
+            {feature.description}
+          </p>
+
+          <a
+            href={feature.ref}
+            aria-label={`Learn more about ${feature.title}`}
+            class="inline-flex items-center gap-2 text-sm font-semibold text-dark transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 dark:text-white"
+          >
+            {feature.refTitle}
+            <span class="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </div>
+      </article>
+    ))
+  }
+</div>
     </div>
   </div>
 </section>

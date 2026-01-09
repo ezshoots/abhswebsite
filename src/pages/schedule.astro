@@ -1,0 +1,166 @@
+---
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Schedule a Home Inspection | Above and Beyond Home Solutions, LLC"
+  description="Schedule your home inspection online with Above and Beyond Home Solutions, LLC. Choose your preferred date and time, and book in minutes."
+>
+ <Breadcrumb>
+    <Fragment slot="title">Schedule Home Inspection</Fragment>
+</Breadcrumb>
+  <main class="bg-gradient-to-b from-sky-50 via-white to-white">
+    <!-- Top Header -->
+    <section class="relative overflow-hidden">
+      <!-- Decorative accents -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(59,130,246,0.10),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(14,165,233,0.12),transparent_60%)]"></div>
+      </div>
+      <!-- Nav offset: prevents content from sitting under a fixed/sticky header -->
+        <div class="h-[88px] sm:h-[96px] lg:h-[104px]"></div>
+
+      <div class="container mx-auto relative px-4 pt-14 pb-10 lg:pt-20 lg:pb-14">
+        <div class="mx-auto max-w-3xl text-center">
+          <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Schedule Home Inspection
+          </h1>
+          <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+            Book online in minutes. Select your service, choose an available date/time, and receive confirmation right away.
+          </p>
+        </div>
+    
+
+        <!-- Sticker Cards -->
+        <div class="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-3">
+          <!-- Sticker 1: Licensed & Insured -->
+          <div class="relative rounded-2xl border border-sky-100 bg-white/90 p-5 shadow-sm backdrop-blur">
+            <div class="absolute -top-2 -right-2 h-10 w-10 rotate-12 rounded-xl bg-sky-600/10"></div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-600 text-white">
+                <!-- shield icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.5 12l2.3 2.3L15.8 9.3"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-slate-900">Licensed &amp; Insured</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Professional inspection services delivered with accountability and care.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sticker 2: Fast 24 Hour Report Turnaround -->
+          <div class="relative rounded-2xl border border-sky-100 bg-white/90 p-5 shadow-sm backdrop-blur">
+            <div class="absolute -top-2 -left-2 h-10 w-10 -rotate-12 rounded-xl bg-blue-600/10"></div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white">
+                <!-- clock icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 6v6l4 2"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-slate-900">Fast 24 Hour Report Turnaround</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Clear, photo-rich results delivered quickly so you can keep your deal moving.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sticker 3: Easy Online Scheduling -->
+          <div class="relative rounded-2xl border border-sky-100 bg-white/90 p-5 shadow-sm backdrop-blur">
+            <div class="absolute -bottom-2 -right-2 h-10 w-10 rotate-6 rounded-xl bg-sky-600/10"></div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-700 text-white">
+                <!-- calendar icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 3v3M17 3v3M4 8h16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M6 5h12a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8 12h8M8 16h6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-slate-900">Easy Online Scheduling</h3>
+                <p class="mt-1 text-sm text-slate-600">
+                  Choose a date/time that works for you and book without phone calls.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scheduler Container -->
+    <section class="pb-16 lg:pb-24">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-5xl rounded-2xl border border-sky-100 bg-white shadow-sm">
+          <div class="border-b border-sky-100 px-5 py-4 sm:px-7">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <p class="text-sm font-semibold text-slate-900">Online Scheduler</p>
+              <p class="text-xs text-slate-500">
+                If the scheduler doesn’t load, try refreshing or opening in a new tab.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-2 sm:p-3">
+            <div class="overflow-hidden rounded-xl">
+              <iframe
+                src="https://app.spectora.com/home-inspectors/my-inspection-company-940093e4db/schedule?iframe=1"
+                style="border:0;height:1100px;width:100%;"
+                title="Schedule an Inspection"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

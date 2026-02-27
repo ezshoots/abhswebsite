@@ -11,6 +11,29 @@ import Layout from "../layouts/Layout.astro";
   .star-twinkle {
     animation: twinkle 4s ease-in-out infinite;
   }
+
+  .sunshine-glow {
+    background: radial-gradient(
+      circle,
+      rgba(251, 191, 36, 0.22) 0%,
+      rgba(251, 191, 36, 0.10) 40%,
+      transparent 70%
+    );
+  }
+
+  .sunshine-rays {
+    background: conic-gradient(
+      from 175deg at 102% -5%,
+      rgba(251, 191, 36, 0.07) 0deg   8deg,
+      transparent                     8deg  24deg,
+      rgba(251, 191, 36, 0.06) 24deg  32deg,
+      transparent                     32deg 50deg,
+      rgba(251, 191, 36, 0.07) 50deg  59deg,
+      transparent                     59deg 78deg,
+      rgba(251, 191, 36, 0.05) 78deg  86deg,
+      transparent                     86deg 360deg
+    );
+  }
 </style>
 
 <Layout
@@ -28,6 +51,13 @@ import Layout from "../layouts/Layout.astro";
         <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl dark:bg-sky-900/30"></div>
         <div class="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl dark:bg-blue-900/30"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(59,130,246,0.10),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(14,165,233,0.12),transparent_60%)]"></div>
+        <!-- Morning sunshine (light mode only) -->
+        <div class="absolute inset-0 opacity-100 dark:opacity-0 transition-opacity duration-700" aria-hidden="true">
+          <!-- Warm sun glow at top-right corner -->
+          <div class="absolute -top-16 -right-16 h-80 w-80 rounded-full sunshine-glow"></div>
+          <!-- Subtle conic rays fanning from top-right -->
+          <div class="absolute inset-0 sunshine-rays"></div>
+        </div>
         <!-- Starlight (dark mode only) -->
         <div class="absolute inset-0 opacity-0 dark:opacity-100 transition-opacity duration-700" aria-hidden="true">
           <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

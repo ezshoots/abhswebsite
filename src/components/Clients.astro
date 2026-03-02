@@ -29,13 +29,13 @@ const certs = [
   <div class="cert-track-wrapper">
     <div class="cert-track">
       {certs.map(cert => (
-        <a href="https://www.internachi.org" target="_blank" rel="nofollow noopener" class="cert-item" title={cert.name}>
+        <a href="https://www.nachi.org" target="_blank" rel="nofollow noopener" class="cert-item" title={cert.name}>
           <img src={cert.image} alt={cert.name} class="cert-icon" />
         </a>
       ))}
       {/* Duplicate for seamless loop */}
       {certs.map(cert => (
-        <a href="https://www.internachi.org" target="_blank" rel="nofollow noopener" class="cert-item" aria-hidden="true" tabindex="-1" title={cert.name}>
+        <a href="https://www.nachi.org" target="_blank" rel="nofollow noopener" class="cert-item" aria-hidden="true" tabindex="-1" title={cert.name}>
           <img src={cert.image} alt="" class="cert-icon" />
         </a>
       ))}

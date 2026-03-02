@@ -1,38 +1,91 @@
 ---
-const clients = [
-  { ref: "https://tailgrids.com", image: "/assets/brands/graygrids.svg", whiteImage: "/assets/brands/graygrids-white.svg", name: "tailgrids"},
-  { ref: "https://ayroui.com", image: "/assets/brands/lineicons.svg", whiteImage: "/assets/brands/lineicons-white.svg", name: "ayroui"},
-  { ref: "https://uideck.com", image: "/assets/brands/uideck.svg", whiteImage: "/assets/brands/uideck-white.svg", name: "uideck"},
-  { ref: "https://graygrids.com", image: "/assets/brands/ayroui.svg", whiteImage: "/assets/brands/ayroui-white.svg", name: "graygrids"},
-  { ref: "https://lineicons.com", image: "/assets/brands/tailgrids.svg", whiteImage: "/assets/brands/tailgrids-white.svg", name: "lineicons"},
+const certs = [
+  { image: "/assets/certicons/internachicert.webp", name: "InterNACHI Certified" },
+  { image: "/assets/certicons/residentialinspectioncert.webp", name: "Residential Inspection" },
+  { image: "/assets/certicons/4pointinspectioncert.webp", name: "4-Point Inspection" },
+  { image: "/assets/certicons/windmitigationcert.webp", name: "Wind Mitigation" },
+  { image: "/assets/certicons/newconstructioncert.webp", name: "New Construction" },
+  { image: "/assets/certicons/11monthwarrantyinspection.webp", name: "11-Month Warranty Inspection" },
+  { image: "/assets/certicons/roofinspector.webp", name: "Roof Inspector" },
+  { image: "/assets/certicons/electricalcert.webp", name: "Electrical" },
+  { image: "/assets/certicons/plumbingcert.webp", name: "Plumbing" },
+  { image: "/assets/certicons/thermalcert.webp", name: "Thermal Imaging" },
+  { image: "/assets/certicons/iaqcert.webp", name: "Indoor Air Quality" },
+  { image: "/assets/certicons/moistureintrusioncert.webp", name: "Moisture Intrusion" },
+  { image: "/assets/certicons/atticinsulationcert.webp", name: "Attic Insulation" },
+  { image: "/assets/certicons/exteriorinspectorcert.webp", name: "Exterior Inspector" },
+  { image: "/assets/certicons/condocert.webp", name: "Condo Inspection" },
+  { image: "/assets/certicons/mobilehomecert.webp", name: "Mobile Home" },
+  { image: "/assets/certicons/moveincert.webp", name: "Move-In" },
+  { image: "/assets/certicons/firsttimebuyercert.webp", name: "First-Time Buyer" },
+  { image: "/assets/certicons/annualmaintencecert.webp", name: "Annual Maintenance" },
+  { image: "/assets/certicons/drontpilotcert.webp", name: "Drone Pilot" },
+  { image: "/assets/certicons/safeworkplacecert.webp", name: "Safe Workplace" },
 ]
 ---
 
-<!-- ====== Brands Section Start -->
-<section class="pb-20 dark:bg-dark">
-  <div class="container px-4">
-    <div class="-mx-4 flex flex-wrap items-center justify-center gap-8 xl:gap-11">
-      {
-        clients.map(client => (
-          <a
-            href={client.ref}
-            target="_blank"
-            rel="nofollow noopner"
-          >
-            <img
-              src={client.image}
-              alt={client.name}
-              class="dark:hidden"
-            />
-            <img
-              src={client.whiteImage}
-              alt={client.name}
-              class="hidden dark:block"
-            />
-          </a>
-        ))
-      }
+<!-- ====== Certifications Section Start -->
+<section class="pb-20 dark:bg-dark overflow-hidden">
+  <div class="cert-track-wrapper">
+    <div class="cert-track">
+      {certs.map(cert => (
+        <a href="https://www.internachi.org" target="_blank" rel="nofollow noopener" class="cert-item" title={cert.name}>
+          <img src={cert.image} alt={cert.name} class="cert-icon" />
+        </a>
+      ))}
+      {/* Duplicate for seamless loop */}
+      {certs.map(cert => (
+        <a href="https://www.internachi.org" target="_blank" rel="nofollow noopener" class="cert-item" aria-hidden="true" tabindex="-1" title={cert.name}>
+          <img src={cert.image} alt="" class="cert-icon" />
+        </a>
+      ))}
     </div>
   </div>
 </section>
-<!-- ====== Brands Section End -->
+<!-- ====== Certifications Section End -->
+
+<style>
+  .cert-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .cert-track {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    width: max-content;
+    animation: cert-scroll 40s linear infinite;
+  }
+
+  .cert-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes cert-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cert-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+
+  .cert-item:hover .cert-icon {
+    transform: scale(1.15) translateY(-4px);
+    filter: drop-shadow(0 6px 12px rgba(55, 88, 249, 0.35));
+    animation-play-state: paused;
+  }
+</style>

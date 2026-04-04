@@ -1,0 +1,278 @@
+---
+import Breadcrumb from '../../components/layout/Breadcrumb.astro';
+import CTAsection from '../../components/CTAsection.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const waterTests = [
+  {
+    title: 'Bacteria & Coliform',
+    description:
+      'Total coliform and E. coli testing determines whether harmful bacteria are present in your water supply. This is especially important for homes on private wells, which are common in rural parts of Lee, Collier, and Charlotte counties.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
+  },
+  {
+    title: 'Lead & Heavy Metals',
+    description:
+      'Lead can leach from older plumbing fixtures, solder, and service lines — particularly in pre-1986 homes. We also test for arsenic, iron, manganese, and other metals that are naturally occurring in Florida\'s groundwater.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>`,
+  },
+  {
+    title: 'Nitrates & Nitrites',
+    description:
+      'High nitrate levels in well water are a health risk, particularly for infants. Agricultural runoff is a concern in inland areas of Southwest Florida including Immokalee, Alva, and parts of DeSoto and Hendry counties.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>`,
+  },
+  {
+    title: 'pH, Hardness & Minerals',
+    description:
+      'Florida\'s water is naturally hard and mineral-rich. Testing for pH, hardness, sulfur, and iron helps identify issues affecting taste, appliance longevity, and plumbing performance — a common concern in Cape Coral, Lehigh Acres, and Golden Gate.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>`,
+  },
+];
+
+const airTests = [
+  {
+    title: 'Mold & Spore Sampling',
+    description:
+      'Florida\'s heat and humidity create ideal conditions for mold growth. Air samples are collected indoors and compared to outdoor baseline levels to detect elevated mold spore counts — even when mold is not visibly apparent inside the home.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>`,
+  },
+  {
+    title: 'VOCs & Chemical Contaminants',
+    description:
+      'Volatile organic compounds (VOCs) from paints, adhesives, building materials, and cleaning products can accumulate in closed spaces. Testing identifies chemical off-gassing that may affect air quality and long-term health.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+  },
+  {
+    title: 'Allergens & Particulates',
+    description:
+      'Dust mites, pet dander, pollen, and other airborne allergens are tested to assess indoor air quality — particularly important in Florida homes where windows are kept closed and HVAC systems recirculate air year-round.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636-6.364l.707.707M12 21v-1m-6.364-1.636l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+  },
+  {
+    title: 'Post-Remediation Clearance',
+    description:
+      'After mold remediation work has been completed, a clearance air test confirms that spore levels have returned to acceptable ranges. We provide the documentation needed to satisfy insurance requirements and close on the property.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Schedule Your Test',
+    description:
+      'Water and air sampling can be added to a home inspection or booked as standalone services. Contact us or book online to pick a date that works for you.',
+  },
+  {
+    number: '02',
+    title: 'On-Site Collection',
+    description:
+      'Our inspector collects water samples from key points in the home and deploys calibrated air sampling equipment. The process is thorough, non-invasive, and typically completed within an hour.',
+  },
+  {
+    number: '03',
+    title: 'Lab Results & Report',
+    description:
+      'Samples are submitted to a certified laboratory. Results are provided to you with a plain-language explanation of any findings, recommended actions, and context for what the numbers mean.',
+  },
+];
+---
+
+<Layout
+  title="Water & Air Quality Testing | Above and Beyond Home Solutions"
+  description="Professional water and air quality sampling in Fort Myers, Cape Coral, Naples, Sarasota, Port Charlotte, and Southwest Florida. Mold testing, well water testing, and more."
+>
+  <Breadcrumb>
+    <Fragment slot="title">Water & Air Quality Sampling</Fragment>
+  </Breadcrumb>
+
+  <!-- ====== Overview Section Start -->
+  <section class="py-20 dark:bg-dark lg:py-[120px]">
+    <div class="container">
+      <div class="-mx-4 flex flex-wrap items-center">
+
+        <!-- Text column -->
+        <div class="w-full px-4 lg:w-1/2">
+          <div class="mb-12 lg:mb-0 lg:pr-10">
+            <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+              Environmental Testing
+            </span>
+            <h2 class="mb-5 mt-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
+              Know What's in Your Air and Water
+            </h2>
+            <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
+              Southwest Florida's climate — hot, humid, and prone to flooding — creates conditions where water contamination and mold growth are real concerns for homeowners and buyers. Our water and air quality sampling services give you laboratory-backed answers about what's actually in the home, not just what you can see.
+            </p>
+            <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
+              Whether you're buying a home in Naples, Sarasota, North Port, Marco Island, or Englewood — or you're a current homeowner in Fort Myers or Cape Coral concerned about post-storm conditions — our certified testing gives you the documentation and peace of mind you need.
+            </p>
+            <a
+              href="/schedule"
+              class="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-base font-medium text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
+              Schedule Testing
+            </a>
+          </div>
+        </div>
+
+        <!-- Image / stat column -->
+        <div class="w-full px-4 lg:w-1/2">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-1 ring-1 ring-primary/20 dark:from-primary/20 dark:to-primary/10">
+            <img
+              src="/assets/blog/blog-details-01.jpg"
+              alt="Water and air quality testing"
+              class="w-full rounded-xl object-cover"
+              style="aspect-ratio: 16/10;"
+            />
+          </div>
+
+          <!-- Info strip -->
+          <div class="mt-6 grid grid-cols-3 divide-x divide-stroke dark:divide-dark-3 rounded-xl border border-stroke dark:border-dark-3 bg-white dark:bg-dark-2">
+            <div class="px-5 py-4 text-center">
+              <p class="text-2xl font-bold text-dark dark:text-white">Lab</p>
+              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Certified Results</p>
+            </div>
+            <div class="px-5 py-4 text-center">
+              <p class="text-2xl font-bold text-dark dark:text-white">Water</p>
+              <p class="mt-1 text-xs text-body-color dark:text-dark-6">& Air Testing</p>
+            </div>
+            <div class="px-5 py-4 text-center">
+              <p class="text-2xl font-bold text-dark dark:text-white">Add-On</p>
+              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Available</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ====== Overview Section End -->
+
+  <!-- ====== Water Testing Section Start -->
+  <section class="bg-gray-1 py-20 dark:bg-dark-2 lg:py-[120px]">
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-2xl text-center lg:mb-[70px]">
+        <span class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+          Water Quality Testing
+        </span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
+          What We Test For in Your Water
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+          Florida's water supply — whether municipal or from a private well — can contain a range of contaminants. We test for the issues most relevant to Southwest Florida properties.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+        {waterTests.map((item) => (
+          <div class="group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primary/20 dark:border-white/10 dark:bg-dark">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-[1.05]">
+              <svg
+                class="h-6 w-6 text-primary"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <Fragment set:html={item.icon} />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-lg font-semibold text-dark dark:text-white">{item.title}</h3>
+            <p class="text-sm leading-relaxed text-body-color dark:text-dark-6">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <!-- ====== Water Testing Section End -->
+
+  <!-- ====== Air Testing Section Start -->
+  <section class="py-20 dark:bg-dark lg:py-[120px]">
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-2xl text-center lg:mb-[70px]">
+        <span class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+          Air Quality Testing
+        </span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
+          What We Test For in Your Air
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+          Indoor air quality directly impacts your family's health. Florida's humidity and hurricane season make mold testing especially important — particularly following storms, flooding, or in homes that have been vacant.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+        {airTests.map((item) => (
+          <div class="group rounded-2xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primary/20 dark:border-white/10 dark:bg-dark/40">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-[1.05]">
+              <svg
+                class="h-6 w-6 text-primary"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <Fragment set:html={item.icon} />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-lg font-semibold text-dark dark:text-white">{item.title}</h3>
+            <p class="text-sm leading-relaxed text-body-color dark:text-dark-6">{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Florida-specific callout -->
+      <div class="mx-auto mt-12 max-w-3xl rounded-2xl border border-secondary/30 bg-secondary/10 px-8 py-6 text-center">
+        <p class="text-lg font-semibold text-dark dark:text-white">Post-Storm & Vacant Home Testing</p>
+        <p class="mt-2 text-base text-body-color dark:text-dark-6">
+          After a hurricane or tropical storm, mold can begin growing within 24–48 hours in flooded or water-damaged areas. We strongly recommend air quality testing for any home in the Fort Myers, Cape Coral, Bonita Springs, or Naples areas that experienced flooding or prolonged moisture exposure from Ian, Helene, or any storm event.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Air Testing Section End -->
+
+  <!-- ====== How It Works Section Start -->
+  <section class="bg-gray-1 py-20 dark:bg-dark-2 lg:py-[120px]">
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-2xl text-center lg:mb-[70px]">
+        <span class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+          Simple Process
+        </span>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
+          How It Works
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+          From scheduling to receiving your certified lab results, here's what to expect.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {steps.map((step) => (
+          <div class="relative text-center">
+            <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 ring-2 ring-primary/20">
+              <span class="text-2xl font-bold text-primary">{step.number}</span>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-dark dark:text-white">{step.title}</h3>
+            <p class="text-sm leading-relaxed text-body-color dark:text-dark-6">{step.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mx-auto mt-12 max-w-xl text-center">
+        <a
+          href="/schedule"
+          class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-medium text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+        >
+          Schedule Water or Air Testing
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ====== How It Works Section End -->
+
+  <CTAsection />
+</Layout>

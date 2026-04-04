@@ -1,60 +1,75 @@
 ---
-import Breadcrumb from '../components/layout/Breadcrumb.astro';
-import CTAsection from '../components/CTAsection.astro';
-import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../../components/layout/Breadcrumb.astro';
+import CTAsection from '../../components/CTAsection.astro';
+import Layout from '../../layouts/Layout.astro';
 
-const included = [
+const whatWeInspect = [
   {
-    title: 'Roof & Attic',
+    title: 'Pipe Condition & Integrity',
     description:
-      'We inspect roof coverings, flashings, gutters, ventilation, and attic insulation. In Southwest Florida\'s climate, roof condition directly impacts your insurance rates and storm readiness — we document everything clearly.',
-    icon: `<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+      'Our camera travels the full length of the lateral sewer line, checking for cracks, fractures, collapses, or corroded sections that can cause sewage backups or slow drainage — common issues in Southwest Florida\'s older clay and cast-iron pipe systems.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`,
   },
   {
-    title: 'Structural Components',
+    title: 'Root Intrusion',
     description:
-      'We evaluate the foundation, framing, walls, floors, and ceilings for signs of settlement, cracking, moisture intrusion, or damage — critical checks in Florida\'s high-humidity, hurricane-prone environment.',
-    icon: `<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`,
+      'Tree and shrub roots naturally seek out water — and sewer lines are a prime target. Root intrusion is one of the most common findings in Florida properties, especially in established neighborhoods with mature landscaping in areas like Cape Coral, Fort Myers, and North Port.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>`,
   },
   {
-    title: 'Electrical Systems',
+    title: 'Blockages & Debris',
     description:
-      'We inspect the service panel, wiring, outlets, GFCI protection, and visible components for safety hazards. Outdated or improperly installed electrical systems are among the most common findings in older Florida homes.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+      'Grease buildup, foreign objects, and years of accumulation can partially or fully block a sewer line. We identify obstructions that may not yet be causing problems but will — giving you leverage during the home purchase negotiation.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>`,
   },
   {
-    title: 'Plumbing',
+    title: 'Pipe Belly & Negative Grade',
     description:
-      'We assess supply lines, drain lines, water heater condition, fixtures, and visible pipe materials. We note aging galvanized or polybutylene piping that can affect insurability and flag active leaks or signs of prior water damage.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>`,
+      'Soil settlement can cause sections of the pipe to sag, creating low spots (bellies) where waste accumulates rather than flowing freely. This is especially common in Florida\'s sandy, shifting soils and is not detectable without a camera inspection.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>`,
   },
   {
-    title: 'HVAC',
+    title: 'Joint Separation',
     description:
-      'In the Florida heat, your air conditioning system is essential. We test heating and cooling equipment for proper operation, inspect ductwork and air handlers, and note age and condition so you know what to expect.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636-6.364l.707.707M12 21v-1m-6.364-1.636l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+      'Over time, pipe joints can separate — allowing ground water to enter the system (infiltration) or sewage to escape into the surrounding soil (exfiltration). Both are red flags that indicate the line may need repair or lining.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>`,
   },
   {
-    title: 'Interior & Exterior',
+    title: 'Material Identification',
     description:
-      'We walk the entire property — doors, windows, siding, driveways, grading, decks, and interior rooms — checking for water intrusion, pest damage, cosmetic issues, and safety concerns that affect the home\'s value and livability.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>`,
+      'We identify the pipe material in use — clay, cast iron, PVC, Orangeburg, or other — so you know what you\'re inheriting and what the expected lifespan of the system is. Orangeburg and clay pipes are still present in many pre-1980s Southwest Florida homes.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>`,
   },
 ];
 
 const steps = [
-  { number: '01', title: 'Book Online', description: 'Schedule in minutes at your convenience through our online booking system. Pick a date and time that works for you — no phone tag required.' },
-  { number: '02', title: 'On-Site Inspection', description: 'Our licensed inspector arrives on time and conducts a comprehensive walkthrough of the home, typically lasting 2–4 hours depending on the size and condition of the property.' },
-  { number: '03', title: 'Receive Your Report', description: 'Your detailed digital report — complete with photos, descriptions, and recommendations — is delivered the same day, so you can act quickly during your inspection period.' },
+  {
+    number: '01',
+    title: 'Schedule with Your Inspection',
+    description:
+      'A sewer scope can be booked as a stand-alone service or added to your general home inspection on the same visit — saving you time and coordination.',
+  },
+  {
+    number: '02',
+    title: 'Camera Inspection',
+    description:
+      'Our inspector inserts a flexible, high-resolution camera into a cleanout access point and pushes it through the full run of the lateral line to the municipal connection.',
+  },
+  {
+    number: '03',
+    title: 'Video Report Delivered Same Day',
+    description:
+      'You receive a digital report with recorded video footage and a written summary of any findings. Your real estate agent and plumber can access it immediately.',
+  },
 ];
 ---
 
 <Layout
-  title="General Home Inspection | Above and Beyond Home Solutions"
-  description="Professional general home inspections in Fort Myers, Cape Coral, Naples, Port Charlotte, Sarasota, and across Southwest Florida. InterNACHI certified. Same-day reports."
+  title="Lateral Sewer Scope Inspection | Above and Beyond Home Solutions"
+  description="Lateral sewer scope inspections in Fort Myers, Cape Coral, Naples, Port Charlotte, Sarasota, and Southwest Florida. High-resolution camera inspection delivered same day."
 >
   <Breadcrumb>
-    <Fragment slot="title">General Home Inspection</Fragment>
+    <Fragment slot="title">Lateral Sewer Scope Inspection</Fragment>
   </Breadcrumb>
 
   <!-- ====== Overview Section Start -->
@@ -66,22 +81,22 @@ const steps = [
         <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 lg:mb-0 lg:pr-10">
             <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
-              Our Most Popular Service
+              Sewer & Drain Inspection
             </span>
             <h2 class="mb-5 mt-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
-              A Thorough Inspection You Can Rely On
+              See What's Hiding in Your Sewer Line
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Whether you're buying a home in Fort Myers, Cape Coral, Naples, Port Charlotte, Sarasota, North Port, or anywhere across Southwest Florida, a thorough general home inspection gives you an honest picture of the property before you commit. We evaluate every major system and component from roof to foundation.
+              A standard home inspection evaluates the fixtures and drains you can see — but it can't tell you what's happening underground. A lateral sewer scope inspection uses a high-resolution camera to inspect the sewer line running from the home to the municipal connection, revealing blockages, root intrusion, pipe damage, and material failures that are otherwise invisible.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Our InterNACHI certified inspector uses thermal imaging, moisture meters, and advanced diagnostic tools to find issues that aren't always visible to the naked eye. You'll receive a clear, photo-documented digital report the same day — so you can negotiate repairs, plan for maintenance, or walk away with confidence.
+              We recommend a sewer scope on virtually every home purchase in Southwest Florida — including newer construction. Improper installation, debris left during build-out, and poor grading can affect even recently built homes in Fort Myers, Cape Coral, Lehigh Acres, Estero, and Bonita Springs. The cost of discovering a failing sewer line after closing is far greater than the cost of the inspection.
             </p>
             <a
               href="/schedule"
               class="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-base font-medium text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             >
-              Schedule an Inspection
+              Schedule a Sewer Scope
             </a>
           </div>
         </div>
@@ -91,25 +106,25 @@ const steps = [
           <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-1 ring-1 ring-primary/20 dark:from-primary/20 dark:to-primary/10">
             <img
               src="/assets/blog/blog-details-01.jpg"
-              alt="Home inspector reviewing property"
+              alt="Sewer scope camera inspection"
               class="w-full rounded-xl object-cover"
               style="aspect-ratio: 16/10;"
             />
           </div>
 
-          <!-- Stat strip -->
+          <!-- Info strip -->
           <div class="mt-6 grid grid-cols-3 divide-x divide-stroke dark:divide-dark-3 rounded-xl border border-stroke dark:border-dark-3 bg-white dark:bg-dark-2">
             <div class="px-5 py-4 text-center">
-              <p class="text-2xl font-bold text-dark dark:text-white">500+</p>
-              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Inspections</p>
+              <p class="text-2xl font-bold text-dark dark:text-white">HD</p>
+              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Camera Footage</p>
             </div>
             <div class="px-5 py-4 text-center">
               <p class="text-2xl font-bold text-dark dark:text-white">Same Day</p>
-              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Reports</p>
+              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Video Report</p>
             </div>
             <div class="px-5 py-4 text-center">
-              <p class="text-2xl font-bold text-dark dark:text-white">5★</p>
-              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Rated</p>
+              <p class="text-2xl font-bold text-dark dark:text-white">Add-On</p>
+              <p class="mt-1 text-xs text-body-color dark:text-dark-6">Available</p>
             </div>
           </div>
         </div>
@@ -119,23 +134,23 @@ const steps = [
   </section>
   <!-- ====== Overview Section End -->
 
-  <!-- ====== What's Included Section Start -->
+  <!-- ====== What We Inspect Section Start -->
   <section class="bg-gray-1 py-20 dark:bg-dark-2 lg:py-[120px]">
     <div class="container">
       <div class="mx-auto mb-12 max-w-2xl text-center lg:mb-[70px]">
         <span class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
-          Full Coverage
+          Full Line Coverage
         </span>
         <h2 class="mt-3 text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
-          What's Included in Your Inspection
+          What the Camera Looks For
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Every inspection covers all major systems and components of the home. Below is a breakdown of what's evaluated during your inspection — nothing gets skipped.
+          Our lateral sewer scope covers the entire run from the home's cleanout to the street connection. Here's what we document along the way.
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-        {included.map((item) => (
+        {whatWeInspect.map((item) => (
           <div class="group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primary/20 dark:border-white/10 dark:bg-dark">
             <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-[1.05]">
               <svg
@@ -156,7 +171,7 @@ const steps = [
       </div>
     </div>
   </section>
-  <!-- ====== What's Included Section End -->
+  <!-- ====== What We Inspect Section End -->
 
   <!-- ====== How It Works Section Start -->
   <section class="py-20 dark:bg-dark lg:py-[120px]">
@@ -169,7 +184,7 @@ const steps = [
           How It Works
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Getting your inspection scheduled is simple. Here's what to expect from start to finish.
+          The sewer scope can be completed in under an hour and added to any home inspection visit.
         </p>
       </div>
 
@@ -197,11 +212,10 @@ const steps = [
           <div class="relative overflow-hidden rounded-2xl">
             <img
               src="/assets/blog/blog-01.jpg"
-              alt="Inspector using thermal camera"
+              alt="Sewer scope inspection camera"
               class="w-full rounded-2xl object-cover"
               style="aspect-ratio: 4/3;"
             />
-            <!-- badge overlay -->
             <div class="absolute bottom-4 left-4 flex items-center gap-3 rounded-xl bg-white/90 px-4 py-3 shadow-md backdrop-blur dark:bg-dark/90">
               <span class="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10">
                 <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -209,8 +223,8 @@ const steps = [
                 </svg>
               </span>
               <div>
-                <p class="text-sm font-semibold text-dark dark:text-white">InterNACHI Certified</p>
-                <p class="text-xs text-body-color dark:text-dark-6">Licensed & Insured</p>
+                <p class="text-sm font-semibold text-dark dark:text-white">Video Delivered Same Day</p>
+                <p class="text-xs text-body-color dark:text-dark-6">Full HD footage included</p>
               </div>
             </div>
           </div>
@@ -222,21 +236,22 @@ const steps = [
               Why It Matters
             </span>
             <h2 class="mb-5 mt-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[42px] md:leading-[1.15]">
-              Protect Your Investment Before You Sign
+              Don't Let a Failing Sewer Line Surprise You After Closing
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              A home inspection isn't just a formality — it's one of the most important steps in any real estate transaction. In Florida's market, waiving an inspection or choosing a cheap one can cost far more later in surprise repairs, insurance complications, or safety hazards you didn't see coming.
+              Sewer line repairs are among the most expensive surprises a homeowner can face — often running from $3,000 to $15,000 or more depending on depth, material, and the extent of the damage. In Sarasota, Venice, Port Charlotte, Punta Gorda, and Naples, aging infrastructure and root-heavy landscapes make sewer issues common.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              At Above and Beyond Home Solutions, we treat every home as if we're buying it ourselves. From Alva to Bonita Springs, Lehigh Acres to Venice, our thorough process ensures nothing gets overlooked — so you go into your purchase fully informed.
+              A sewer scope inspection completed before closing gives you documented evidence to negotiate repairs with the seller, request a price reduction, or make an informed decision about whether the property is right for you.
             </p>
 
             <ul class="mb-8 space-y-3">
               {[
-                'Detailed digital report delivered same day',
-                'Thermal imaging and moisture detection tools',
-                'Clear photo documentation of every finding',
-                'Plain-language explanations — no jargon',
+                'High-resolution camera footage of the full lateral line',
+                'Written summary of all findings with timestamps',
+                'Identifies issues invisible to a standard inspection',
+                'Can be added to your general home inspection visit',
+                'Useful on new construction — not just older homes',
               ].map((point) => (
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
@@ -253,7 +268,7 @@ const steps = [
               href="/schedule"
               class="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-base font-medium text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             >
-              Book Your Inspection
+              Add a Sewer Scope
             </a>
           </div>
         </div>

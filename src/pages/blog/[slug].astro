@@ -48,10 +48,7 @@ const { Content } = await entry.render();
                   </div>
                   <p class="text-base font-medium text-white">
                     By
-                    <a
-                      href="javascript:void(0)"
-                      class="text-white hover:opacity-70"
-                    >
+                    <span class="text-white">
                       {entry.data.author}
                     </a>
                   </p>
@@ -217,12 +214,11 @@ const { Content } = await entry.render();
                     >
                       {
                         entry.data.tags.map((tag) => (
-                          <a
-                            href="javascript:void(0)"
-                            class="cursor-none block rounded-md bg-primary/[0.08] py-[5px] px-[14px] text-base text-dark dark:text-white hover:bg-primary hover:text-white"
+                          <span
+                            class="block rounded-md bg-primary/[0.08] py-[5px] px-[14px] text-base text-dark dark:text-white"
                           >
                             {tag}
-                          </a>
+                          </span>
                         ))
                       }
                     </div>
@@ -236,9 +232,9 @@ const { Content } = await entry.render();
                         Share This Post
                       </span>
                       <div class="flex items-center gap-[10px]">
-                        <a href="javascript:void(0)">
+                        <button type="button" aria-label="Share on Facebook">
                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path
                               d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
                               fill="#1877F2" />
@@ -247,9 +243,9 @@ const { Content } = await entry.render();
                               fill="white" />
                           </svg>
                         </a>
-                        <a href="javascript:void(0)">
+                        <button type="button" aria-label="Share on Twitter / X">
                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path
                               d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
                               fill="#55ACEE" />
@@ -258,9 +254,9 @@ const { Content } = await entry.render();
                               fill="white" />
                           </svg>
                         </a>
-                        <a href="javascript:void(0)">
+                        <button type="button" aria-label="Share on LinkedIn">
                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path
                               d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
                               fill="#007AB9" />

@@ -28,6 +28,55 @@ const { description, title, image } = Astro.props;
     <meta property="og:image" content={image} />
     <meta property="twitter:image" content={image} />
     <title>{title}</title>
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com",
+      "logo": "https://www.abovebeyondhomesolutions.com/assets/logo/logo.svg",
+      "telephone": "+12394163505",
+      "email": "info@abovebeyondhomesolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1002 W 9th Street",
+        "addressLocality": "Lehigh Acres",
+        "addressRegion": "FL",
+        "postalCode": "33972",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        "Fort Myers, FL",
+        "Cape Coral, FL",
+        "Lehigh Acres, FL",
+        "Naples, FL",
+        "North Port, FL",
+        "Sarasota, FL",
+        "Venice, FL",
+        "Port Charlotte, FL",
+        "Punta Gorda, FL",
+        "Bonita Springs, FL",
+        "Estero, FL",
+        "Marco Island, FL",
+        "Alva, FL",
+        "Englewood, FL",
+        "Immokalee, FL",
+        "Sanibel, FL",
+        "Fort Myers Beach, FL"
+      ],
+      "description": "InterNACHI certified home inspectors serving Southwest Florida. General home inspections, 4-Point, Wind Mitigation, Lateral Sewer Scope, Water and Air Quality Sampling, and Home Watch services. Same-day digital reports.",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": []
+    }
+    </script>
   </head>
   <body>
     <Header />
@@ -45,6 +94,9 @@ const { description, title, image } = Astro.props;
       }
       body {
         font-family: "Inter Variable", "Inter", sans-serif;
+      }
+      html:not(.dark) body {
+        background-color: #F2F6FB;
       }
       .sticky-header {
         @apply fixed z-[9999] bg-white/80 dark:bg-dark/80 transition;

@@ -48,7 +48,7 @@ module.exports = {
         "body-secondary": "#8899A8",
         warning: "#FBBF24",
         stroke: "#DFE4EA",
-        "gray-1": "#F9FAFB",
+        "gray-1": "#EEF2F8",
         "gray-2": "#F3F4F6",
         "gray-7": "#CED4DA",
       },

@@ -19,6 +19,28 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title} description={entry.data.postDetails.paraOne} image={entry.data.bigImg.src}>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": entry.data.title,
+    "image": entry.data.bigImg.src,
+    "author": {
+      "@type": "Person",
+      "name": entry.data.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Above and Beyond Home Solutions, LLC"
+    },
+    "datePublished": entry.data.publishDate,
+    "dateModified": entry.data.publishDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": Astro.url
+    }
+  }
+  </script>
   <!-- ====== Blog Details Section Start -->
   <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20 dark:bg-dark">
     <div class="container">

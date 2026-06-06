@@ -7,7 +7,7 @@ const fourPointItems = [
   {
     title: 'HVAC System',
     description:
-      'Insurers require documentation of your heating and cooling system\'s age, condition, and functionality. Older or poorly maintained HVAC units can raise red flags—our inspection clearly documents what is installed and its current operational status.',
+      'Insurers require documentation of your heating and cooling system\'s age, condition, and functionality. Older or poorly maintained HVAC units can raise red flags. Our inspection clearly documents what is installed and its current operational status.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636-6.364l.707.707M12 21v-1m-6.364-1.636l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>`,
   },
   {
@@ -34,13 +34,13 @@ const windMitItems = [
   {
     title: 'Roof Shape',
     description:
-      'Hip roofs—where all sides slope down to the walls—are proven to perform significantly better in high winds than gable roofs. Florida insurers reward hip roof geometry with meaningful premium discounts, and our report documents your exact roof shape with supporting photos.',
+      'Hip roofs, where all sides slope down to the walls, are proven to perform significantly better in high winds than gable roofs. Florida insurers reward hip roof geometry with meaningful premium discounts, and our report documents your exact roof shape with supporting photos.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
   },
   {
     title: 'Roof Deck Attachment',
     description:
-      'How your roof sheathing is nailed to the structure directly affects how well it holds during a hurricane. We measure nail size and spacing, identifying whether your home meets current wind-resistance standards—a key factor in Florida insurance rating.',
+      'How your roof sheathing is nailed to the structure directly affects how well it holds during a hurricane. We measure nail size and spacing, identifying whether your home meets current wind-resistance standards, a key factor in Florida insurance rating.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>`,
   },
   {
@@ -62,7 +62,23 @@ const windMitItems = [
   title="4-Point & Wind Mitigation Inspections | Above and Beyond Home Solutions"
   description="Florida homeowners can reduce insurance costs with 4-Point and Wind Mitigation inspections. Required for homes 20+ years old. Serving Southwest Florida."
 >
-  <Breadcrumb>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "4-Point & Wind Mitigation Inspection",
+    "serviceType": "Insurance Inspection",
+    "description": "Florida homeowners can reduce insurance costs with 4-Point and Wind Mitigation inspections. Required for homes 20+ years old. We inspect HVAC, electrical, plumbing, and roof systems for insurability.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com"
+    },
+    "areaServed": ["Fort Myers, FL","Cape Coral, FL","Lehigh Acres, FL","Naples, FL","North Port, FL","Sarasota, FL","Port Charlotte, FL","Punta Gorda, FL","Bonita Springs, FL","Estero, FL","Marco Island, FL"],
+    "url": "https://www.abovebeyondhomesolutions.com/4pointandwind"
+  }
+  </script>
+  <Breadcrumb pageTitle="4-Point & Wind Mitigation Inspections">
     <Fragment slot="title">4-Point & Wind Mitigation Inspections</Fragment>
   </Breadcrumb>
 
@@ -77,7 +93,7 @@ const windMitItems = [
           Lower Your Premiums. Protect Your Home.
         </h2>
         <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-          In Florida, insurance carriers frequently require two specific inspections before issuing or renewing a homeowner policy on properties 20 years of age or older — the <strong class="text-dark dark:text-white">4-Point Inspection</strong> and the <strong class="text-dark dark:text-white">Wind Mitigation Inspection</strong>. While often performed together, each serves a distinct purpose and can have a significant impact on what you pay each year.
+          In Florida, insurance carriers frequently require two specific inspections before issuing or renewing a homeowner policy on properties 20 years of age or older: the <strong class="text-dark dark:text-white">4-Point Inspection</strong> and the <strong class="text-dark dark:text-white">Wind Mitigation Inspection</strong>. While often performed together, each serves a distinct purpose and can have a significant impact on what you pay each year.
         </p>
         <p class="text-base leading-relaxed text-body-color dark:text-dark-6">
           At Above and Beyond Home Solutions, we are InterNACHI certified and experienced with Florida insurance requirements. Our reports are accepted by all major carriers and delivered the same day as the inspection.
@@ -117,10 +133,10 @@ const windMitItems = [
           What Is a 4-Point Inspection?
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          A 4-Point Inspection evaluates the four major systems that insurance carriers are most concerned about in older Florida homes. The report documents the current age and condition of each system and is submitted to your insurer when applying for or renewing a homeowner policy. A poor result on any of the four systems can affect your eligibility for coverage or increase your premium — but knowing in advance gives you time to address issues before they become a problem.
+          A 4-Point Inspection evaluates the four major systems that insurance carriers are most concerned about in older Florida homes. The report documents the current age and condition of each system and is submitted to your insurer when applying for or renewing a homeowner policy. A poor result on any of the four systems can affect your eligibility for coverage or increase your premium, but knowing in advance gives you time to address issues before they become a problem.
         </p>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Our inspectors are familiar with the specific requirements of major Florida carriers and complete the OIR-B1-1802 form — the standard Citizens and most private insurer accepted format. We serve homeowners throughout Lee, Collier, Charlotte, and Sarasota counties, including Fort Myers, Cape Coral, Naples, Port Charlotte, Punta Gorda, Sarasota, North Port, and Venice.
+          Our inspectors are familiar with the specific requirements of major Florida carriers and complete the OIR-B1-1802 form, the standard Citizens and most private insurer accepted format. We serve homeowners throughout Lee, Collier, Charlotte, and Sarasota counties, including Fort Myers, Cape Coral, Naples, Port Charlotte, Punta Gorda, Sarasota, North Port, and Venice.
         </p>
       </div>
 
@@ -150,7 +166,7 @@ const windMitItems = [
       <div class="mx-auto mt-12 max-w-3xl rounded-2xl border border-secondary/30 bg-secondary/10 px-8 py-6 text-center">
         <p class="text-lg font-semibold text-dark dark:text-white">How does this save you money?</p>
         <p class="mt-2 text-base text-body-color dark:text-dark-6">
-          Homes that pass a 4-Point Inspection with all systems in good condition are viewed as lower risk by insurers. Carriers are more willing to offer competitive rates — and in some cases, coverage at all — when a current, clean 4-Point report is on file. Without one, you may face higher premiums, coverage exclusions, or outright denial on older properties.
+          Homes that pass a 4-Point Inspection with all systems in good condition are viewed as lower risk by insurers. Carriers are more willing to offer competitive rates, and in some cases coverage at all, when a current, clean 4-Point report is on file. Without one, you may face higher premiums, coverage exclusions, or outright denial on older properties.
         </p>
       </div>
 
@@ -171,7 +187,7 @@ const windMitItems = [
           What Is a Wind Mitigation Inspection?
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          A Wind Mitigation Inspection documents the storm-resistant features of your home that reduce the likelihood of hurricane damage. Florida law requires insurers to offer premium discounts when a home meets certain wind mitigation standards — and many homeowners are surprised to find they qualify for credits they did not know existed. Unlike the 4-Point, a wind mitigation inspection is not a pass/fail report. Any qualifying feature earns you a discount.
+          A Wind Mitigation Inspection documents the storm-resistant features of your home that reduce the likelihood of hurricane damage. Florida law requires insurers to offer premium discounts when a home meets certain wind mitigation standards, and many homeowners are surprised to find they qualify for credits they did not know existed. Unlike the 4-Point, a wind mitigation inspection is not a pass/fail report. Any qualifying feature earns you a discount.
         </p>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
           Southwest Florida homeowners in areas like Bonita Springs, Estero, Lehigh Acres, Alva, Marco Island, and Englewood often find they qualify for credits they didn't know about. Even a modest improvement in your roof-to-wall connection rating or impact window documentation can produce meaningful annual savings on your wind premium.
@@ -204,7 +220,7 @@ const windMitItems = [
       <div class="mx-auto mt-12 max-w-3xl rounded-2xl border border-secondary/30 bg-secondary/10 px-8 py-6 text-center">
         <p class="text-lg font-semibold text-dark dark:text-white">How much can you save?</p>
         <p class="mt-2 text-base text-body-color dark:text-dark-6">
-          Florida homeowners with qualifying wind mitigation features can see annual premium reductions ranging from a modest discount to over 40% on their wind portion of coverage — which in South Florida is often the largest component of your bill. The inspection typically pays for itself many times over in the first year alone.
+          Florida homeowners with qualifying wind mitigation features can see annual premium reductions ranging from a modest discount to over 40% on their wind portion of coverage, which in South Florida is often the largest component of your bill. The inspection typically pays for itself many times over in the first year alone.
         </p>
       </div>
 
@@ -280,7 +296,7 @@ const windMitItems = [
               {[
                 'Optional but highly recommended for all FL homeowners',
                 'Covers roof shape, deck attachment, wall connections & openings',
-                'Credit-based — any qualifying feature saves you money',
+                'Credit-based: any qualifying feature saves you money',
                 'Florida law requires insurers to apply earned discounts',
                 'Report valid for 5 years',
                 'Often saves hundreds to thousands per year on wind coverage',

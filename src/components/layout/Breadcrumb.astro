@@ -1,3 +1,18 @@
+---
+interface Props {
+  pageTitle?: string;
+}
+const { pageTitle } = Astro.props;
+const breadcrumbSchema = pageTitle ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.abovebeyondhomesolutions.com" },
+    { "@type": "ListItem", "position": 2, "name": pageTitle, "item": Astro.url.href }
+  ]
+}) : null;
+---
+{breadcrumbSchema && <script is:inline type="application/ld+json" set:html={breadcrumbSchema} />}
 <section
   class="relative z-10 overflow-hidden pt-[120px] pb-[60px] md:pt-[130px] lg:pt-[160px] dark:bg-dark"
 >

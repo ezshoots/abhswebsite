@@ -13,7 +13,7 @@ const whatWeCheck = [
   {
     title: 'HVAC Operation',
     description:
-      'We verify that your air conditioning system is running and maintaining the target temperature. An HVAC failure in a sealed, unoccupied Florida home can cause mold to develop within days — especially during summer months in Fort Myers, Cape Coral, and Naples.',
+      'We verify that your air conditioning system is running and maintaining the target temperature. An HVAC failure in a sealed, unoccupied Florida home can cause mold to develop within days, especially during summer months in Fort Myers, Cape Coral, and Naples.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636-6.364l.707.707M12 21v-1m-6.364-1.636l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>`,
   },
   {
@@ -25,7 +25,7 @@ const whatWeCheck = [
   {
     title: 'Pest Activity',
     description:
-      'Florida is home to termites, ants, rodents, and other pests that exploit vacant properties. We look for evidence of activity — droppings, tunnels, damage, or entry points — so problems can be addressed before they spread.',
+      'Florida is home to termites, ants, rodents, and other pests that exploit vacant properties. We look for evidence of activity including droppings, tunnels, damage, or entry points so problems can be addressed before they spread.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>`,
   },
   {
@@ -68,7 +68,23 @@ const plans = [
   title="Home Watch Services | Above and Beyond Home Solutions"
   description="Professional home watch services in Fort Myers, Cape Coral, Naples, Bonita Springs, Estero, Sarasota, and Southwest Florida. Scheduled property checks with photo reports for snowbirds and seasonal residents."
 >
-  <Breadcrumb>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Home Watch Services",
+    "serviceType": "Home Watch",
+    "description": "Professional home watch services for snowbirds and seasonal residents in Southwest Florida. Scheduled property checks with photo reports covering water damage, HVAC operation, mold, and exterior conditions.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com"
+    },
+    "areaServed": ["Fort Myers, FL","Cape Coral, FL","Lehigh Acres, FL","Naples, FL","North Port, FL","Sarasota, FL","Port Charlotte, FL","Punta Gorda, FL","Bonita Springs, FL","Estero, FL","Marco Island, FL"],
+    "url": "https://www.abovebeyondhomesolutions.com/services/home-watch"
+  }
+  </script>
+  <Breadcrumb pageTitle="Home Watch Services">
     <Fragment slot="title">Home Watch Services</Fragment>
   </Breadcrumb>
 
@@ -87,10 +103,10 @@ const plans = [
               Peace of Mind While You're Away
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Southwest Florida is one of the most popular seasonal destinations in the country. Tens of thousands of homeowners in Lee County, Collier County, Charlotte County, and Sarasota County spend part of the year away from their Florida properties — and an empty home is a vulnerable home.
+              Southwest Florida is one of the most popular seasonal destinations in the country. Tens of thousands of homeowners in Lee County, Collier County, Charlotte County, and Sarasota County spend part of the year away from their Florida properties. An empty home is a vulnerable home.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Our home watch service provides scheduled, documented property checks by a licensed inspector who knows what to look for. From HVAC failures to water leaks to storm damage, we catch problems early — before they turn into costly repairs — and send you a photo report after every visit so you always know what's happening at your home.
+              Our home watch service provides scheduled, documented property checks by a licensed inspector who knows what to look for. From HVAC failures to water leaks to storm damage, we catch problems early, before they turn into costly repairs, and send you a photo report after every visit so you always know what's happening at your home.
             </p>
             <a
               href="/schedule"
@@ -145,7 +161,7 @@ const plans = [
           What We Check on Every Property Visit
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Our licensed inspectors conduct a thorough walkthrough inside and outside the home on each visit. Nothing is skimmed — every check is documented with photos.
+          Our licensed inspectors conduct a thorough walkthrough inside and outside the home on each visit. Nothing is skimmed. Every check is documented with photos.
         </p>
       </div>
 
@@ -247,7 +263,7 @@ const plans = [
               </span>
               <div>
                 <p class="text-sm font-semibold text-dark dark:text-white">Licensed Inspector On Every Visit</p>
-                <p class="text-xs text-body-color dark:text-dark-6">Not a property manager — an inspector</p>
+                <p class="text-xs text-body-color dark:text-dark-6">Not a property manager. A licensed inspector.</p>
               </div>
             </div>
           </div>
@@ -262,10 +278,10 @@ const plans = [
               Built for Southwest Florida's Seasonal Residents
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              If you spend summers up north and winters in Naples, Bonita Springs, Fort Myers Beach, Sanibel, or Marco Island — or if you travel frequently throughout the year — our home watch service keeps your property protected while you're away.
+              If you spend summers up north and winters in Naples, Bonita Springs, Fort Myers Beach, Sanibel, or Marco Island, or if you travel frequently throughout the year, our home watch service keeps your property protected while you're away.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              What sets us apart from typical home watch companies is that our visits are conducted by a licensed home inspector. We don't just walk through and look for obvious problems — we know what to look for, and we document it all with the same thoroughness we bring to every inspection.
+              What sets us apart from typical home watch companies is that our visits are conducted by a licensed home inspector. We don't just walk through and look for obvious problems. We know what to look for, and we document it all with the same thoroughness we bring to every inspection.
             </p>
 
             <ul class="mb-8 space-y-3">

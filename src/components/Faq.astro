@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     title: "When will I receive the report?",
-    description: "You’ll receive a comprehensive digital report—complete with annotated photos and clear recommendations—the same day in most cases, but always within 24 hours.",
+    description: "You’ll receive a comprehensive digital report with annotated photos and clear recommendations, delivered the same day in most cases, but always within 24 hours.",
   },
   {
     title: "May I attend the inspection?",
@@ -25,8 +25,19 @@ const faqs = [
     description: "Ensure all utilities are on, pilot lights lit, and attic, crawlspace, electrical panels, and mechanical systems are accessible. A tidy home speeds the process and yields the most thorough results.",
   },
 ]
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.title,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.description }
+  }))
+});
 ---
 
+<script is:inline type="application/ld+json" set:html={faqSchema} />
 <!-- ====== Faq Section Start -->
 <section
   class="relative z-20 overflow-hidden bg-white dark:bg-dark pt-20 pb-8 lg:pt-[120px] lg:pb-[50px]"

@@ -7,19 +7,19 @@ const whatWeInspect = [
   {
     title: 'Pipe Condition & Integrity',
     description:
-      'Our camera travels the full length of the lateral sewer line, checking for cracks, fractures, collapses, or corroded sections that can cause sewage backups or slow drainage — common issues in Southwest Florida\'s older clay and cast-iron pipe systems.',
+      'Our camera travels the full length of the lateral sewer line, checking for cracks, fractures, collapses, or corroded sections that can cause sewage backups or slow drainage. These are common issues in Southwest Florida\'s older clay and cast-iron pipe systems.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>`,
   },
   {
     title: 'Root Intrusion',
     description:
-      'Tree and shrub roots naturally seek out water — and sewer lines are a prime target. Root intrusion is one of the most common findings in Florida properties, especially in established neighborhoods with mature landscaping in areas like Cape Coral, Fort Myers, and North Port.',
+      'Tree and shrub roots naturally seek out water, and sewer lines are a prime target. Root intrusion is one of the most common findings in Florida properties, especially in established neighborhoods with mature landscaping in areas like Cape Coral, Fort Myers, and North Port.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>`,
   },
   {
     title: 'Blockages & Debris',
     description:
-      'Grease buildup, foreign objects, and years of accumulation can partially or fully block a sewer line. We identify obstructions that may not yet be causing problems but will — giving you leverage during the home purchase negotiation.',
+      'Grease buildup, foreign objects, and years of accumulation can partially or fully block a sewer line. We identify obstructions that may not yet be causing problems but will, giving you leverage during the home purchase negotiation.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>`,
   },
   {
@@ -31,13 +31,13 @@ const whatWeInspect = [
   {
     title: 'Joint Separation',
     description:
-      'Over time, pipe joints can separate — allowing ground water to enter the system (infiltration) or sewage to escape into the surrounding soil (exfiltration). Both are red flags that indicate the line may need repair or lining.',
+      'Over time, pipe joints can separate, allowing ground water to enter the system (infiltration) or sewage to escape into the surrounding soil (exfiltration). Both are red flags that indicate the line may need repair or lining.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>`,
   },
   {
     title: 'Material Identification',
     description:
-      'We identify the pipe material in use — clay, cast iron, PVC, Orangeburg, or other — so you know what you\'re inheriting and what the expected lifespan of the system is. Orangeburg and clay pipes are still present in many pre-1980s Southwest Florida homes.',
+      'We identify the pipe material in use (clay, cast iron, PVC, Orangeburg, or other) so you know what you\'re inheriting and what the expected lifespan of the system is. Orangeburg and clay pipes are still present in many pre-1980s Southwest Florida homes.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>`,
   },
 ];
@@ -47,7 +47,7 @@ const steps = [
     number: '01',
     title: 'Schedule with Your Inspection',
     description:
-      'A sewer scope can be booked as a stand-alone service or added to your general home inspection on the same visit — saving you time and coordination.',
+      'A sewer scope can be booked as a stand-alone service or added to your general home inspection on the same visit, saving you time and coordination.',
   },
   {
     number: '02',
@@ -68,7 +68,23 @@ const steps = [
   title="Lateral Sewer Scope Inspection | Above and Beyond Home Solutions"
   description="Lateral sewer scope inspections in Fort Myers, Cape Coral, Naples, Port Charlotte, Sarasota, and Southwest Florida. High-resolution camera inspection delivered same day."
 >
-  <Breadcrumb>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Lateral Sewer Scope Inspection",
+    "serviceType": "Sewer Inspection",
+    "description": "High-resolution camera lateral sewer scope inspections in Southwest Florida. We inspect pipe condition, root intrusion, blockages, and grading issues. Same-day reports.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com"
+    },
+    "areaServed": ["Fort Myers, FL","Cape Coral, FL","Lehigh Acres, FL","Naples, FL","North Port, FL","Sarasota, FL","Port Charlotte, FL","Punta Gorda, FL","Bonita Springs, FL","Estero, FL","Marco Island, FL"],
+    "url": "https://www.abovebeyondhomesolutions.com/services/lateral-sewer-scope"
+  }
+  </script>
+  <Breadcrumb pageTitle="Lateral Sewer Scope Inspection">
     <Fragment slot="title">Lateral Sewer Scope Inspection</Fragment>
   </Breadcrumb>
 
@@ -87,10 +103,10 @@ const steps = [
               See What's Hiding in Your Sewer Line
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              A standard home inspection evaluates the fixtures and drains you can see — but it can't tell you what's happening underground. A lateral sewer scope inspection uses a high-resolution camera to inspect the sewer line running from the home to the municipal connection, revealing blockages, root intrusion, pipe damage, and material failures that are otherwise invisible.
+              A standard home inspection evaluates the fixtures and drains you can see, but it can't tell you what's happening underground. A lateral sewer scope inspection uses a high-resolution camera to inspect the sewer line running from the home to the municipal connection, revealing blockages, root intrusion, pipe damage, and material failures that are otherwise invisible.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              We recommend a sewer scope on virtually every home purchase in Southwest Florida — including newer construction. Improper installation, debris left during build-out, and poor grading can affect even recently built homes in Fort Myers, Cape Coral, Lehigh Acres, Estero, and Bonita Springs. The cost of discovering a failing sewer line after closing is far greater than the cost of the inspection.
+              We recommend a sewer scope on virtually every home purchase in Southwest Florida, including newer construction. Improper installation, debris left during build-out, and poor grading can affect even recently built homes in Fort Myers, Cape Coral, Lehigh Acres, Estero, and Bonita Springs. The cost of discovering a failing sewer line after closing is far greater than the cost of the inspection.
             </p>
             <a
               href="/schedule"
@@ -239,7 +255,7 @@ const steps = [
               Don't Let a Failing Sewer Line Surprise You After Closing
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Sewer line repairs are among the most expensive surprises a homeowner can face — often running from $3,000 to $15,000 or more depending on depth, material, and the extent of the damage. In Sarasota, Venice, Port Charlotte, Punta Gorda, and Naples, aging infrastructure and root-heavy landscapes make sewer issues common.
+              Sewer line repairs are among the most expensive surprises a homeowner can face, often running from $3,000 to $15,000 or more depending on depth, material, and the extent of the damage. In Sarasota, Venice, Port Charlotte, Punta Gorda, and Naples, aging infrastructure and root-heavy landscapes make sewer issues common.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
               A sewer scope inspection completed before closing gives you documented evidence to negotiate repairs with the seller, request a price reduction, or make an informed decision about whether the property is right for you.
@@ -251,7 +267,7 @@ const steps = [
                 'Written summary of all findings with timestamps',
                 'Identifies issues invisible to a standard inspection',
                 'Can be added to your general home inspection visit',
-                'Useful on new construction — not just older homes',
+                'Useful on new construction, not just older homes',
               ].map((point) => (
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">

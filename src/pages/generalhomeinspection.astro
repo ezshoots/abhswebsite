@@ -7,13 +7,13 @@ const included = [
   {
     title: 'Roof & Attic',
     description:
-      'We inspect roof coverings, flashings, gutters, ventilation, and attic insulation. In Southwest Florida\'s climate, roof condition directly impacts your insurance rates and storm readiness — we document everything clearly.',
+      'We inspect roof coverings, flashings, gutters, ventilation, and attic insulation. In Southwest Florida\'s climate, roof condition directly impacts your insurance rates and storm readiness. We document everything clearly.',
     icon: `<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
   },
   {
     title: 'Structural Components',
     description:
-      'We evaluate the foundation, framing, walls, floors, and ceilings for signs of settlement, cracking, moisture intrusion, or damage — critical checks in Florida\'s high-humidity, hurricane-prone environment.',
+      'We evaluate the foundation, framing, walls, floors, and ceilings for signs of settlement, cracking, moisture intrusion, or damage. These are critical checks in Florida\'s high-humidity, hurricane-prone environment.',
     icon: `<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>`,
   },
   {
@@ -37,15 +37,15 @@ const included = [
   {
     title: 'Interior & Exterior',
     description:
-      'We walk the entire property — doors, windows, siding, driveways, grading, decks, and interior rooms — checking for water intrusion, pest damage, cosmetic issues, and safety concerns that affect the home\'s value and livability.',
+      'We walk the entire property, including doors, windows, siding, driveways, grading, decks, and interior rooms, checking for water intrusion, pest damage, cosmetic issues, and safety concerns that affect the home\'s value and livability.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>`,
   },
 ];
 
 const steps = [
-  { number: '01', title: 'Book Online', description: 'Schedule in minutes at your convenience through our online booking system. Pick a date and time that works for you — no phone tag required.' },
+  { number: '01', title: 'Book Online', description: 'Schedule in minutes at your convenience through our online booking system. Pick a date and time that works for you. No phone tag required.' },
   { number: '02', title: 'On-Site Inspection', description: 'Our licensed inspector arrives on time and conducts a comprehensive walkthrough of the home, typically lasting 2–4 hours depending on the size and condition of the property.' },
-  { number: '03', title: 'Receive Your Report', description: 'Your detailed digital report — complete with photos, descriptions, and recommendations — is delivered the same day, so you can act quickly during your inspection period.' },
+  { number: '03', title: 'Receive Your Report', description: 'Your detailed digital report, complete with photos, descriptions, and recommendations, is delivered the same day so you can act quickly during your inspection period.' },
 ];
 ---
 
@@ -53,7 +53,23 @@ const steps = [
   title="General Home Inspection | Above and Beyond Home Solutions"
   description="Professional general home inspections in Fort Myers, Cape Coral, Naples, Port Charlotte, Sarasota, and across Southwest Florida. InterNACHI certified. Same-day reports."
 >
-  <Breadcrumb>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "General Home Inspection",
+    "serviceType": "General Home Inspection",
+    "description": "Professional general home inspections in Southwest Florida. We inspect the roof, attic, structural components, electrical systems, plumbing, HVAC, and interior/exterior. InterNACHI certified. Same-day digital reports.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com"
+    },
+    "areaServed": ["Fort Myers, FL","Cape Coral, FL","Lehigh Acres, FL","Naples, FL","North Port, FL","Sarasota, FL","Port Charlotte, FL","Punta Gorda, FL","Bonita Springs, FL","Estero, FL","Marco Island, FL"],
+    "url": "https://www.abovebeyondhomesolutions.com/generalhomeinspection"
+  }
+  </script>
+  <Breadcrumb pageTitle="General Home Inspection">
     <Fragment slot="title">General Home Inspection</Fragment>
   </Breadcrumb>
 
@@ -75,7 +91,7 @@ const steps = [
               Whether you're buying a home in Fort Myers, Cape Coral, Naples, Port Charlotte, Sarasota, North Port, or anywhere across Southwest Florida, a thorough general home inspection gives you an honest picture of the property before you commit. We evaluate every major system and component from roof to foundation.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Our InterNACHI certified inspector uses thermal imaging, moisture meters, and advanced diagnostic tools to find issues that aren't always visible to the naked eye. You'll receive a clear, photo-documented digital report the same day — so you can negotiate repairs, plan for maintenance, or walk away with confidence.
+              Our InterNACHI certified inspector uses thermal imaging, moisture meters, and advanced diagnostic tools to find issues that aren't always visible to the naked eye. You'll receive a clear, photo-documented digital report the same day so you can negotiate repairs, plan for maintenance, or walk away with confidence.
             </p>
             <a
               href="/schedule"
@@ -130,7 +146,7 @@ const steps = [
           What's Included in Your Inspection
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Every inspection covers all major systems and components of the home. Below is a breakdown of what's evaluated during your inspection — nothing gets skipped.
+          Every inspection covers all major systems and components of the home. Below is a breakdown of what's evaluated during your inspection. Nothing gets skipped.
         </p>
       </div>
 
@@ -225,10 +241,10 @@ const steps = [
               Protect Your Investment Before You Sign
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              A home inspection isn't just a formality — it's one of the most important steps in any real estate transaction. In Florida's market, waiving an inspection or choosing a cheap one can cost far more later in surprise repairs, insurance complications, or safety hazards you didn't see coming.
+              A home inspection isn't just a formality. It's one of the most important steps in any real estate transaction. In Florida's market, waiving an inspection or choosing a cheap one can cost far more later in surprise repairs, insurance complications, or safety hazards you didn't see coming.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              At Above and Beyond Home Solutions, we treat every home as if we're buying it ourselves. From Alva to Bonita Springs, Lehigh Acres to Venice, our thorough process ensures nothing gets overlooked — so you go into your purchase fully informed.
+              At Above and Beyond Home Solutions, we treat every home as if we're buying it ourselves. From Alva to Bonita Springs, Lehigh Acres to Venice, our thorough process ensures nothing gets overlooked so you go into your purchase fully informed.
             </p>
 
             <ul class="mb-8 space-y-3">
@@ -236,7 +252,7 @@ const steps = [
                 'Detailed digital report delivered same day',
                 'Thermal imaging and moisture detection tools',
                 'Clear photo documentation of every finding',
-                'Plain-language explanations — no jargon',
+                'Plain-language explanations, no jargon',
               ].map((point) => (
                 <li class="flex items-start gap-3">
                   <span class="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">

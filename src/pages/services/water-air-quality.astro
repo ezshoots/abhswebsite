@@ -13,7 +13,7 @@ const waterTests = [
   {
     title: 'Lead & Heavy Metals',
     description:
-      'Lead can leach from older plumbing fixtures, solder, and service lines — particularly in pre-1986 homes. We also test for arsenic, iron, manganese, and other metals that are naturally occurring in Florida\'s groundwater.',
+      'Lead can leach from older plumbing fixtures, solder, and service lines, particularly in pre-1986 homes. We also test for arsenic, iron, manganese, and other metals that are naturally occurring in Florida\'s groundwater.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>`,
   },
   {
@@ -25,7 +25,7 @@ const waterTests = [
   {
     title: 'pH, Hardness & Minerals',
     description:
-      'Florida\'s water is naturally hard and mineral-rich. Testing for pH, hardness, sulfur, and iron helps identify issues affecting taste, appliance longevity, and plumbing performance — a common concern in Cape Coral, Lehigh Acres, and Golden Gate.',
+      'Florida\'s water is naturally hard and mineral-rich. Testing for pH, hardness, sulfur, and iron helps identify issues affecting taste, appliance longevity, and plumbing performance, a common concern in Cape Coral, Lehigh Acres, and Golden Gate.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>`,
   },
 ];
@@ -34,7 +34,7 @@ const airTests = [
   {
     title: 'Mold & Spore Sampling',
     description:
-      'Florida\'s heat and humidity create ideal conditions for mold growth. Air samples are collected indoors and compared to outdoor baseline levels to detect elevated mold spore counts — even when mold is not visibly apparent inside the home.',
+      'Florida\'s heat and humidity create ideal conditions for mold growth. Air samples are collected indoors and compared to outdoor baseline levels to detect elevated mold spore counts, even when mold is not visibly apparent inside the home.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>`,
   },
   {
@@ -46,7 +46,7 @@ const airTests = [
   {
     title: 'Allergens & Particulates',
     description:
-      'Dust mites, pet dander, pollen, and other airborne allergens are tested to assess indoor air quality — particularly important in Florida homes where windows are kept closed and HVAC systems recirculate air year-round.',
+      'Dust mites, pet dander, pollen, and other airborne allergens are tested to assess indoor air quality, particularly important in Florida homes where windows are kept closed and HVAC systems recirculate air year-round.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636-6.364l.707.707M12 21v-1m-6.364-1.636l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>`,
   },
   {
@@ -83,7 +83,23 @@ const steps = [
   title="Water & Air Quality Testing | Above and Beyond Home Solutions"
   description="Professional water and air quality sampling in Fort Myers, Cape Coral, Naples, Sarasota, Port Charlotte, and Southwest Florida. Mold testing, well water testing, and more."
 >
-  <Breadcrumb>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Water & Air Quality Testing",
+    "serviceType": "Environmental Testing",
+    "description": "Professional water and air quality sampling in Southwest Florida. We test for bacteria, lead, heavy metals, mold spores, VOCs, and radon. Serving Fort Myers, Cape Coral, Naples, and surrounding areas.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com"
+    },
+    "areaServed": ["Fort Myers, FL","Cape Coral, FL","Lehigh Acres, FL","Naples, FL","North Port, FL","Sarasota, FL","Port Charlotte, FL","Punta Gorda, FL","Bonita Springs, FL","Estero, FL","Marco Island, FL"],
+    "url": "https://www.abovebeyondhomesolutions.com/services/water-air-quality"
+  }
+  </script>
+  <Breadcrumb pageTitle="Water & Air Quality Sampling">
     <Fragment slot="title">Water & Air Quality Sampling</Fragment>
   </Breadcrumb>
 
@@ -102,10 +118,10 @@ const steps = [
               Know What's in Your Air and Water
             </h2>
             <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Southwest Florida's climate — hot, humid, and prone to flooding — creates conditions where water contamination and mold growth are real concerns for homeowners and buyers. Our water and air quality sampling services give you laboratory-backed answers about what's actually in the home, not just what you can see.
+              Southwest Florida's hot, humid, and flood-prone climate creates conditions where water contamination and mold growth are real concerns for homeowners and buyers. Our water and air quality sampling services give you laboratory-backed answers about what's actually in the home, not just what you can see.
             </p>
             <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Whether you're buying a home in Naples, Sarasota, North Port, Marco Island, or Englewood — or you're a current homeowner in Fort Myers or Cape Coral concerned about post-storm conditions — our certified testing gives you the documentation and peace of mind you need.
+              Whether you're buying a home in Naples, Sarasota, North Port, Marco Island, or Englewood, or you're a current homeowner in Fort Myers or Cape Coral concerned about post-storm conditions, our certified testing gives you the documentation and peace of mind you need.
             </p>
             <a
               href="/schedule"
@@ -160,7 +176,7 @@ const steps = [
           What We Test For in Your Water
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Florida's water supply — whether municipal or from a private well — can contain a range of contaminants. We test for the issues most relevant to Southwest Florida properties.
+          Florida's water supply, whether municipal or from a private well, can contain a range of contaminants. We test for the issues most relevant to Southwest Florida properties.
         </p>
       </div>
 
@@ -199,7 +215,7 @@ const steps = [
           What We Test For in Your Air
         </h2>
         <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Indoor air quality directly impacts your family's health. Florida's humidity and hurricane season make mold testing especially important — particularly following storms, flooding, or in homes that have been vacant.
+          Indoor air quality directly impacts your family's health. Florida's humidity and hurricane season make mold testing especially important, particularly following storms, flooding, or in homes that have been vacant.
         </p>
       </div>
 

@@ -6,25 +6,25 @@ import Layout from '../layouts/Layout.astro';
 const services = [
   {
     title: 'General Home Inspection',
-    description: 'Full inspection of roof, structure, electrical, plumbing, HVAC, interior, and exterior. Clear digital report with photos delivered the same day.',
+    description: 'Complete roof-to-foundation inspection of every major system. Clear digital report with annotated photos delivered the same day.',
     href: '/generalhomeinspection',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
   },
   {
     title: '4-Point & Wind Mitigation',
-    description: 'Required for most Sarasota homes 20+ years old. We help you satisfy insurer requirements and qualify for wind premium discounts.',
+    description: 'Required by most Florida insurers for Fort Myers homes 20+ years old. We produce insurer-accepted reports that can lower your premiums significantly.',
     href: '/4pointandwind',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
   },
   {
     title: 'Lateral Sewer Scope',
-    description: 'Camera inspection of the sewer lateral from house to street. Essential for Sarasota\'s older historic homes and properties with large trees.',
+    description: 'High-resolution camera inspection of the sewer lateral. Important for Fort Myers\' older neighborhoods and any property with mature trees near the line.',
     href: '/services/lateral-sewer-scope',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
   },
   {
     title: 'Water & Air Quality Testing',
-    description: 'Mold screening, air quality sampling, and water testing. Especially important for waterfront Sarasota properties and older homes with known moisture history.',
+    description: 'Mold screening, air quality sampling, and water quality testing. Recommended for Fort Myers properties with any known moisture history or older plumbing.',
     href: '/services/water-air-quality',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
   },
@@ -32,43 +32,43 @@ const services = [
 
 const commonIssues = [
   {
-    issue: 'Aging Historic Construction',
-    detail: 'Downtown Sarasota and neighborhoods like Laurel Park, Arlington Park, and Indian Beach have homes dating to the 1920s–1950s. We evaluate original construction, additions, and deferred maintenance carefully.',
+    issue: 'Hurricane Ian Damage & Repairs',
+    detail: 'Fort Myers was one of the hardest-hit areas when Hurricane Ian made landfall in September 2022. We look closely for evidence of incomplete repairs, improper patching, hidden moisture intrusion, and structural issues that may have been overlooked or left unaddressed.',
   },
   {
-    issue: 'Waterfront & Coastal Deterioration',
-    detail: 'Salt air accelerates corrosion on Sarasota Bay-front and barrier island properties. We inspect for corroded fasteners, deteriorated soffits, and compromised coatings that indicate accelerated wear.',
+    issue: 'Roof Age & Insurance Eligibility',
+    detail: 'A large portion of Fort Myers\' housing stock has roofs approaching or past the age where Florida insurers require 4-Point inspections or refuse new coverage. We document roof age, condition, and material type so you know your insurability position before closing.',
   },
   {
-    issue: 'Condo & Strata Components',
-    detail: 'Sarasota has hundreds of condominium buildings. We inspect your unit\'s interior components and spell out what is your responsibility versus the association\'s. That line matters a lot when it comes time to negotiate repairs.',
+    issue: 'Aging Electrical Panels',
+    detail: 'Federal Pacific Stab-Lok and Zinsco panels are still common in Fort Myers homes built in the 1970s and 1980s. Both are fire hazards and most insurers won\'t touch them. We identify these panels and walk you through what replacement involves.',
   },
   {
-    issue: 'Roof Age & Insurance Risk',
-    detail: 'Florida insurers are increasingly non-renewing policies on roofs over 15 years old. We document roof age, condition, and material so you know your insurability position before you close.',
+    issue: 'Plumbing Material Issues',
+    detail: 'Polybutylene and galvanized steel piping are found in many older Fort Myers homes. These materials are flagged by insurers and lenders. We document all visible pipe materials throughout the home.',
   },
   {
     issue: 'Mold & Moisture Intrusion',
-    detail: 'Sarasota\'s humidity and frequent rain, combined with aging stucco and windows, creates conditions for hidden moisture damage. We use thermal imaging and moisture meters to find what visual inspection can miss.',
+    detail: 'Lee County\'s heat and humidity are rough on homes. Add any post-Ian moisture that wasn\'t properly dried out, and you\'ve got real mold risk. We use moisture meters and probe suspect areas to find what you can\'t see on the surface.',
   },
   {
-    issue: 'Outdated Electrical Panels',
-    detail: 'Federal Pacific Stab-Lok panels are common in Sarasota homes from the 1960s–1980s. We identify these and other wiring hazards that most insurance carriers refuse to cover.',
+    issue: 'HVAC Condition & Age',
+    detail: 'Air conditioning is non-negotiable in Fort Myers. We test HVAC systems for proper operation, check refrigerant levels, inspect ductwork, and note the age and condition. That information matters a lot when you\'re budgeting for what comes after closing.',
   },
 ];
 ---
 
 <Layout
-  title="Home Inspector in Sarasota, FL | Above and Beyond Home Solutions"
-  description="Licensed home inspector serving Sarasota, FL. Thorough inspections for buyers, sellers & investors. 4-point, wind mitigation, sewer scope & more. Same-day reports."
+  title="Home Inspector in Fort Myers, FL | Above and Beyond Home Solutions"
+  description="Licensed home inspector serving Fort Myers, FL. General inspections, 4-point, wind mitigation, sewer scope & more. InterNACHI certified, same-day reports. Call (239) 416-3505."
 >
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Home Inspection in Sarasota, FL",
+    "name": "Home Inspection in Fort Myers, FL",
     "serviceType": "Home Inspection",
-    "description": "Professional home inspections serving Sarasota, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, water and air quality testing. InterNACHI certified inspector, same-day digital reports.",
+    "description": "Professional home inspections serving Fort Myers, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, water and air quality testing. InterNACHI certified inspector, same-day digital reports.",
     "provider": {
       "@type": "ProfessionalService",
       "name": "Above and Beyond Home Solutions, LLC",
@@ -78,18 +78,18 @@ const commonIssues = [
     },
     "areaServed": {
       "@type": "City",
-      "name": "Sarasota",
+      "name": "Fort Myers",
       "containedInPlace": {
         "@type": "State",
         "name": "Florida"
       }
     },
-    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-sarasota"
+    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-fort-myers"
   }
   </script>
 
   <Breadcrumb>
-    <Fragment slot="title">Home Inspector in Sarasota, FL</Fragment>
+    <Fragment slot="title">Home Inspector in Fort Myers, FL</Fragment>
   </Breadcrumb>
 
   <!-- Hero -->
@@ -97,20 +97,20 @@ const commonIssues = [
     <div class="container mx-auto px-4">
       <div class="mx-auto max-w-3xl text-center">
         <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-          Sarasota County · Sarasota, FL
+          Lee County · Fort Myers, FL
         </span>
         <h1 class="mb-5 text-4xl font-extrabold tracking-tight text-dark dark:text-white sm:text-5xl">
-          Home Inspector in Sarasota, FL
+          Home Inspector in Fort Myers, FL
         </h1>
         <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
-          Above and Beyond Home Solutions delivers detailed, same-day home inspections across Sarasota. From historic homes in Laurel Park to waterfront condos on Siesta Key, our InterNACHI certified inspectors give you the confidence to make your best real estate decision.
+          Above and Beyond Home Solutions provides thorough, same-day home inspections throughout Fort Myers and Lee County. As the largest city in Southwest Florida and a primary Hurricane Ian impact zone, Fort Myers homes demand an inspector who knows the local risks and won't miss a thing.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/schedule"
             class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
           >
-            Book Your Sarasota Inspection
+            Book Your Fort Myers Inspection
           </a>
           <a
             href="tel:+12394163505"
@@ -147,10 +147,10 @@ const commonIssues = [
     <div class="container mx-auto px-4">
       <div class="mx-auto mb-12 max-w-2xl text-center">
         <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
-          Inspection Services in Sarasota
+          Inspection Services in Fort Myers
         </h2>
         <p class="text-base text-body-color dark:text-dark-6">
-          Every inspection service you need, from a full buyer's inspection to insurance-required reports and environmental testing.
+          Every inspection service Fort Myers buyers, sellers, and property owners need. All with same-day digital reports.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -176,10 +176,10 @@ const commonIssues = [
     <div class="container mx-auto px-4">
       <div class="mx-auto mb-12 max-w-2xl text-center">
         <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
-          Common Issues Found in Sarasota Homes
+          Common Issues Found in Fort Myers Homes
         </h2>
         <p class="text-base text-body-color dark:text-dark-6">
-          Sarasota's housing stock runs from 1920s bungalows to modern waterfront condos. Every inspection tells a different story. Here's what we find most often.
+          Between the post-Ian recovery and the age of much of Fort Myers' housing stock, our inspectors consistently find issues that make a real difference at the negotiating table.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -196,22 +196,25 @@ const commonIssues = [
     </div>
   </section>
 
-  <!-- Why Inspect in Sarasota -->
+  <!-- Why Inspect in Fort Myers -->
   <section class="bg-white dark:bg-dark py-16 lg:py-20">
     <div class="container mx-auto px-4">
       <div class="mx-auto max-w-3xl">
         <h2 class="mb-6 text-3xl font-bold text-dark dark:text-white">
-          Why Home Inspections Matter in Sarasota
+          Why Home Inspections Matter in Fort Myers
         </h2>
         <div class="space-y-4 text-base leading-relaxed text-body-color dark:text-dark-6">
           <p>
-            Sarasota is one of Florida's most desirable real estate markets, and one of the most varied. You might be buying a 1940s bungalow in Laurel Park, a 1970s ranch in Sarasota Springs, a waterfront condo on Siesta Key, or a newer home in Palmer Ranch. Each one has its own quirks, and you need someone who knows what to look for.
+            Fort Myers is the biggest real estate market in Southwest Florida, and one of the more complicated ones to buy in right now. The housing stock runs from 1950s downtown bungalows to mid-century ranch homes in McGregor to newer developments along the Gateway and Estero Road corridors. Each one has its own inspection profile.
           </p>
           <p>
-            The Sarasota market moves fast, and buyers sometimes feel pressured to skip the inspection to stay competitive. We hear it all the time. But in this price range, a missed structural issue, a failing roof, or hidden mold can cost you tens of thousands. Our same-day reports give you the facts before your inspection period runs out so you can ask for repairs, request a credit, or walk away.
+            Hurricane Ian hit Lee County hard in September 2022, and a lot of Fort Myers homes went through insurance repairs afterward. Some of those repairs were done well. Some weren't. Unpermitted work, wall cavities that were never properly dried out, and mold that quietly developed during the recovery are all things we find regularly. If a seller tells you the home was "fully repaired," the only way to know for sure is an independent inspection.
           </p>
           <p>
-            We also serve Siesta Key, Lido Key, Longboat Key, Osprey, Nokomis, Fruitville, and all surrounding Sarasota County communities. Whether you're a first-time buyer or an experienced investor, we give you the same thorough, honest report every time.
+            Fort Myers is also home to a large concentration of older homes that are hitting the insurance industry's age thresholds for roof coverage. We inspect thousands of homes in this market and understand exactly what insurers are looking for. Our 4-Point and Wind Mitigation reports are accepted by all major Florida carriers.
+          </p>
+          <p>
+            We serve all of Fort Myers including McGregor, Page Field, Gateway, Lehigh Acres, Cape Coral, and surrounding Lee County communities.
           </p>
         </div>
         <div class="mt-8">
@@ -219,7 +222,7 @@ const commonIssues = [
             href="/schedule"
             class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
           >
-            Schedule Your Sarasota Inspection
+            Schedule Your Fort Myers Inspection
           </a>
         </div>
       </div>

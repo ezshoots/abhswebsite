@@ -6,69 +6,69 @@ import Layout from '../layouts/Layout.astro';
 const services = [
   {
     title: 'General Home Inspection',
-    description: 'Full inspection of roof, structure, electrical, plumbing, HVAC, interior, and exterior. Clear digital report with photos delivered the same day.',
+    description: 'Full inspection of roof, structure, electrical, plumbing, HVAC, interior, and exterior. Detailed digital report with photos delivered the same day.',
     href: '/generalhomeinspection',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
   },
   {
     title: '4-Point & Wind Mitigation',
-    description: 'Required for most Sarasota homes 20+ years old. We help you satisfy insurer requirements and qualify for wind premium discounts.',
+    description: 'Most Punta Gorda homes require these reports to maintain insurance. We deliver accepted reports that help you keep coverage and reduce wind premiums.',
     href: '/4pointandwind',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
   },
   {
     title: 'Lateral Sewer Scope',
-    description: 'Camera inspection of the sewer lateral from house to street. Essential for Sarasota\'s older historic homes and properties with large trees.',
+    description: 'Camera inspection of the sewer lateral from home to street. Essential for Punta Gorda Isles canal-front properties and any home with large trees over the sewer line.',
     href: '/services/lateral-sewer-scope',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
   },
   {
-    title: 'Water & Air Quality Testing',
-    description: 'Mold screening, air quality sampling, and water testing. Especially important for waterfront Sarasota properties and older homes with known moisture history.',
-    href: '/services/water-air-quality',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
+    title: 'Home Watch Services',
+    description: 'Scheduled property checks with photo reports for snowbirds and absentee owners. Punta Gorda\'s large seasonal community makes this one of our most requested services.',
+    href: '/services/home-watch',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
   },
 ];
 
 const commonIssues = [
   {
-    issue: 'Aging Historic Construction',
-    detail: 'Downtown Sarasota and neighborhoods like Laurel Park, Arlington Park, and Indian Beach have homes dating to the 1920s–1950s. We evaluate original construction, additions, and deferred maintenance carefully.',
+    issue: 'Hurricane Ian Storm Damage',
+    detail: 'Punta Gorda took a direct hit from Hurricane Ian in 2022, just as it did from Hurricane Charley in 2004. We look closely for incomplete repairs, improper patching, hidden moisture damage, and mold that developed during the recovery. These things don\'t always show up on the surface.',
   },
   {
-    issue: 'Waterfront & Coastal Deterioration',
-    detail: 'Salt air accelerates corrosion on Sarasota Bay-front and barrier island properties. We inspect for corroded fasteners, deteriorated soffits, and compromised coatings that indicate accelerated wear.',
+    issue: 'Seawall, Dock & Canal Frontage',
+    detail: 'Punta Gorda Isles is one of Florida\'s premier boating communities with miles of sailboat-access canals. We inspect seawalls, docks, davits, and boat lifts for corrosion, spalling, and structural deterioration that salt water accelerates.',
   },
   {
-    issue: 'Condo & Strata Components',
-    detail: 'Sarasota has hundreds of condominium buildings. We inspect your unit\'s interior components and spell out what is your responsibility versus the association\'s. That line matters a lot when it comes time to negotiate repairs.',
+    issue: 'Aging Roofs & Insurance',
+    detail: 'With many homes from the 1970s–1990s, Punta Gorda has a high proportion of properties approaching the age thresholds where Florida insurers require 4-Point reports or decline new coverage. We document exactly what insurers need to see.',
   },
   {
-    issue: 'Roof Age & Insurance Risk',
-    detail: 'Florida insurers are increasingly non-renewing policies on roofs over 15 years old. We document roof age, condition, and material so you know your insurability position before you close.',
+    issue: 'Electrical Panel Hazards',
+    detail: 'Federal Pacific Stab-Lok and Zinsco panels remain common in older Punta Gorda homes. These are fire hazards that most insurers will not cover. We identify them and explain your replacement options.',
   },
   {
-    issue: 'Mold & Moisture Intrusion',
-    detail: 'Sarasota\'s humidity and frequent rain, combined with aging stucco and windows, creates conditions for hidden moisture damage. We use thermal imaging and moisture meters to find what visual inspection can miss.',
+    issue: 'Plumbing Materials',
+    detail: 'Polybutylene pipe and galvanized steel are still found in many Punta Gorda properties. We document all visible pipe materials throughout the home so you know your replacement risk before closing.',
   },
   {
-    issue: 'Outdated Electrical Panels',
-    detail: 'Federal Pacific Stab-Lok panels are common in Sarasota homes from the 1960s–1980s. We identify these and other wiring hazards that most insurance carriers refuse to cover.',
+    issue: 'Deferred Maintenance on Seasonal Homes',
+    detail: 'Punta Gorda has a large snowbird population. Homes that sit vacant for months accumulate pest activity, UV roof degradation, HVAC issues from disuse, and minor leaks that go unnoticed. We flag all of it.',
   },
 ];
 ---
 
 <Layout
-  title="Home Inspector in Sarasota, FL | Above and Beyond Home Solutions"
-  description="Licensed home inspector serving Sarasota, FL. Thorough inspections for buyers, sellers & investors. 4-point, wind mitigation, sewer scope & more. Same-day reports."
+  title="Home Inspector in Punta Gorda, FL | Above and Beyond Home Solutions"
+  description="Licensed home inspector serving Punta Gorda, FL. General inspections, 4-point, wind mitigation, sewer scope & home watch. InterNACHI certified, same-day reports."
 >
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Home Inspection in Sarasota, FL",
+    "name": "Home Inspection in Punta Gorda, FL",
     "serviceType": "Home Inspection",
-    "description": "Professional home inspections serving Sarasota, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, water and air quality testing. InterNACHI certified inspector, same-day digital reports.",
+    "description": "Professional home inspections serving Punta Gorda, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, and home watch services. InterNACHI certified inspector, same-day digital reports.",
     "provider": {
       "@type": "ProfessionalService",
       "name": "Above and Beyond Home Solutions, LLC",
@@ -78,18 +78,18 @@ const commonIssues = [
     },
     "areaServed": {
       "@type": "City",
-      "name": "Sarasota",
+      "name": "Punta Gorda",
       "containedInPlace": {
         "@type": "State",
         "name": "Florida"
       }
     },
-    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-sarasota"
+    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-punta-gorda"
   }
   </script>
 
   <Breadcrumb>
-    <Fragment slot="title">Home Inspector in Sarasota, FL</Fragment>
+    <Fragment slot="title">Home Inspector in Punta Gorda, FL</Fragment>
   </Breadcrumb>
 
   <!-- Hero -->
@@ -97,20 +97,20 @@ const commonIssues = [
     <div class="container mx-auto px-4">
       <div class="mx-auto max-w-3xl text-center">
         <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-          Sarasota County · Sarasota, FL
+          Charlotte County · Punta Gorda, FL
         </span>
         <h1 class="mb-5 text-4xl font-extrabold tracking-tight text-dark dark:text-white sm:text-5xl">
-          Home Inspector in Sarasota, FL
+          Home Inspector in Punta Gorda, FL
         </h1>
         <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
-          Above and Beyond Home Solutions delivers detailed, same-day home inspections across Sarasota. From historic homes in Laurel Park to waterfront condos on Siesta Key, our InterNACHI certified inspectors give you the confidence to make your best real estate decision.
+          Above and Beyond Home Solutions delivers thorough, same-day home inspections throughout Punta Gorda and Charlotte County. From the waterfront homes of Punta Gorda Isles to the historic downtown, our InterNACHI certified inspectors know this market well. After two direct hurricane hits, we know exactly what to look for.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/schedule"
             class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
           >
-            Book Your Sarasota Inspection
+            Book Your Punta Gorda Inspection
           </a>
           <a
             href="tel:+12394163505"
@@ -147,10 +147,10 @@ const commonIssues = [
     <div class="container mx-auto px-4">
       <div class="mx-auto mb-12 max-w-2xl text-center">
         <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
-          Inspection Services in Sarasota
+          Inspection Services in Punta Gorda
         </h2>
         <p class="text-base text-body-color dark:text-dark-6">
-          Every inspection service you need, from a full buyer's inspection to insurance-required reports and environmental testing.
+          Every inspection service Punta Gorda homebuyers, sellers, and seasonal property owners need. One team, one call.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -176,10 +176,10 @@ const commonIssues = [
     <div class="container mx-auto px-4">
       <div class="mx-auto mb-12 max-w-2xl text-center">
         <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
-          Common Issues Found in Sarasota Homes
+          Common Issues Found in Punta Gorda Homes
         </h2>
         <p class="text-base text-body-color dark:text-dark-6">
-          Sarasota's housing stock runs from 1920s bungalows to modern waterfront condos. Every inspection tells a different story. Here's what we find most often.
+          Punta Gorda's waterfront lifestyle and hurricane history mean inspection findings here are rarely minor. Here's what comes up most often.
         </p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -196,22 +196,25 @@ const commonIssues = [
     </div>
   </section>
 
-  <!-- Why Inspect in Sarasota -->
+  <!-- Why Inspect in Punta Gorda -->
   <section class="bg-white dark:bg-dark py-16 lg:py-20">
     <div class="container mx-auto px-4">
       <div class="mx-auto max-w-3xl">
         <h2 class="mb-6 text-3xl font-bold text-dark dark:text-white">
-          Why Home Inspections Matter in Sarasota
+          Why Home Inspections Matter in Punta Gorda
         </h2>
         <div class="space-y-4 text-base leading-relaxed text-body-color dark:text-dark-6">
           <p>
-            Sarasota is one of Florida's most desirable real estate markets, and one of the most varied. You might be buying a 1940s bungalow in Laurel Park, a 1970s ranch in Sarasota Springs, a waterfront condo on Siesta Key, or a newer home in Palmer Ranch. Each one has its own quirks, and you need someone who knows what to look for.
+            Punta Gorda has been through it twice. Hurricane Charley hit in 2004, and Hurricane Ian came back in 2022. That means a lot of homes in this market have been repaired at some point, and the quality of those repairs varies widely. The only way to know what you're actually buying is an independent inspection.
           </p>
           <p>
-            The Sarasota market moves fast, and buyers sometimes feel pressured to skip the inspection to stay competitive. We hear it all the time. But in this price range, a missed structural issue, a failing roof, or hidden mold can cost you tens of thousands. Our same-day reports give you the facts before your inspection period runs out so you can ask for repairs, request a credit, or walk away.
+            Punta Gorda Isles is one of the best boating communities on Florida's west coast. Those canal-front homes come with seawalls, docks, and marine hardware that most standard inspections barely glance at. We look at all of it. The waterfront infrastructure on a canal property can easily be the most expensive thing to fix if something goes wrong.
           </p>
           <p>
-            We also serve Siesta Key, Lido Key, Longboat Key, Osprey, Nokomis, Fruitville, and all surrounding Sarasota County communities. Whether you're a first-time buyer or an experienced investor, we give you the same thorough, honest report every time.
+            Like a lot of Charlotte County, Punta Gorda has a big snowbird and retiree population. Homes that sit empty for months collect deferred maintenance quietly. Whether you're buying a full-time home or a seasonal retreat, our same-day photo report gives you what you need to negotiate and close without surprises.
+          </p>
+          <p>
+            We serve all of Punta Gorda including Punta Gorda Isles, Burnt Store, Burnt Store Meadows, South Gulf Cove, and surrounding Charlotte County communities.
           </p>
         </div>
         <div class="mt-8">
@@ -219,7 +222,7 @@ const commonIssues = [
             href="/schedule"
             class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
           >
-            Schedule Your Sarasota Inspection
+            Schedule Your Punta Gorda Inspection
           </a>
         </div>
       </div>

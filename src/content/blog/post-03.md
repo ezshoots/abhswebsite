@@ -3,7 +3,7 @@ draft: false
 title: "Mold, Moisture, and Air Quality in Florida Homes"
 snippet: "Florida's heat and humidity make moisture intrusion and mold growth a persistent risk. Learn what causes it, how it is detected, and what testing options are available."
 image: {
-  src: "/assets/blog/blog-03.jpg",
+  src: "/assets/blog/blog-03.webp",
   alt: "Moisture and mold inspection in a Florida home"
 }
 publishDate: "2023-11-10 11:39"

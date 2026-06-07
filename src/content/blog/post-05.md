@@ -3,7 +3,7 @@ draft: false
 title: "Home Watch Services: Protecting Your Florida Property While You Are Away"
 snippet: "Seasonal residents and snowbirds face unique risks leaving a Florida home unoccupied. A professional home watch service provides regular inspections and early detection before small issues become costly ones."
 image: {
-  src: "/assets/blog/blog-03.jpg",
+  src: "/assets/blog/blog-03.webp",
   alt: "Home watch inspection of a vacant Florida property"
 }
 publishDate: "2023-11-12 11:39"

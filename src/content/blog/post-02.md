@@ -3,7 +3,7 @@ draft: false
 title: "What to Expect During a Home Inspection in Southwest Florida"
 snippet: "First-time buyers often do not know what happens during an inspection or how to use the report. Here is a plain-language walkthrough of the process from arrival to final report."
 image: {
-  src: "/assets/blog/blog-02.jpg",
+  src: "/assets/blog/blog-02.webp",
   alt: "Home inspector examining a property in Southwest Florida"
 }
 publishDate: "2023-11-09 11:39"

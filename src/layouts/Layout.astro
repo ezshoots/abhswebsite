@@ -11,7 +11,7 @@ interface Props {
   image?: string;
 }
 
-const { description, title, image } = Astro.props;
+const { description, title, image = 'https://www.abovebeyondhomesolutions.com/assets/hero/abovebeyondhero.webp' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -56,15 +56,12 @@ const { description, title, image } = Astro.props;
         "Fort Myers, FL",
         "Cape Coral, FL",
         "Lehigh Acres, FL",
-        "Naples, FL",
         "North Port, FL",
         "Sarasota, FL",
         "Venice, FL",
         "Port Charlotte, FL",
         "Punta Gorda, FL",
         "Bonita Springs, FL",
-        "Estero, FL",
-        "Marco Island, FL",
         "Alva, FL",
         "Englewood, FL",
         "Immokalee, FL",

@@ -1,0 +1,230 @@
+---
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
+import CTAsection from '../components/CTAsection.astro';
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'General Home Inspection',
+    description: 'Full inspection of roof, structure, electrical, plumbing, HVAC, interior, and exterior. Clear digital report with photos delivered the same day.',
+    href: '/generalhomeinspection',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+  },
+  {
+    title: '4-Point & Wind Mitigation',
+    description: 'Required for most Sarasota homes 20+ years old. We help you satisfy insurer requirements and qualify for wind premium discounts.',
+    href: '/4pointandwind',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+  },
+  {
+    title: 'Lateral Sewer Scope',
+    description: 'Camera inspection of the sewer lateral from house to street. Essential for Sarasota\'s older historic homes and properties with large trees.',
+    href: '/services/lateral-sewer-scope',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
+  },
+  {
+    title: 'Water & Air Quality Testing',
+    description: 'Mold screening, air quality sampling, and water testing. Especially important for waterfront Sarasota properties and older homes with known moisture history.',
+    href: '/services/water-air-quality',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
+  },
+];
+
+const commonIssues = [
+  {
+    issue: 'Aging Historic Construction',
+    detail: 'Downtown Sarasota and neighborhoods like Laurel Park, Arlington Park, and Indian Beach have homes dating to the 1920s–1950s. We evaluate original construction, additions, and deferred maintenance carefully.',
+  },
+  {
+    issue: 'Waterfront & Coastal Deterioration',
+    detail: 'Salt air accelerates corrosion on Sarasota Bay-front and barrier island properties. We inspect for corroded fasteners, deteriorated soffits, and compromised coatings that indicate accelerated wear.',
+  },
+  {
+    issue: 'Condo & Strata Components',
+    detail: 'Sarasota has hundreds of condominium buildings. We inspect your unit\'s interior components and identify what is your responsibility versus the association\'s — important for negotiating repairs and understanding liability.',
+  },
+  {
+    issue: 'Roof Age & Insurance Risk',
+    detail: 'Florida insurers are increasingly non-renewing policies on roofs over 15 years old. We document roof age, condition, and material so you know your insurability position before you close.',
+  },
+  {
+    issue: 'Mold & Moisture Intrusion',
+    detail: 'Sarasota\'s humidity and frequent rain, combined with aging stucco and windows, creates conditions for hidden moisture damage. We use thermal imaging and moisture meters to find what visual inspection can miss.',
+  },
+  {
+    issue: 'Outdated Electrical Panels',
+    detail: 'Federal Pacific Stab-Lok panels are common in Sarasota homes from the 1960s–1980s. We identify these and other wiring hazards that most insurance carriers refuse to cover.',
+  },
+];
+---
+
+<Layout
+  title="Home Inspector in Sarasota, FL | Above and Beyond Home Solutions"
+  description="Licensed home inspector serving Sarasota, FL. Thorough inspections for buyers, sellers & investors. 4-point, wind mitigation, sewer scope & more. Same-day reports."
+>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Home Inspection in Sarasota, FL",
+    "serviceType": "Home Inspection",
+    "description": "Professional home inspections serving Sarasota, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, water and air quality testing. InterNACHI certified inspector, same-day digital reports.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com",
+      "telephone": "+12394163505",
+      "license": "Florida Home Inspector License HI16270"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Sarasota",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Florida"
+      }
+    },
+    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-sarasota"
+  }
+  </script>
+
+  <Breadcrumb>
+    <Fragment slot="title">Home Inspector in Sarasota, FL</Fragment>
+  </Breadcrumb>
+
+  <!-- Hero -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          Sarasota County · Sarasota, FL
+        </span>
+        <h1 class="mb-5 text-4xl font-extrabold tracking-tight text-dark dark:text-white sm:text-5xl">
+          Home Inspector in Sarasota, FL
+        </h1>
+        <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
+          Above and Beyond Home Solutions delivers detailed, same-day home inspections across Sarasota. From historic homes in Laurel Park to waterfront condos on Siesta Key, our InterNACHI certified inspectors give you the confidence to make your best real estate decision.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+          >
+            Book Your Sarasota Inspection
+          </a>
+          <a
+            href="tel:+12394163505"
+            class="inline-flex items-center justify-center rounded-md border border-primary/30 px-8 py-4 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary/5"
+          >
+            Call (239) 416-3505
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {[
+          { label: 'InterNACHI Certified', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>` },
+          { label: 'License #HI16270', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>` },
+          { label: 'Same-Day Reports', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>` },
+          { label: 'Locally Owned', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>` },
+        ].map(item => (
+          <div class="flex flex-col items-center gap-2 rounded-xl bg-white dark:bg-dark p-4 text-center shadow-sm">
+            <svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+            <span class="text-sm font-semibold text-dark dark:text-white">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Inspection Services in Sarasota
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          Every inspection service you need, from a full buyer's inspection to insurance-required reports and environmental testing.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {services.map(service => (
+          <a
+            href={service.href}
+            class="group flex flex-col rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark-2 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/30"
+          >
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={service.icon} />
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{service.title}</h3>
+            <p class="flex-1 text-sm text-body-color dark:text-dark-6">{service.description}</p>
+            <span class="mt-4 text-sm font-semibold text-primary">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Issues -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Common Issues Found in Sarasota Homes
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          Sarasota's diverse housing stock — from 1920s bungalows to modern waterfront condos — means every inspection tells a different story. Here's what we find most often.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {commonIssues.map(item => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary flex-shrink-0"></div>
+              <h3 class="font-semibold text-dark dark:text-white">{item.issue}</h3>
+            </div>
+            <p class="text-sm text-body-color dark:text-dark-6">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Inspect in Sarasota -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-6 text-3xl font-bold text-dark dark:text-white">
+          Why Home Inspections Matter in Sarasota
+        </h2>
+        <div class="space-y-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+          <p>
+            Sarasota is one of Florida's most desirable real estate markets — and one of the most varied. You might be buying a 1940s bungalow in Laurel Park, a 1970s ranch in Sarasota Springs, a waterfront condo on Siesta Key, or a newer home in Palmer Ranch. Each comes with its own set of risks that demand a trained eye.
+          </p>
+          <p>
+            The Sarasota market moves fast, and buyers can feel pressured to waive inspections to compete. We strongly advise against it. In this price range, a missed structural issue, failing roof, or hidden mold problem can cost tens of thousands of dollars. Our detailed, same-day reports give you the facts you need to negotiate repairs, request credits, or make an informed decision before your inspection period expires.
+          </p>
+          <p>
+            We also serve Siesta Key, Lido Key, Longboat Key, Osprey, Nokomis, Fruitville, and all surrounding Sarasota County communities. Whether you're a first-time buyer or an experienced investor, we give you the same thorough, honest report every time.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+          >
+            Schedule Your Sarasota Inspection
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTAsection />
+</Layout>

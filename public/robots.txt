@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aboveandbeyondhomesolutions.com/sitemap-index.xml
+Sitemap: https://abovebeyondhomesolutions.com/sitemap-index.xml

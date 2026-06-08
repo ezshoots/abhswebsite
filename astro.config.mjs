@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aboveandbeyondhomesolutions.com',
+  site: 'https://abovebeyondhomesolutions.com',
   output: 'static',
   integrations: [tailwind(), compress(), sitemap()],
 });

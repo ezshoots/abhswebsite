@@ -69,6 +69,40 @@ const features = [
       <p class="mt-4 text-base leading-relaxed text-body-color dark:text-dark-6">
         At Above and Beyond Home Solutions, we deliver thorough, trustworthy inspections that empower homeowners and buyers to make informed decisions. With advanced tools and a commitment to excellence, we help shape safer homes, one inspection at a time.
       </p>
+
+      <!-- Animated house illustration -->
+      <div id="hero-house" class="mx-auto mt-8 max-w-[200px] sm:max-w-[240px]">
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" aria-hidden="true">
+          <g class="house-foundation">
+            <rect x="18" y="162" width="204" height="22" rx="3"
+              stroke="rgba(55,88,249,0.4)" stroke-width="1.5" fill="rgba(55,88,249,0.04)"/>
+            <line x1="66" y1="162" x2="66" y2="184" stroke="rgba(55,88,249,0.15)" stroke-width="1"/>
+            <line x1="120" y1="162" x2="120" y2="184" stroke="rgba(55,88,249,0.15)" stroke-width="1"/>
+            <line x1="174" y1="162" x2="174" y2="184" stroke="rgba(55,88,249,0.15)" stroke-width="1"/>
+          </g>
+          <g class="house-walls">
+            <rect x="30" y="90" width="180" height="74" stroke="rgba(55,88,249,0.5)" stroke-width="1.5" fill="rgba(55,88,249,0.04)"/>
+            <rect x="99" y="122" width="42" height="42" rx="2"
+              stroke="rgba(55,88,249,0.35)" stroke-width="1.2" fill="rgba(55,88,249,0.1)"/>
+            <circle cx="135" cy="144" r="2.5" fill="rgba(55,88,249,0.5)"/>
+            <rect x="44" y="104" width="38" height="28" rx="2"
+              stroke="rgba(55,88,249,0.35)" stroke-width="1.2" fill="rgba(55,88,249,0.07)"/>
+            <line x1="63" y1="104" x2="63" y2="132" stroke="rgba(55,88,249,0.2)" stroke-width="0.8"/>
+            <line x1="44" y1="118" x2="82" y2="118" stroke="rgba(55,88,249,0.2)" stroke-width="0.8"/>
+            <rect x="158" y="104" width="38" height="28" rx="2"
+              stroke="rgba(55,88,249,0.35)" stroke-width="1.2" fill="rgba(55,88,249,0.07)"/>
+            <line x1="177" y1="104" x2="177" y2="132" stroke="rgba(55,88,249,0.2)" stroke-width="0.8"/>
+            <line x1="158" y1="118" x2="196" y2="118" stroke="rgba(55,88,249,0.2)" stroke-width="0.8"/>
+          </g>
+          <g class="house-roof">
+            <polygon points="18,91 120,22 222,91"
+              stroke="rgba(55,88,249,0.65)" stroke-width="1.5" fill="rgba(55,88,249,0.06)" stroke-linejoin="round"/>
+            <rect x="158" y="42" width="16" height="28"
+              stroke="rgba(55,88,249,0.35)" stroke-width="1.2" fill="rgba(55,88,249,0.04)"/>
+            <line x1="18" y1="91" x2="222" y2="91" stroke="rgba(55,88,249,0.15)" stroke-width="0.8"/>
+          </g>
+        </svg>
+      </div>
     </div>
 
 <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
@@ -115,4 +149,46 @@ const features = [
     </div>
   </div>
 </section>
+
+<style>
+  .house-foundation,
+  .house-walls,
+  .house-roof {
+    opacity: 0;
+  }
+  .house-foundation {
+    transform: translateY(18px);
+    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+  }
+  .house-walls {
+    transform: translateY(12px);
+    transition: opacity 0.6s ease 0.32s, transform 0.6s ease 0.32s;
+  }
+  .house-roof {
+    transform: translateY(-18px);
+    transition: opacity 0.6s ease 0.54s, transform 0.6s ease 0.54s;
+  }
+  #hero-house.assembled .house-foundation,
+  #hero-house.assembled .house-walls,
+  #hero-house.assembled .house-roof {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const house = document.getElementById('hero-house');
+  if (house) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setTimeout(() => house.classList.add('assembled'), 300);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(house);
+  }
+</script>
 <!-- ====== Features Section End -->

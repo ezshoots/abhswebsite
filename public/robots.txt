@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /signin
+Disallow: /signup
 
 Sitemap: https://abovebeyondhomesolutions.com/sitemap-index.xml

@@ -1,0 +1,233 @@
+---
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
+import CTAsection from '../components/CTAsection.astro';
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'General Home Inspection',
+    description: 'Complete roof-to-foundation inspection of every major system. Clear digital report with annotated photos delivered the same day.',
+    href: '/generalhomeinspection',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+  },
+  {
+    title: '4-Point & Wind Mitigation',
+    description: 'Required by most Florida insurers for Lehigh Acres homes 20+ years old. We produce insurer-accepted reports that can lower your premiums significantly.',
+    href: '/4pointandwind',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+  },
+  {
+    title: 'Lateral Sewer Scope',
+    description: 'High-resolution camera inspection of the sewer lateral. Important for Lehigh Acres properties with older plumbing or mature trees near the line.',
+    href: '/services/lateral-sewer-scope',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
+  },
+  {
+    title: 'Water & Air Quality Testing',
+    description: 'Mold screening, air quality sampling, and water quality testing. Recommended for Lehigh Acres properties with any moisture history or older plumbing.',
+    href: '/services/water-air-quality',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
+  },
+];
+
+const commonIssues = [
+  {
+    issue: 'Hurricane Ian Damage & Repairs',
+    detail: 'Lehigh Acres sustained significant damage when Hurricane Ian struck Lee County in September 2022. We look closely for evidence of incomplete repairs, improper patching, hidden moisture intrusion, and structural issues that may have been overlooked or left unaddressed.',
+  },
+  {
+    issue: 'Roof Age & Insurance Eligibility',
+    detail: 'Much of Lehigh Acres\' housing stock was built in the 1970s–1990s, putting many roofs at or past the age where Florida insurers require 4-Point inspections or decline new coverage. We document roof age, condition, and material so you know your insurability position before closing.',
+  },
+  {
+    issue: 'Aging Electrical Panels',
+    detail: 'Federal Pacific Stab-Lok and Zinsco panels are common in Lehigh Acres homes built in the 1970s and 1980s. Both are fire hazards and most insurers won\'t cover them. We identify these panels and walk you through what replacement involves.',
+  },
+  {
+    issue: 'Plumbing Material Issues',
+    detail: 'Polybutylene and galvanized steel piping are found in many older Lehigh Acres homes. These materials are flagged by insurers and lenders. We document all visible pipe materials throughout the home.',
+  },
+  {
+    issue: 'Mold & Moisture Intrusion',
+    detail: 'Lee County\'s heat and humidity create real mold risk, especially in homes that experienced post-Ian moisture that wasn\'t properly dried out. We use moisture meters and probe suspect areas to find what you can\'t see on the surface.',
+  },
+  {
+    issue: 'HVAC Condition & Age',
+    detail: 'Air conditioning is non-negotiable in Lehigh Acres. We test HVAC systems for proper operation, check refrigerant levels, inspect ductwork, and note the age and condition — information that matters when you\'re budgeting for what comes after closing.',
+  },
+];
+---
+
+<Layout
+  title="Home Inspector in Lehigh Acres, FL | Above and Beyond Home Solutions"
+  description="Licensed home inspector serving Lehigh Acres, FL. General inspections, 4-point, wind mitigation, sewer scope & more. InterNACHI certified, same-day reports. Call (239) 416-3505."
+>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Home Inspection in Lehigh Acres, FL",
+    "serviceType": "Home Inspection",
+    "description": "Professional home inspections serving Lehigh Acres, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, water and air quality testing. InterNACHI certified inspector, same-day digital reports.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://www.abovebeyondhomesolutions.com",
+      "telephone": "+12394163505",
+      "license": "Florida Home Inspector License HI16270"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Lehigh Acres",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Florida"
+      }
+    },
+    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-lehigh-acres"
+  }
+  </script>
+
+  <Breadcrumb>
+    <Fragment slot="title">Home Inspector in Lehigh Acres, FL</Fragment>
+  </Breadcrumb>
+
+  <!-- Hero -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          Lee County · Lehigh Acres, FL
+        </span>
+        <h1 class="mb-5 text-4xl font-extrabold tracking-tight text-dark dark:text-white sm:text-5xl">
+          Home Inspector in Lehigh Acres, FL
+        </h1>
+        <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
+          Above and Beyond Home Solutions provides thorough, same-day home inspections throughout Lehigh Acres and Lee County. With one of the largest concentrations of affordable single-family homes in Southwest Florida, Lehigh Acres properties deserve a close look — and we know exactly what to look for.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+          >
+            Book Your Lehigh Acres Inspection
+          </a>
+          <a
+            href="tel:+12394163505"
+            class="inline-flex items-center justify-center rounded-md border border-primary/30 px-8 py-4 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary/5"
+          >
+            Call (239) 416-3505
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {[
+          { label: 'InterNACHI Certified', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>` },
+          { label: 'License #HI16270', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>` },
+          { label: 'Same-Day Reports', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>` },
+          { label: 'Locally Owned', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>` },
+        ].map(item => (
+          <div class="flex flex-col items-center gap-2 rounded-xl bg-white dark:bg-dark p-4 text-center shadow-sm">
+            <svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+            <span class="text-sm font-semibold text-dark dark:text-white">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Inspection Services in Lehigh Acres
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          Every inspection service Lehigh Acres buyers, sellers, and property owners need. All with same-day digital reports.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {services.map(service => (
+          <a
+            href={service.href}
+            class="group flex flex-col rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark-2 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/30"
+          >
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={service.icon} />
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{service.title}</h3>
+            <p class="flex-1 text-sm text-body-color dark:text-dark-6">{service.description}</p>
+            <span class="mt-4 text-sm font-semibold text-primary">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Issues -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Common Issues Found in Lehigh Acres Homes
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          Lehigh Acres has a large inventory of older, affordable homes — and with that comes a consistent set of issues our inspectors find that make a real difference at the negotiating table.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {commonIssues.map(item => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary flex-shrink-0"></div>
+              <h3 class="font-semibold text-dark dark:text-white">{item.issue}</h3>
+            </div>
+            <p class="text-sm text-body-color dark:text-dark-6">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Inspect in Lehigh Acres -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-6 text-3xl font-bold text-dark dark:text-white">
+          Why Home Inspections Matter in Lehigh Acres
+        </h2>
+        <div class="space-y-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+          <p>
+            Lehigh Acres is one of the most active real estate markets in Lee County, drawing buyers looking for affordable single-family homes in a suburban setting close to Fort Myers. The community grew rapidly in the 1970s through the 1990s, and much of that original housing stock is still in circulation — making the condition of each home highly variable.
+          </p>
+          <p>
+            Hurricane Ian impacted Lehigh Acres significantly in September 2022. In the years since, properties have gone through insurance-driven repairs of varying quality. We regularly find unpermitted repair work, missed moisture damage, and mold that developed quietly after the storm. If a seller claims a home was "fully repaired," an independent inspection is the only way to verify that.
+          </p>
+          <p>
+            Many Lehigh Acres homes are also approaching or past the age thresholds where Florida insurers require 4-Point inspections or limit new coverage. Our 4-Point and Wind Mitigation reports are accepted by all major Florida carriers and can directly affect your insurance costs.
+          </p>
+          <p>
+            We are locally based in Lehigh Acres and serve the entire community including established neighborhoods, newer infill builds, and surrounding Lee County areas.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+          >
+            Schedule Your Lehigh Acres Inspection
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTAsection />
+</Layout>

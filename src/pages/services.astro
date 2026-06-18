@@ -2,6 +2,7 @@
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import Layout from '../layouts/Layout.astro';
 import Servicessection from '../components/Servicessection.astro';
+import ServiceBundles from '../components/ServiceBundles.astro';
 ---
 
 <Layout
@@ -11,5 +12,6 @@ import Servicessection from '../components/Servicessection.astro';
   <Breadcrumb>
     <Fragment slot="title">Inspection Services</Fragment>
   </Breadcrumb>
+  <ServiceBundles />
   <Servicessection />
 </Layout>

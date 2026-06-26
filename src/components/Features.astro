@@ -1,49 +1,60 @@
 ﻿---
 const features = [
   {
-    icon: 'assets/features/icon-01.svg',
-    title: 'General Home Inspection (Existing & New Construction)',
-    slug: 'general-home-inspection',
-    ref: '/generalhomeinspection',
-    refTitle: 'Learn more',
+    title: "General Home Inspection (Existing & New Construction)",
+    slug: "general-home-inspection",
+    ref: "/generalhomeinspection",
+    refTitle: "Learn more",
     description:
       "Whether you’re buying or selling, our detailed inspections uncover hidden defects and give you the confidence to move forward with peace of mind. Included in all three inspection packages.",
+    iconPaths: [
+      "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+    ],
   },
   {
-    icon: 'assets/features/icon-02.svg',
-    title: '4-Point & Wind Mitigation Inspections',
-    slug: '4-point-wind-mitigation',
-    ref: '/4pointandwind',
-    refTitle: 'Learn more',
+    title: "4-Point & Wind Mitigation Inspections",
+    slug: "4-point-wind-mitigation",
+    ref: "/4pointandwind",
+    refTitle: "Learn more",
     description:
       "Required by most Florida insurers, our 4-Point and Wind Mitigation (OIR-B1-1802) inspections evaluate your home’s key systems and storm-resistant features helping you secure coverage and lower your premium. Included in all packages.",
+    iconPaths: [
+      "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    ],
   },
   {
-    icon: 'assets/features/icon-03.svg',
-    title: 'Lateral Sewer Scope Inspections',
-    slug: 'lateral-sewer-scope',
-    ref: '/services/lateral-sewer-scope',
-    refTitle: 'Learn more',
+    title: "Lateral Sewer Scope Inspections",
+    slug: "lateral-sewer-scope",
+    ref: "/services/lateral-sewer-scope",
+    refTitle: "Learn more",
     description:
-      'A high-resolution camera inspection of your main sewer line identifies blockages, root intrusion, and pipe damage including issues common in newer construction. Included in the Premium and Complete Assurance packages.',
+      "A high-resolution camera inspection of your main sewer line identifies blockages, root intrusion, and pipe damage including issues common in newer construction. Included in the Premium and Complete Assurance packages.",
+    iconPaths: [
+      "M15 10l4.553-2.069A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z",
+    ],
   },
   {
-    icon: 'assets/features/icon-04.svg',
-    title: 'Air Sampling Mold Detection (AirOCell)',
-    slug: 'water-air-quality',
-    ref: '/services/water-air-quality',
-    refTitle: 'Learn more',
+    title: "Air Sampling Mold Detection (AirOCell)",
+    slug: "water-air-quality",
+    ref: "/services/water-air-quality",
+    refTitle: "Learn more",
     description:
-      'Using the AirOCell method, we collect air samples analyzed for mold spore presence giving you a clear picture of indoor air quality. Included exclusively in the Complete Assurance Package.',
+      "Using the AirOCell method, we collect air samples analyzed for mold spore presence giving you a clear picture of indoor air quality. Included exclusively in the Complete Assurance Package.",
+    iconPaths: [
+      "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
+    ],
   },
   {
-    icon: 'assets/features/icon-04.svg',
-    title: 'Home Watch Services',
-    slug: 'home-watch',
-    ref: '/services/home-watch',
-    refTitle: 'Learn more',
+    title: "Home Watch Services",
+    slug: "home-watch",
+    ref: "/services/home-watch",
+    refTitle: "Learn more",
     description:
       "Routine scheduled property checks while you’re away, looking for water damage, mold, HVAC issues, pests, and security concerns. Every visit is documented with photos and a written report.",
+    iconPaths: [
+      "M15 12a3 3 0 11-6 0 3 3 0 016 0z",
+      "M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z",
+    ],
   },
 ];
 ---
@@ -113,13 +124,11 @@ const features = [
           <div class="mb-5 inline-flex items-center gap-4">
             <div class="relative grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-[1.03]">
               <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent opacity-70"></div>
-              <img
-                src={feature.icon}
-                alt={`${feature.title} icon`}
-                class="relative h-6 w-6"
-                loading="lazy"
-                decoding="async"
-              />
+              <svg xmlns="http://www.w3.org/2000/svg" class="relative h-6 w-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                {feature.iconPaths.map((d) => (
+                  <path stroke-linecap="round" stroke-linejoin="round" d={d} />
+                ))}
+              </svg>
             </div>
 
             <h3 class="text-lg font-semibold leading-snug text-dark dark:text-white">

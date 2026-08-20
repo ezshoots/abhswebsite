@@ -16,31 +16,40 @@ export async function getStaticPaths() {
 // Get the entry directly from the prop on render
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const postUrl = Astro.url.href;
+const shareUrl = encodeURIComponent(postUrl);
+const shareText = encodeURIComponent(entry.data.title);
+
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: entry.data.title,
+  description: entry.data.snippet,
+  image: new URL(entry.data.bigImg.src, Astro.url).href,
+  author: {
+    "@type": "Person",
+    name: entry.data.author,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Above and Beyond Home Solutions, LLC",
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/assets/logo/logo.svg", Astro.url).href,
+    },
+  },
+  datePublished: entry.data.publishDate.toISOString(),
+  dateModified: entry.data.publishDate.toISOString(),
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": postUrl,
+  },
+};
 ---
 
 <Layout title={entry.data.title} description={entry.data.postDetails.paraOne} image={entry.data.bigImg.src}>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": entry.data.title,
-    "image": entry.data.bigImg.src,
-    "author": {
-      "@type": "Person",
-      "name": entry.data.author
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Above and Beyond Home Solutions, LLC"
-    },
-    "datePublished": entry.data.publishDate,
-    "dateModified": entry.data.publishDate,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": Astro.url
-    }
-  }
-  </script>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostingSchema)} />
   <!-- ====== Blog Details Section Start -->
   <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20 dark:bg-dark">
     <div class="container">
@@ -71,7 +80,7 @@ const { Content } = await render(entry);
                     By
                     <span class="text-white">
                       {entry.data.author}
-                    </a>
+                    </span>
                   </p>
                 </div>
                 <div class="mb-4 flex items-center">
@@ -253,7 +262,12 @@ const { Content } = await render(entry);
                         Share This Post
                       </span>
                       <div class="flex items-center gap-[10px]">
-                        <button type="button" aria-label="Share on Facebook">
+                        <a
+                          href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Share this post on Facebook"
+                        >
                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path
@@ -264,7 +278,12 @@ const { Content } = await render(entry);
                               fill="white" />
                           </svg>
                         </a>
-                        <button type="button" aria-label="Share on Twitter / X">
+                        <a
+                          href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`}
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Share this post on X"
+                        >
                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path
@@ -275,7 +294,12 @@ const { Content } = await render(entry);
                               fill="white" />
                           </svg>
                         </a>
-                        <button type="button" aria-label="Share on LinkedIn">
+                        <a
+                          href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Share this post on LinkedIn"
+                        >
                           <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path

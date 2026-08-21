@@ -13,8 +13,15 @@ const menuitems = [
     path: "/#packages",
   },
   {
-    title: "Get Quote",
-    path: "/#getquote",
+    title: "Services",
+    path: "/services",
+    children: [
+      { title: "General Home Inspection", path: "/generalhomeinspection" },
+      { title: "4 Point and Wind Mitigation Inspection", path: "/4pointandwind" },
+      { title: "Lateral Sewer Scope", path: "/services/lateral-sewer-scope" },
+      { title: "Water / Air Quality Sampling", path: "/services/water-air-quality" },
+      { title: "Home Watch Services", path: "/services/home-watch" },
+    ],
   },
   {
     title: "Contact",
@@ -27,17 +34,6 @@ const menuitems = [
   {
     title: "Blog",
     path: "/blog",
-  },
-  {
-    title: "Services",
-    path: "/services",
-    children: [
-      { title: "General Home Inspection", path: "/generalhomeinspection" },
-      { title: "4 Point and Wind Mitigation Inspection", path: "/4pointandwind" },
-      { title: "Lateral Sewer Scope", path: "/services/lateral-sewer-scope" },
-      { title: "Water / Air Quality Sampling", path: "/services/water-air-quality" },
-      { title: "Home Watch Services", path: "/services/home-watch" },
-    ],
   },
   {
     title: "Service Areas",
@@ -58,17 +54,19 @@ const menuitems = [
 <header class="ud-header absolute top-0 left-0 z-40 flex w-full items-center bg-transparent">
   <div class="container">
     <div class="relative -mx-4 flex items-center justify-between">
-      <div class="w-60 max-w-full px-4">
-        <a href="/" class="navbar-logo block w-full py-5">
+      <div class="shrink-0 px-4">
+        <a href="/" class="navbar-logo block py-3">
           {(Astro.url.pathname === '/') ? (
             <img
               src="/assets/logo/logo-white.svg"
               alt="logo"
-              class="header-logo w-full"
+              class="header-logo h-20 w-auto xl:h-24"
             />
           ) : (
-            <img src="/assets/logo/logo.svg" alt="logo" class="w-full dark:hidden" />
-            <img src="/assets/logo/logo-white.svg" alt="logo" class="w-full hidden dark:block" />
+            <Fragment>
+              <img src="/assets/logo/logo.svg" alt="logo" class="h-20 w-auto xl:h-24 dark:hidden" />
+              <img src="/assets/logo/logo-white.svg" alt="logo" class="h-20 w-auto xl:h-24 hidden dark:block" />
+            </Fragment>
           )}
           
         </a>
@@ -93,7 +91,7 @@ const menuitems = [
             id="navbarCollapse"
             class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white dark:bg-dark-2 py-5 shadow-lg lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent dark:lg:bg-transparent lg:py-0 xl:px-4 lg:shadow-none 2xl:px-6"
           >
-            <ul class="block lg:flex 2xl:ml-20">
+            <ul class="block lg:flex 2xl:ml-8">
               {
                 menuitems.map((item, index) => {
                   if(!item.children) {
@@ -102,7 +100,7 @@ const menuitems = [
                         <a
                           href={item.path}
                           class={` ${index}
-                          ${Astro.url.pathname === '/' ? 'ud-menu-scroll mx-8 flex py-2 font-medium text-base text-dark dark:text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 lg:whitespace-nowrap xl:ml-10' : 'ud-menu-scroll mx-8 flex py-2 font-medium text-base text-dark dark:text-white group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-body-color dark:lg:text-dark-6 lg:whitespace-nowrap xl:ml-10'}
+                          ${Astro.url.pathname === '/' ? 'ud-menu-scroll mx-8 flex py-2 font-medium text-base text-dark dark:text-white group-hover:text-primary lg:mr-0 lg:ml-3 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 lg:whitespace-nowrap xl:ml-5' : 'ud-menu-scroll mx-8 flex py-2 font-medium text-base text-dark dark:text-white group-hover:text-primary lg:mr-0 lg:ml-3 lg:inline-flex lg:py-6 lg:px-0 lg:text-body-color dark:lg:text-dark-6 lg:whitespace-nowrap xl:ml-5'}
                           `}>
                           {item.title}
                         </a>
@@ -117,7 +115,7 @@ const menuitems = [
                         <a
                           href={item.path}
                           class={` ${index}
-                          ${Astro.url.pathname === '/' ? 'relative mx-8 flex items-center justify-between py-2 font-medium text-base text-dark dark:text-white group-hover:text-primary lg:mr-0 lg:ml-8 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10' : 'relative mx-8 flex items-center justify-between py-2 font-medium text-base text-primary group-hover:text-primary lg:mr-0 lg:ml-8 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 xl:ml-10'}
+                          ${Astro.url.pathname === '/' ? 'relative mx-8 flex items-center justify-between py-2 font-medium text-base text-dark dark:text-white group-hover:text-primary lg:mr-0 lg:ml-3 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-5' : 'relative mx-8 flex items-center justify-between py-2 font-medium text-base text-primary group-hover:text-primary lg:mr-0 lg:ml-3 lg:inline-flex lg:py-6 lg:px-0 xl:ml-5'}
                           `}>
                           {item.title}
 
@@ -190,7 +188,7 @@ const menuitems = [
               </svg>
             </span>
           </button>
-          <div class="hidden sm:flex ml-4">
+          <div class="hidden sm:flex lg:hidden xl:flex ml-4">
             <a
               href="/schedule"
               class="rounded-md bg-blue-600 py-2 px-6 text-base font-medium text-white shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:bg-[#2563EB] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60 dark:focus-visible:ring-blue-400/40"

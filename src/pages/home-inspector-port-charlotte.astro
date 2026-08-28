@@ -56,6 +56,39 @@ const commonIssues = [
     detail: 'Port Charlotte was directly impacted by Hurricane Ian in 2022. We look for evidence of incomplete repairs, improper patching, and hidden moisture damage that may have been missed or left unaddressed.',
   },
 ];
+
+const faqs = [
+  {
+    q: 'Do I need a 4-point inspection to buy or insure a home in Port Charlotte?',
+    a: 'For most Port Charlotte homes, yes. Citizens Property Insurance requires a 4-point inspection for any home more than 20 years old, completed within the last 12 months, and most private Florida carriers follow similar rules. Since so much of Port Charlotte was built between the 1970s and 1990s, the large majority of purchases here involve one. We complete 4-point reports in the insurer-accepted format, typically alongside the full inspection.',
+  },
+  {
+    q: 'Who issues building permits in Port Charlotte?',
+    a: 'Port Charlotte is unincorporated, so permits run through Charlotte County Building Construction Services at the Murdock Circle complex, with records searchable through the county\'s online portal. That matters when a roof or enclosure looks newer than the home: a quick permit check confirms the work was done legitimately. Punta Gorda, by contrast, is an incorporated city with its own building department.',
+  },
+  {
+    q: 'Do you inspect seawalls and docks on canal-front homes?',
+    a: 'Yes. On canal-front inspections we evaluate the visible condition of seawalls, docks, and boat lifts for corrosion, cracking, settlement, and deterioration that salt water accelerates. These structures can cost more to repair than many interior systems, and standard inspections often skip them entirely.',
+  },
+  {
+    q: 'Can a wind mitigation inspection lower my insurance premium in Port Charlotte?',
+    a: 'Often, yes. Florida law (section 627.0629, Florida Statutes) requires insurers to credit verified wind-resistant features like roof-to-wall connections and opening protection, documented on the OIR-B1-1802 form, which is generally valid for up to five years. Homes that were re-roofed after Hurricane Ian frequently qualify for better credits than their owners realize, because the new roof was installed to current code.',
+  },
+  {
+    q: 'Who actually performs the inspection?',
+    a: 'Eugene, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. One inspector, the same standards on every job, and a same-day digital report you can act on immediately.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
 ---
 
 <Layout
@@ -72,7 +105,7 @@ const commonIssues = [
     "provider": {
       "@type": "ProfessionalService",
       "name": "Above and Beyond Home Solutions, LLC",
-      "url": "https://www.abovebeyondhomesolutions.com",
+      "url": "https://abovebeyondhomesolutions.com",
       "telephone": "+12394163505",
       "license": "Florida Home Inspector License HI16270"
     },
@@ -84,9 +117,11 @@ const commonIssues = [
         "name": "Florida"
       }
     },
-    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-port-charlotte"
+    "url": "https://abovebeyondhomesolutions.com/home-inspector-port-charlotte"
   }
   </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
 
   <Breadcrumb>
     <Fragment slot="title">Home Inspector in Port Charlotte, FL</Fragment>
@@ -103,7 +138,7 @@ const commonIssues = [
           Home Inspector in Port Charlotte, FL
         </h1>
         <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
-          Above and Beyond Home Solutions provides comprehensive home inspections throughout Port Charlotte and Charlotte County. With hundreds of miles of canals, a large stock of 1970s–1990s homes, and a significant seasonal population, Port Charlotte demands an inspector who knows the local market. That's us.
+          Above and Beyond Home Solutions provides comprehensive home inspections throughout Port Charlotte and Charlotte County, just down the road from our North Port home base. With hundreds of miles of canals, a large stock of 1970s–1990s homes, and a significant seasonal population, Port Charlotte demands an inspector who knows the local market. Eugene, the owner and licensed inspector (HI16270), personally performs every inspection.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
@@ -214,7 +249,10 @@ const commonIssues = [
             A lot of homes in Port Charlotte sit empty for months at a time while owners are up north. Deferred maintenance piles up quietly. Whether you're buying a primary residence, a vacation home, or a rental property here, we'll give you the straight story on what you're actually getting.
           </p>
           <p>
-            We also serve Punta Gorda, Deep Creek, Murdock, El Jobean, and surrounding Charlotte County communities.
+            Because Port Charlotte is unincorporated, permits and inspections for past work run through Charlotte County Building Construction Services rather than a city building department, and the county's records are searchable online. When we flag a roof, panel, or addition during an inspection, that permit history is often the fastest way to find out whether the work was done right.
+          </p>
+          <p>
+            We also serve Punta Gorda, Deep Creek, Murdock, El Jobean, and surrounding Charlotte County communities. Our <a href="/generalhomeinspection" class="text-primary hover:underline">general home inspection</a>, <a href="/4pointandwind" class="text-primary hover:underline">4-point and wind mitigation inspections</a>, <a href="/services/lateral-sewer-scope" class="text-primary hover:underline">lateral sewer scope</a>, and <a href="/services/home-watch" class="text-primary hover:underline">home watch service</a> all cover the entire Port Charlotte area.
           </p>
         </div>
         <div class="mt-8">
@@ -225,6 +263,28 @@ const commonIssues = [
             Schedule Your Port Charlotte Inspection
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Port Charlotte Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions Port Charlotte buyers and homeowners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

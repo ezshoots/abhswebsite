@@ -36,8 +36,8 @@ const commonIssues = [
     detail: 'North Port\'s rapid growth brought many homes built in the 1980s and 1990s that now have aging roofs. We document condition, estimate remaining life, and flag anything that may affect insurability.',
   },
   {
-    issue: 'Moisture & Mold',
-    detail: 'Sarasota County\'s humidity combined with older HVAC systems and poor attic ventilation creates ideal conditions for mold. We identify moisture intrusion points before they become expensive repairs.',
+    issue: 'Moisture & Biological Growth',
+    detail: 'Sarasota County\'s humidity combined with older HVAC systems and poor attic ventilation creates ideal conditions for biological growth. We identify moisture intrusion points before they become expensive repairs.',
   },
   {
     issue: 'New Construction Defects',
@@ -56,6 +56,43 @@ const commonIssues = [
     detail: 'Polybutylene and galvanized steel piping are still common in older North Port homes. We identify pipe materials so you know replacement costs before closing.',
   },
 ];
+
+const faqs = [
+  {
+    q: 'Do I need a 4-point inspection to get homeowners insurance in North Port?',
+    a: 'If the home is more than 20 years old, plan on it. Citizens Property Insurance requires a 4-point inspection for homes over 20 years old, completed within the last 12 months, and most private Florida carriers have similar rules. Many North Port homes built during the mid-2000s construction boom are now crossing that 20-year mark, so buyers are often surprised to need one. We complete 4-point reports in the insurer-accepted format, usually as an add-on to a full inspection.',
+  },
+  {
+    q: 'Is my North Port home on city water or a private well?',
+    a: 'It depends on the neighborhood. Large portions of North Port still rely on private wells and septic systems, and the city is expanding water and sewer service over time under its utilities master plan. If the home is on a well, we strongly recommend water testing before you buy. We can collect samples during the inspection and send them to a lab for analysis.',
+  },
+  {
+    q: 'Who issues building permits in North Port?',
+    a: 'The City of North Port Building Division handles permitting inside city limits, not Sarasota County. Permit history is searchable through the city\'s online portal, which is useful for confirming that a roof replacement, addition, or enclosure was actually permitted. The inspection documents the current physical condition, and the permit record tells the rest of the story.',
+  },
+  {
+    q: 'Are brand-new homes in Wellen Park worth inspecting?',
+    a: 'Yes. Municipal inspections during construction are pass-fail code compliance checks, not a detailed quality review for the buyer. We routinely find HVAC duct problems, missing insulation, flashing errors, and unfinished items in newly built North Port homes. An independent inspection before closing, and an 11-month warranty inspection before the builder warranty expires, are both worth far more than they cost.',
+  },
+  {
+    q: 'Can a wind mitigation inspection actually lower my insurance premium?',
+    a: 'Florida law (section 627.0629, Florida Statutes) requires insurers to give premium credits for verified wind-resistant features such as roof-to-wall connections, opening protection, and roof deck attachment. The features are documented on the OIR-B1-1802 form, which is generally valid for up to five years. The size of the credit depends on your home and carrier, but for many North Port homes the inspection pays for itself quickly.',
+  },
+  {
+    q: 'Who actually performs the inspection?',
+    a: 'Eugene, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. You get the same inspector, the same standards, and a direct line to the person who was on your roof and in your attic, with a full digital report the same day.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
 ---
 
 <Layout
@@ -72,7 +109,7 @@ const commonIssues = [
     "provider": {
       "@type": "ProfessionalService",
       "name": "Above and Beyond Home Solutions, LLC",
-      "url": "https://www.abovebeyondhomesolutions.com",
+      "url": "https://abovebeyondhomesolutions.com",
       "telephone": "+12394163505",
       "license": "Florida Home Inspector License HI16270"
     },
@@ -84,7 +121,7 @@ const commonIssues = [
         "name": "Florida"
       }
     },
-    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-north-port"
+    "url": "https://abovebeyondhomesolutions.com/home-inspector-north-port"
   }
   </script>
 
@@ -93,19 +130,17 @@ const commonIssues = [
     "@context": "https://schema.org",
     "@type": "HomeInspector",
     "name": "Above and Beyond Home Solutions, LLC",
-    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-north-port",
+    "url": "https://abovebeyondhomesolutions.com/home-inspector-north-port",
     "telephone": "+12394163505",
     "email": "info@abovebeyondhomesolutions.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "8896 Wawana Rd",
       "addressLocality": "North Port",
       "addressRegion": "FL",
       "postalCode": "34287",
       "addressCountry": "US"
     },
     "license": "Florida Home Inspector License HI16270",
-    "priceRange": "$$",
     "areaServed": [
       "North Port, FL",
       "Port Charlotte, FL",
@@ -116,6 +151,8 @@ const commonIssues = [
     ]
   }
   </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
 
   <Breadcrumb>
     <Fragment slot="title">Home Inspector in North Port, FL</Fragment>
@@ -132,7 +169,7 @@ const commonIssues = [
           Home Inspector in North Port, FL
         </h1>
         <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
-          Above and Beyond Home Solutions provides thorough, same-day home inspections throughout North Port and Sarasota County. Whether you're buying a resale home in an established neighborhood or a brand-new build in Wellen Park, our InterNACHI certified inspectors give you the full picture before you close.
+          Above and Beyond Home Solutions is based right here in North Port and provides thorough, same-day home inspections throughout the city and Sarasota County. Whether you're buying a resale home in an established neighborhood or a brand-new build in Wellen Park, Eugene, the owner and licensed inspector (HI16270), personally performs every inspection and gives you the full picture before you close.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
@@ -237,13 +274,16 @@ const commonIssues = [
             North Port has been one of Florida's fastest-growing cities for over a decade. That growth brings real opportunity, but it also brings risk. Buyers are competing for homes in established neighborhoods like Jockey Club and Bobcat Trail right alongside brand-new builds in Wellen Park. Either way, an inspection is your best protection before you sign anything.
           </p>
           <p>
-            Older homes in North Port, particularly those built in the 1980s and early 1990s, often have aging roofs close to their insurance renewal deadline, outdated electrical panels, and plumbing materials that lenders and insurers flag. Our inspectors know these homes well and put everything in writing so you can negotiate from a position of knowledge.
+            Older homes in North Port, particularly those built in the 1980s and early 1990s, often have aging roofs close to their insurance renewal deadline, outdated electrical panels, and plumbing materials that lenders and insurers flag. The city's huge wave of mid-2000s boom construction is now reaching the 20-year mark where insurers such as Citizens require a 4-point inspection before writing a policy. We know these homes well and put everything in writing so you can negotiate from a position of knowledge.
           </p>
           <p>
             New construction is no guarantee of quality. We routinely find framing defects, improper attic ventilation, inadequate waterproofing at penetrations, and missing code items in newly completed North Port homes. Getting an inspection before you close, or before your builder's warranty expires, can save you thousands.
           </p>
           <p>
-            We serve all of North Port including Wellen Park, The Cove at West Villages, Bobcat Trail, Heron Creek, and surrounding Sarasota County communities.
+            One local detail worth knowing: building permits inside North Port are issued by the City of North Port Building Division, not Sarasota County, and the city's permit records are searchable online. When a roof, water heater, or addition looks newer than the house, checking that it was permitted is a cheap way to avoid inheriting someone else's shortcut. Septic systems, common across the city, are permitted at the county level.
+          </p>
+          <p>
+            We serve all of North Port including Wellen Park, The Cove at West Villages, Bobcat Trail, Heron Creek, and surrounding Sarasota County communities. Our <a href="/generalhomeinspection" class="text-primary hover:underline">general home inspection</a>, <a href="/4pointandwind" class="text-primary hover:underline">4-point and wind mitigation inspections</a>, <a href="/services/lateral-sewer-scope" class="text-primary hover:underline">lateral sewer scope</a>, and <a href="/services/water-air-quality" class="text-primary hover:underline">water and air quality testing</a> are all available anywhere in the service area.
           </p>
         </div>
         <div class="mt-8">
@@ -254,6 +294,28 @@ const commonIssues = [
             Schedule Your North Port Inspection
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          North Port Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions North Port buyers and homeowners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

@@ -11,7 +11,7 @@ interface Props {
   image?: string;
 }
 
-const { description, title, image = 'https://www.abovebeyondhomesolutions.com/assets/og-image.webp' } = Astro.props;
+const { description, title, image = 'https://abovebeyondhomesolutions.com/assets/og-image.webp' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -54,36 +54,33 @@ const { description, title, image = 'https://www.abovebeyondhomesolutions.com/as
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService"],
       "name": "Above and Beyond Home Solutions, LLC",
-      "url": "https://www.abovebeyondhomesolutions.com",
-      "logo": "https://www.abovebeyondhomesolutions.com/assets/logo/logo.svg",
+      "url": "https://abovebeyondhomesolutions.com",
+      "logo": "https://abovebeyondhomesolutions.com/assets/logo/logo.svg",
       "telephone": "+12394163505",
       "email": "info@abovebeyondhomesolutions.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "8896 Wawana Rd",
         "addressLocality": "North Port",
         "addressRegion": "FL",
         "postalCode": "34287",
         "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.0661,
+        "longitude": -82.1886
+      },
       "areaServed": [
-        "North Port, FL",
-        "Sarasota, FL",
-        "Venice, FL",
-        "Port Charlotte, FL",
-        "Punta Gorda, FL",
-        "Fort Myers, FL",
-        "Cape Coral, FL",
-        "Lehigh Acres, FL",
-        "Bonita Springs, FL",
-        "Alva, FL",
-        "Englewood, FL",
-        "Immokalee, FL",
-        "Sanibel, FL",
-        "Fort Myers Beach, FL"
+        { "@type": "City", "name": "North Port", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
+        { "@type": "City", "name": "Port Charlotte", "containedInPlace": { "@type": "AdministrativeArea", "name": "Charlotte County, FL" } },
+        { "@type": "City", "name": "Punta Gorda", "containedInPlace": { "@type": "AdministrativeArea", "name": "Charlotte County, FL" } },
+        { "@type": "City", "name": "Venice", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
+        { "@type": "City", "name": "Englewood", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
+        { "@type": "City", "name": "Rotonda West", "containedInPlace": { "@type": "AdministrativeArea", "name": "Charlotte County, FL" } },
+        { "@type": "City", "name": "Nokomis", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
+        { "@type": "City", "name": "Sarasota", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } }
       ],
       "description": "InterNACHI certified home inspectors serving Southwest Florida. General home inspections, 4-Point, Wind Mitigation, Lateral Sewer Scope, Water and Air Quality Sampling, and Home Watch services. Same-day digital reports.",
-      "priceRange": "$$",
       "license": "Florida Home Inspector License HI16270",
       "hasCredential": [
         { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "InterNACHI Certified Professional Inspector" },

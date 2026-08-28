@@ -1,6 +1,6 @@
 Above and Beyond Home Solutions – Professional Home Inspections in Southwest Florida
 
-Above and Beyond Home Solutions, LLC is a licensed, InterNACHI-certified home inspection company serving Lehigh Acres, Fort Myers, Cape Coral, Naples, and the surrounding Southwest Florida region. We are committed to providing top-quality, detail-driven inspections backed by modern tools, cutting-edge technology, and a customer-focused approach.
+Above and Beyond Home Solutions, LLC is a licensed, InterNACHI-certified home inspection company based in North Port, FL, serving North Port, Port Charlotte, Punta Gorda, Venice, Englewood, and the surrounding Sarasota and Charlotte County region. We are committed to providing top-quality, detail-driven inspections backed by modern tools, cutting-edge technology, and a customer-focused approach.
 
 Our mission is simple: deliver accurate, reliable, and easy-to-understand home inspection reports that protect your investment and help you make confident decisions.
 
@@ -96,27 +96,21 @@ Technology improves accuracy, speed, and communication—and we use it to ensure
 
 We provide home inspections across:
 
-Lehigh Acres
-
-Fort Myers
-
-Cape Coral
-
-Naples
-
 North Port
-
-Estero
 
 Port Charlotte
 
 Punta Gorda
 
-Alva
+Venice
 
-LaBelle
+Englewood
 
-Sanibel Island
+Rotonda West
+
+Nokomis
+
+Sarasota
 …and surrounding communities.
 
 If you’re nearby, we’ll go above and beyond to get to you.

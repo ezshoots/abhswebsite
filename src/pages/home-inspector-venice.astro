@@ -56,6 +56,39 @@ const commonIssues = [
     detail: 'Older stucco systems on Venice homes can develop cracks and voids that let water in. By the time you see it on the inside, there\'s usually already real damage behind the wall. We probe stucco and use moisture meters to catch it early.',
   },
 ];
+
+const faqs = [
+  {
+    q: 'Do older Venice homes need a 4-point inspection for insurance?',
+    a: 'Almost always. Citizens Property Insurance requires a 4-point inspection for any home more than 20 years old, completed within the last 12 months, and most private Florida carriers apply similar rules. With so much of Venice built between the 1950s and 1980s, from Venice Island ranch homes to Venice East, the majority of purchases here need one. We complete 4-point reports in the insurer-accepted format.',
+  },
+  {
+    q: 'Can a 1960s or 1970s Venice home still get a good insurance outcome?',
+    a: 'Often, yes, if the right updates are documented. Insurers care about the age and condition of the roof, electrical, plumbing, and HVAC, not the year the house was built. A home with a newer permitted roof, an updated panel, and re-piped plumbing can present well on a 4-point. A wind mitigation inspection can then capture credits for features like opening protection, which Florida law (section 627.0629, Florida Statutes) requires insurers to honor.',
+  },
+  {
+    q: 'Who issues building permits in Venice?',
+    a: 'It depends on where the home sits. Properties inside Venice city limits are permitted through the City of Venice, while unincorporated communities such as South Venice, Venice Gardens, and Nokomis go through Sarasota County. Both keep searchable records. When a roof or addition looks newer than the house, verifying the permit is the quickest way to confirm the work was legitimate.',
+  },
+  {
+    q: 'Do you inspect condos in Venice?',
+    a: 'Yes. For condos we focus on everything inside the unit: electrical, plumbing, HVAC, appliances, windows, and signs of moisture intrusion, plus the accessible portions of what serves the unit. Venice has a large stock of 1970s-era condo buildings where aging systems and older wiring deserve a close look before you buy.',
+  },
+  {
+    q: 'Who actually performs the inspection?',
+    a: 'Eugene, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. Same inspector every time, same-day digital report, and straight answers about what matters and what does not.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
 ---
 
 <Layout
@@ -72,7 +105,7 @@ const commonIssues = [
     "provider": {
       "@type": "ProfessionalService",
       "name": "Above and Beyond Home Solutions, LLC",
-      "url": "https://www.abovebeyondhomesolutions.com",
+      "url": "https://abovebeyondhomesolutions.com",
       "telephone": "+12394163505",
       "license": "Florida Home Inspector License HI16270"
     },
@@ -84,9 +117,11 @@ const commonIssues = [
         "name": "Florida"
       }
     },
-    "url": "https://www.abovebeyondhomesolutions.com/home-inspector-venice"
+    "url": "https://abovebeyondhomesolutions.com/home-inspector-venice"
   }
   </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
 
   <Breadcrumb>
     <Fragment slot="title">Home Inspector in Venice, FL</Fragment>
@@ -103,7 +138,7 @@ const commonIssues = [
           Home Inspector in Venice, FL
         </h1>
         <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
-          Above and Beyond Home Solutions provides thorough, same-day home inspections throughout Venice and surrounding Sarasota County communities. From the historic homes of Venice Island to retirement communities in Venice Gardens and Jacaranda, our InterNACHI certified inspectors know what to look for in this market.
+          Above and Beyond Home Solutions provides thorough, same-day home inspections throughout Venice and surrounding Sarasota County communities. From the historic homes of Venice Island to retirement communities in Venice Gardens and Jacaranda, Eugene, the owner and licensed inspector (HI16270), personally performs every inspection and knows what to look for in this market.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
@@ -214,7 +249,10 @@ const commonIssues = [
             Venice is also home to a significant number of seasonal residents and retirees. Whether you're buying a winter retreat or a permanent home, our same-day reports mean you can act quickly during your inspection period without sacrificing thoroughness.
           </p>
           <p>
-            We serve Venice Island, Venice Gardens, South Venice, Jacaranda, Nokomis, Osprey, and all of south Sarasota County.
+            One practical note for Venice buyers: permit records are split between the City of Venice for homes inside city limits and Sarasota County for unincorporated areas like South Venice and Nokomis. When an inspection turns up a newer roof or an addition, checking the permit history with the right office confirms the work was done properly. We point you to the right one.
+          </p>
+          <p>
+            We serve Venice Island, Venice Gardens, South Venice, Venice East, Jacaranda, Nokomis, and all of south Sarasota County. Our <a href="/generalhomeinspection" class="text-primary hover:underline">general home inspection</a>, <a href="/4pointandwind" class="text-primary hover:underline">4-point and wind mitigation inspections</a>, <a href="/services/lateral-sewer-scope" class="text-primary hover:underline">lateral sewer scope</a>, and <a href="/services/home-watch" class="text-primary hover:underline">home watch service</a> cover the whole Venice area.
           </p>
         </div>
         <div class="mt-8">
@@ -225,6 +263,28 @@ const commonIssues = [
             Schedule Your Venice Inspection
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Venice Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions Venice buyers and homeowners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

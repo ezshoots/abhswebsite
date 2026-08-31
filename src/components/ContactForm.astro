@@ -1,0 +1,248 @@
+---
+import { SERVICES, PROPERTY_TYPES, CITIES } from '../lib/contact-form-options.js';
+
+// The aria-invalid rule carries `!` because a plain `border-red-500` loses the
+// cascade to `border-stroke` and `dark:border-dark-3`.
+const fieldClass =
+  'w-full rounded-lg border border-stroke bg-white px-5 py-3 text-base text-dark outline-none transition placeholder:text-body-color/60 focus:border-primary aria-[invalid=true]:!border-red-500 dark:border-dark-3 dark:bg-dark-2 dark:text-white dark:placeholder:text-dark-6';
+const labelClass = 'mb-2.5 block text-sm font-medium text-dark dark:text-white';
+const errorClass = 'mt-1.5 hidden text-sm font-medium text-red-500';
+---
+
+<div
+  class="mt-10 rounded-[24px] border border-[#E8F0FF] bg-white p-6 shadow-sm dark:border-[#1F2937] dark:bg-dark-2 sm:p-8"
+>
+  <h3 class="text-2xl font-semibold text-dark dark:text-white">Request an inspection or a quote</h3>
+  <p class="mt-2 text-sm text-body-color dark:text-dark-6">
+    Tell us a little about the property and we will get right back to you. Fields marked <span
+      class="text-red-500">*</span
+    > are required.
+  </p>
+
+  <form id="contact-form" action="/api/contact" method="POST" novalidate class="mt-8">
+    <input type="hidden" name="page" value={Astro.url.pathname} />
+
+    <!-- Honeypot: hidden from people, catches the simplest bots. -->
+    <div class="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <label for="company_website">Do not fill this in</label>
+      <input
+        type="text"
+        id="company_website"
+        name="company_website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label class={labelClass} for="cf-name">
+          Name <span class="text-red-500">*</span>
+        </label>
+        <input
+          type="text"
+          id="cf-name"
+          name="name"
+          required
+          maxlength="100"
+          autocomplete="name"
+          placeholder="First and last name"
+          class={fieldClass}
+        />
+        <p class={errorClass} data-error-for="name"></p>
+      </div>
+
+      <div>
+        <label class={labelClass} for="cf-phone">
+          Phone <span class="text-red-500">*</span>
+        </label>
+        <input
+          type="tel"
+          id="cf-phone"
+          name="phone"
+          required
+          maxlength="30"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="(941) 555-0123"
+          class={fieldClass}
+        />
+        <p class={errorClass} data-error-for="phone"></p>
+      </div>
+
+      <div>
+        <label class={labelClass} for="cf-service">
+          Service requested <span class="text-red-500">*</span>
+        </label>
+        <select id="cf-service" name="service" required class={fieldClass}>
+          <option value="">Choose a service</option>
+          {SERVICES.map((service) => <option value={service}>{service}</option>)}
+        </select>
+        <p class={errorClass} data-error-for="service"></p>
+      </div>
+
+      <div>
+        <label class={labelClass} for="cf-property-type">
+          Property type <span class="text-red-500">*</span>
+        </label>
+        <select id="cf-property-type" name="propertyType" required class={fieldClass}>
+          <option value="">Choose a property type</option>
+          {PROPERTY_TYPES.map((type) => <option value={type}>{type}</option>)}
+        </select>
+        <p class={errorClass} data-error-for="propertyType"></p>
+      </div>
+
+      <div>
+        <label class={labelClass} for="cf-city">
+          City <span class="text-red-500">*</span>
+        </label>
+        <select id="cf-city" name="city" required class={fieldClass}>
+          <option value="">Choose a city</option>
+          {CITIES.map((city) => <option value={city}>{city}</option>)}
+        </select>
+        <p class={errorClass} data-error-for="city"></p>
+      </div>
+
+      <div>
+        <label class={labelClass} for="cf-email">Email</label>
+        <input
+          type="email"
+          id="cf-email"
+          name="email"
+          maxlength="254"
+          autocomplete="email"
+          placeholder="you@example.com"
+          class={fieldClass}
+        />
+        <p class={errorClass} data-error-for="email"></p>
+      </div>
+
+      <div class="sm:col-span-2">
+        <label class={labelClass} for="cf-details"> Anything else we should know?</label>
+        <textarea
+          id="cf-details"
+          name="details"
+          rows="4"
+          maxlength="2000"
+          placeholder="Property address, closing date, best time to reach you"
+          class={fieldClass}></textarea>
+        <p class={errorClass} data-error-for="details"></p>
+      </div>
+    </div>
+
+    <div class="mt-7 flex flex-wrap items-center gap-4">
+      <button
+        type="submit"
+        data-submit
+        class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-base font-semibold text-white transition hover:bg-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        Send request
+      </button>
+      <p class="text-sm text-body-color dark:text-dark-6">
+        Or call <a
+          href="tel:+12394163505"
+          class="font-semibold text-dark hover:text-primary dark:text-white">(239) 416-3505</a
+        >
+      </p>
+    </div>
+
+    <p
+      data-form-status
+      role="status"
+      aria-live="polite"
+      class="mt-5 hidden rounded-lg px-4 py-3 text-sm font-medium"
+    >
+    </p>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form');
+
+  if (form instanceof HTMLFormElement) {
+    const status = form.querySelector('[data-form-status]');
+    const button = form.querySelector('[data-submit]');
+    const errorSlots = form.querySelectorAll('[data-error-for]');
+
+    const OK_CLASS = 'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300';
+    const BAD_CLASS = 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-300';
+
+    const clearErrors = () => {
+      errorSlots.forEach((slot) => {
+        slot.textContent = '';
+        slot.classList.add('hidden');
+        const field = form.elements.namedItem(slot.dataset.errorFor);
+        if (field instanceof HTMLElement) field.removeAttribute('aria-invalid');
+      });
+    };
+
+    const showErrors = (errors) => {
+      let first = null;
+      Object.entries(errors).forEach(([name, message]) => {
+        const slot = form.querySelector(`[data-error-for="${name}"]`);
+        if (slot) {
+          slot.textContent = message;
+          slot.classList.remove('hidden');
+        }
+        const field = form.elements.namedItem(name);
+        if (field instanceof HTMLElement) {
+          field.setAttribute('aria-invalid', 'true');
+          if (!first) first = field;
+        }
+      });
+      if (first) first.focus();
+    };
+
+    const setStatus = (message, ok) => {
+      if (!status) return;
+      status.textContent = message;
+      status.className =
+        'mt-5 rounded-lg px-4 py-3 text-sm font-medium ' + (ok ? OK_CLASS : BAD_CLASS);
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearErrors();
+      if (status) status.classList.add('hidden');
+
+      const payload = Object.fromEntries(new FormData(form));
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = true;
+        button.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && result.ok) {
+          form.reset();
+          setStatus('Thanks, your request is on its way. We will reach out shortly.', true);
+        } else if (result.errors) {
+          showErrors(result.errors);
+          setStatus('Please fix the highlighted fields and try again.', false);
+        } else {
+          setStatus(
+            result.error ||
+              'Something went wrong. Please call (239) 416-3505 and we will take care of you.',
+            false
+          );
+        }
+      } catch {
+        setStatus(
+          'We could not reach the server. Please call (239) 416-3505 and we will take care of you.',
+          false
+        );
+      } finally {
+        if (button instanceof HTMLButtonElement) {
+          button.disabled = false;
+          button.textContent = 'Send request';
+        }
+      }
+    });
+  }
+</script>

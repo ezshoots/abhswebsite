@@ -1,79 +1,169 @@
+---
+import ContactForm from './ContactForm.astro';
+---
+
 <!-- ====== Contact Start ====== -->
 <section id="contact" class="relative py-20 md:py-[120px]">
-<div class="absolute top-0 left-0 -z-[1] w-full dark:bg-dark h-full"></div>
-  <div class="absolute top-0 left-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
+  <div class="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
+  <div
+    class="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"
+  >
+  </div>
   <div class="container px-4">
     <div class="mx-auto max-w-[1200px]">
-      <div class="grid gap-10 items-start">
-        <div class="rounded-[30px] bg-[#F8FBFF] dark:bg-[#0F172A] p-8 sm:p-10 lg:p-12 shadow-[0_32px_80px_rgba(1,28,80,0.08)] dark:shadow-none">
-          <span class="inline-block rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-semibold text-primary">
+      <div class="grid items-start gap-10">
+        <div
+          class="rounded-[30px] bg-[#F8FBFF] p-8 shadow-[0_32px_80px_rgba(1,28,80,0.08)] dark:bg-[#0F172A] dark:shadow-none sm:p-10 lg:p-12"
+        >
+          <span
+            class="inline-block rounded-full border border-primary/20 bg-primary/5 px-4 py-1 text-sm font-semibold text-primary"
+          >
             CONTACT US
           </span>
-          <h2 class="mt-6 text-4xl font-semibold leading-tight text-dark dark:text-white sm:text-[42px]">
+          <h2
+            class="mt-6 text-4xl font-semibold leading-tight text-dark dark:text-white sm:text-[42px]"
+          >
             Have a question? Give us a call or a message.
           </h2>
           <p class="mt-5 max-w-3xl text-base leading-relaxed text-body-color dark:text-dark-6">
-            Whether you need a home inspection, a quote, or help booking service across Southwest Florida, our team is ready to help.
+            Whether you need a home inspection, a quote, or help booking service across Southwest
+            Florida, our team is ready to help.
           </p>
 
+          <ContactForm />
+
           <div class="mt-10 grid gap-6 sm:grid-cols-2">
-            <article class="rounded-[24px] border border-[#E8F0FF] bg-white p-6 shadow-sm dark:border-[#1F2937] dark:bg-dark-2">
+            <article
+              class="rounded-[24px] border border-[#E8F0FF] bg-white p-6 shadow-sm dark:border-[#1F2937] dark:bg-dark-2"
+            >
               <div class="flex items-center gap-4">
-                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6">
-                    <path d="M4 4H20V20H4V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <span
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                  >
+                    <path
+                      d="M4 4H20V20H4V4Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M4 7L12 13L20 7"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
                   </svg>
                 </span>
                 <div>
                   <h5 class="text-lg font-semibold text-dark dark:text-white">How Can We Help?</h5>
-                  <p class="mt-1 text-sm text-body-color dark:text-dark-6">Ready to answer questions, requests, and booking details.</p>
+                  <p class="mt-1 text-sm text-body-color dark:text-dark-6">
+                    Ready to answer questions, requests, and booking details.
+                  </p>
                 </div>
               </div>
               <div class="mt-6 space-y-4 text-sm text-body-color dark:text-dark-6">
                 <div>
-                  <p class="text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-dark-5">Email</p>
-                  <a href="mailto:info@abovebeyondhomesolutions.com" class="mt-2 inline-block text-xs font-semibold text-dark dark:text-white hover:text-primary break-all">
+                  <p class="text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-dark-5">
+                    Email
+                  </p>
+                  <a
+                    href="mailto:info@abovebeyondhomesolutions.com"
+                    class="mt-2 inline-block break-all text-xs font-semibold text-dark hover:text-primary dark:text-white"
+                  >
                     info@abovebeyondhomesolutions.com
                   </a>
                 </div>
                 <div>
-                  <p class="text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-dark-5">Phone</p>
-                  <a href="tel:+12394163505" class="mt-2 inline-block text-sm font-semibold text-dark dark:text-white hover:text-primary">
+                  <p class="text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-dark-5">
+                    Phone
+                  </p>
+                  <a
+                    href="tel:+12394163505"
+                    class="mt-2 inline-block text-sm font-semibold text-dark hover:text-primary dark:text-white"
+                  >
                     (239) 416-3505
                   </a>
                 </div>
                 <div>
-                  <p class="text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-dark-5">Address</p>
-                  <p class="mt-2 text-sm font-semibold text-dark dark:text-white leading-relaxed">
+                  <p class="text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-dark-5">
+                    Address
+                  </p>
+                  <p class="mt-2 text-sm font-semibold leading-relaxed text-dark dark:text-white">
                     North Port, FL 34287
                   </p>
                 </div>
               </div>
             </article>
 
-            <article class="rounded-[24px] border border-[#E8F0FF] bg-white p-6 shadow-sm dark:border-[#1F2937] dark:bg-dark-2">
+            <article
+              class="rounded-[24px] border border-[#E8F0FF] bg-white p-6 shadow-sm dark:border-[#1F2937] dark:bg-dark-2"
+            >
               <div class="flex items-center gap-4">
-                <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6">
-                    <path d="M12 2C8.134 2 5 5.134 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.134 15.866 2 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5Z" fill="currentColor"/>
+                <span
+                  class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                  >
+                    <path
+                      d="M12 2C8.134 2 5 5.134 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.134 15.866 2 12 2Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5Z"
+                      fill="currentColor"></path>
                   </svg>
                 </span>
                 <div>
                   <h5 class="text-lg font-semibold text-dark dark:text-white">Areas We Serve</h5>
-                  <p class="mt-1 text-sm text-body-color dark:text-dark-6">Serving Southwest Florida with reliable home inspection coverage.</p>
+                  <p class="mt-1 text-sm text-body-color dark:text-dark-6">
+                    Serving Southwest Florida with reliable home inspection coverage.
+                  </p>
                 </div>
               </div>
               <ul class="mt-6 grid gap-2 text-sm text-body-color dark:text-dark-6 sm:grid-cols-2">
-                <li><a href="/home-inspector-north-port" class="hover:text-primary transition-colors">North Port</a></li>
-                <li><a href="/home-inspector-port-charlotte" class="hover:text-primary transition-colors">Port Charlotte</a></li>
-                <li><a href="/home-inspector-punta-gorda" class="hover:text-primary transition-colors">Punta Gorda</a></li>
-                <li><a href="/home-inspector-venice" class="hover:text-primary transition-colors">Venice</a></li>
-                <li><a href="/home-inspector-englewood" class="hover:text-primary transition-colors">Englewood</a></li>
+                <li>
+                  <a href="/home-inspector-north-port" class="transition-colors hover:text-primary"
+                    >North Port</a>
+                </li>
+                <li>
+                  <a
+                    href="/home-inspector-port-charlotte"
+                    class="transition-colors hover:text-primary">Port Charlotte</a>
+                </li>
+                <li>
+                  <a href="/home-inspector-punta-gorda" class="transition-colors hover:text-primary"
+                    >Punta Gorda</a>
+                </li>
+                <li>
+                  <a href="/home-inspector-venice" class="transition-colors hover:text-primary"
+                    >Venice</a>
+                </li>
+                <li>
+                  <a href="/home-inspector-englewood" class="transition-colors hover:text-primary"
+                    >Englewood</a>
+                </li>
                 <li>Rotonda West</li>
                 <li>Nokomis</li>
-                <li><a href="/home-inspector-sarasota" class="hover:text-primary transition-colors">Sarasota</a></li>
+                <li>
+                  <a href="/home-inspector-sarasota" class="transition-colors hover:text-primary"
+                    >Sarasota</a>
+                </li>
               </ul>
             </article>
           </div>

@@ -1,5 +1,11 @@
+# The live deployment is Cloudflare Pages (Git-connected, build output ./dist),
+# so the contact endpoint is served by functions/api/contact.js and this file is
+# ignored. It is kept working for `wrangler deploy` (Workers static assets), where
+# src/worker.js serves the same endpoint. Both share src/lib/contact-submission.js.
 name = "abhswebsite"
+main = "src/worker.js"
 compatibility_date = "2026-03-20"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"

@@ -1,4 +1,4 @@
-import { SERVICES, PROPERTY_TYPES, CITIES } from './contact-form-options.js';
+import { SERVICES, PROPERTY_TYPES } from './contact-form-options.js';
 
 const DEFAULT_TO = 'info@abovebeyondhomesolutions.com';
 const DEFAULT_FROM = 'Website Contact Form <forms@abovebeyondhomesolutions.com>';
@@ -7,6 +7,7 @@ const LIMITS = {
   name: 100,
   email: 254,
   phone: 30,
+  city: 80,
   details: 2000,
   page: 200,
 };
@@ -113,8 +114,12 @@ export function validate(raw) {
     errors.propertyType = 'Please choose a property type.';
   }
 
-  const city = clean(raw.city, 120);
-  if (!CITIES.includes(city)) errors.city = 'Please choose a city.';
+  // City is free text so people outside the usual service area can still ask.
+  // Require a letter so a stray digit or punctuation does not pass as a city.
+  const city = clean(raw.city, LIMITS.city);
+  if (city.length < 2 || !/\p{L}/u.test(city)) {
+    errors.city = 'Please enter the city the property is in.';
+  }
 
   const details = cleanMultiline(raw.details, LIMITS.details);
   const page = clean(raw.page, LIMITS.page);

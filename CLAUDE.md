@@ -33,9 +33,10 @@ Submissions POST to `/api/contact`, which is served by
 `wrangler deploy` instead. Both delegate to `src/lib/contact-submission.js`.
 
 **Dropdown options are validated server-side.** `src/lib/contact-form-options.js`
-is the single source of truth for the service, property type, and city lists.
-The Astro component renders the `<option>` elements from it and the handler
-rejects anything not in it, so edit that file only.
+is the single source of truth for the service and property type lists. The
+Astro component renders those `<option>` elements from it and the handler
+rejects anything not in it, so edit that file only. City is free text (the same
+file supplies `CITY_SUGGESTIONS` for the datalist only, not validation).
 
 **Required environment variables** (Pages project → Settings → Variables and secrets):
 

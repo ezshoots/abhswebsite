@@ -26,7 +26,9 @@ export const PROPERTY_TYPES = [
   'Commercial or other',
 ];
 
-export const CITIES = [
+// City is a free-text field, so these are only autocomplete suggestions in the
+// datalist. The handler accepts any reasonable city, not just these.
+export const CITY_SUGGESTIONS = [
   'North Port',
   'Port Charlotte',
   'Punta Gorda',
@@ -35,5 +37,4 @@ export const CITIES = [
   'Rotonda West',
   'Nokomis',
   'Sarasota',
-  'Other / not listed',
 ];

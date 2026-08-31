@@ -1,5 +1,5 @@
 ---
-import { SERVICES, PROPERTY_TYPES, CITIES } from '../lib/contact-form-options.js';
+import { SERVICES, PROPERTY_TYPES, CITY_SUGGESTIONS } from '../lib/contact-form-options.js';
 
 // The aria-invalid rule carries `!` because a plain `border-red-500` loses the
 // cascade to `border-stroke` and `dark:border-dark-3`.
@@ -96,10 +96,20 @@ const errorClass = 'mt-1.5 hidden text-sm font-medium text-red-500';
         <label class={labelClass} for="cf-city">
           City <span class="text-red-500">*</span>
         </label>
-        <select id="cf-city" name="city" required class={fieldClass}>
-          <option value="">Choose a city</option>
-          {CITIES.map((city) => <option value={city}>{city}</option>)}
-        </select>
+        <input
+          type="text"
+          id="cf-city"
+          name="city"
+          required
+          maxlength="80"
+          list="cf-city-options"
+          autocomplete="address-level2"
+          placeholder="Where is the property?"
+          class={fieldClass}
+        />
+        <datalist id="cf-city-options">
+          {CITY_SUGGESTIONS.map((city) => <option value={city} />)}
+        </datalist>
         <p class={errorClass} data-error-for="city"></p>
       </div>
 

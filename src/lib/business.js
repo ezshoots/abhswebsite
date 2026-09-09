@@ -13,7 +13,8 @@ export const BUSINESS = {
 // The owner performs every inspection. Fill in `yearsExperience` and
 // `inspectionsCompleted` when confirmed; the bio omits them while null.
 export const INSPECTOR = {
-  name: 'Eugene',
+  name: 'Yevgen Zakarukin',
+  firstName: 'Yevgen',
   jobTitle: 'Owner and Licensed Home Inspector',
   url: 'https://abovebeyondhomesolutions.com/about/#inspector',
   license: 'HI16270',

@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Newsletterbox from '../../components/Newsletterbox.astro';
 import Layout from "../../layouts/Layout.astro";
 import RelatedArticles from "../../components/RelatedArticles.astro";
+import { BUSINESS, INSPECTOR } from "../../lib/business.js";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -29,10 +30,14 @@ const blogPostingSchema = {
   image: new URL(entry.data.bigImg.src, Astro.url).href,
   author: {
     "@type": "Person",
-    name: entry.data.author,
+    name: INSPECTOR.name,
+    jobTitle: INSPECTOR.jobTitle,
+    url: INSPECTOR.url,
+    worksFor: { "@id": BUSINESS.id },
   },
   publisher: {
     "@type": "Organization",
+    "@id": BUSINESS.id,
     name: "Above and Beyond Home Solutions, LLC",
     logo: {
       "@type": "ImageObject",
@@ -48,7 +53,7 @@ const blogPostingSchema = {
 };
 ---
 
-<Layout title={entry.data.title} description={entry.data.postDetails.paraOne} image={entry.data.bigImg.src}>
+<Layout title={entry.data.title} description={entry.data.snippet} image={entry.data.bigImg.src}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostingSchema)} />
   <!-- ====== Blog Details Section Start -->
   <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20 dark:bg-dark">

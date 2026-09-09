@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Moisture Intrusion: Why It's a Problem in Both New and Old Homes and What Home Inspection Services Catch First"
-snippet: "Whether your home is brand new or has seen a few decades of Florida summers, moisture intrusion is a problem that does not discriminate. Here is what to know before it catches you off guard."
+snippet: "New or decades old, Florida homes are prone to moisture intrusion. Here is how it starts, where it hides, and what an inspection catches first."
 image: {
   src: "/assets/blog/blog-10.webp",
   alt: "Inspector checking for moisture intrusion along a window frame in a Sarasota County home"

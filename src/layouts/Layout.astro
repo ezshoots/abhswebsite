@@ -53,9 +53,17 @@ const { description, title, image = 'https://abovebeyondhomesolutions.com/assets
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://abovebeyondhomesolutions.com/#business",
       "name": "Above and Beyond Home Solutions, LLC",
+      "alternateName": "Above & Beyond Home Solutions",
       "url": "https://abovebeyondhomesolutions.com",
       "logo": "https://abovebeyondhomesolutions.com/assets/logo/logo.svg",
+      "image": [
+        "https://abovebeyondhomesolutions.com/assets/hero/hero-1920.webp",
+        "https://abovebeyondhomesolutions.com/assets/about/about-image-01.webp",
+        "https://abovebeyondhomesolutions.com/assets/og-image.webp"
+      ],
+      "priceRange": "$475 - $950",
       "telephone": "+12394163505",
       "email": "info@abovebeyondhomesolutions.com",
       "address": {
@@ -78,11 +86,18 @@ const { description, title, image = 'https://abovebeyondhomesolutions.com/assets
         { "@type": "City", "name": "Englewood", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
         { "@type": "City", "name": "Rotonda West", "containedInPlace": { "@type": "AdministrativeArea", "name": "Charlotte County, FL" } },
         { "@type": "City", "name": "Nokomis", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
-        { "@type": "City", "name": "Sarasota", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } }
+        { "@type": "City", "name": "Sarasota", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } },
+        { "@type": "Place", "name": "Wellen Park", "containedInPlace": { "@type": "AdministrativeArea", "name": "Sarasota County, FL" } }
       ],
       "description": "InterNACHI certified home inspectors serving Southwest Florida. General home inspections, 4-Point, Wind Mitigation, Lateral Sewer Scope, Water and Air Quality Sampling, and Home Watch services. Same-day digital reports.",
-      "license": "Florida Home Inspector License HI16270",
       "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "Florida Home Inspector License",
+          "identifier": "HI16270",
+          "recognizedBy": { "@type": "GovernmentOrganization", "name": "Florida Department of Business and Professional Regulation" }
+        },
         { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "InterNACHI Certified Professional Inspector" },
         { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "IAC2 Certified Inspector" },
         { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "CCPIA Certified Inspector" }

@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Lateral Sewer Scope Inspections: What Every Florida Buyer Should Know"
-snippet: "The sewer line from your home to the street is one of the most expensive components to repair — and it is almost never included in a standard home inspection. Here is what a sewer scope reveals."
+snippet: "The sewer line to the street is one of the costliest repairs a home can need, and standard inspections skip it. Here is what a sewer scope reveals."
 image: {
   src: "/assets/blog/blog-04.webp",
   alt: "Sewer scope inspection camera equipment"
@@ -10,7 +10,7 @@ publishDate: "2023-11-11 11:39"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.jpg",
+  src: "/assets/blog/blog-details-01.webp",
   alt: "Lateral sewer scope inspection in Southwest Florida",
 }
 authorImg: {

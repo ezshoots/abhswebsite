@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "How to Read Your Home Inspection Report and What to Do With It"
-snippet: "An inspection report can run 40 to 80 pages. Knowing how to prioritize findings, what to ask for in negotiations, and which items require a specialist can save you time, money, and stress."
+snippet: "Inspection reports can run 40 to 80 pages. Learn how to prioritize findings, what to negotiate, and which items need a specialist."
 image: {
   src: "/assets/blog/blog-01.webp",
   alt: "Homebuyer reviewing a home inspection report"
@@ -10,7 +10,7 @@ publishDate: "2023-11-13 11:39"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.jpg",
+  src: "/assets/blog/blog-details-01.webp",
   alt: "Detailed home inspection report review",
 }
 authorImg: {

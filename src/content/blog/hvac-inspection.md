@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "HVAC Inspection in Florida: Why Your Air Conditioning System Deserves Extra Attention"
-snippet: "In Southwest Florida, the HVAC system runs nearly year-round. Here is what inspectors evaluate and why a failing or aging system affects more than just comfort."
+snippet: "In Southwest Florida the AC runs nearly year-round. Here is what inspectors evaluate and why an aging system affects more than comfort."
 image: {
   src: "/assets/blog/blog-02.webp",
   alt: "HVAC inspection in a Southwest Florida home"
@@ -10,7 +10,7 @@ publishDate: "2023-11-15 11:39"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.jpg",
+  src: "/assets/blog/blog-details-01.webp",
   alt: "Air handler and condenser inspection in Fort Myers Florida",
 }
 authorImg: {

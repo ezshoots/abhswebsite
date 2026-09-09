@@ -63,7 +63,8 @@ module.exports = {
         2: "0px 5px 14px 0px rgba(0, 0, 0, 0.12)",
       },
       backgroundImage: {
-          'herobg': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/hero/abovebeyondhero.webp')",
+          'herobg': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/hero/hero-900.webp')",
+          'herobg-lg': "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/hero/hero-1920.webp')",
         }
     },
   },

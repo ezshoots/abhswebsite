@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "New Construction Home Inspections: Why You Still Need One in Florida"
-snippet: "A brand-new home from a builder is not automatically free of defects. New construction inspections catch issues before they are covered up — or before you close."
+snippet: "A brand-new home is not automatically defect-free. New construction inspections catch builder issues before they are covered up or you close."
 image: {
   src: "/assets/blog/blog-03.webp",
   alt: "New construction home inspection in Southwest Florida"
@@ -10,7 +10,7 @@ publishDate: "2023-11-16 11:39"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.jpg",
+  src: "/assets/blog/blog-details-01.webp",
   alt: "Inspector reviewing new construction framing in Cape Coral Florida",
 }
 authorImg: {

@@ -1,8 +1,11 @@
 ---
 interface Props {
   pageTitle?: string;
+  /** Heading element for the title. Pages that render their own <h1> should pass as="p". */
+  as?: 'h1' | 'p';
 }
-const { pageTitle } = Astro.props;
+const { pageTitle, as = 'h1' } = Astro.props;
+const Title = as;
 const breadcrumbSchema = pageTitle ? JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -23,9 +26,9 @@ const breadcrumbSchema = pageTitle ? JSON.stringify({
     <div class="-mx-4 flex flex-wrap items-center">
       <div class="w-full px-4">
         <div class="text-center">
-          <h1 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+          <Title class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
             <slot name="title">Title</slot>
-          </h1>
+          </Title>
           <p class="mb-5 text-base text-body-color dark:text-dark-6">
             Inspected Once, Inspected Right.
           </p>

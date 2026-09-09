@@ -104,10 +104,10 @@ const faqSchema = JSON.stringify({
     "description": "Professional home inspections serving Englewood, Florida. General home inspection, 4-point, wind mitigation, lateral sewer scope, and home watch services. InterNACHI certified inspector, same-day digital reports.",
     "provider": {
       "@type": "ProfessionalService",
+      "@id": "https://abovebeyondhomesolutions.com/#business",
       "name": "Above and Beyond Home Solutions, LLC",
       "url": "https://abovebeyondhomesolutions.com",
-      "telephone": "+12394163505",
-      "license": "Florida Home Inspector License HI16270"
+      "telephone": "+12394163505"
     },
     "areaServed": {
       "@type": "City",
@@ -123,7 +123,7 @@ const faqSchema = JSON.stringify({
 
   <script type="application/ld+json" is:inline set:html={faqSchema} />
 
-  <Breadcrumb>
+  <Breadcrumb as="p">
     <Fragment slot="title">Home Inspector in Englewood, FL</Fragment>
   </Breadcrumb>
 

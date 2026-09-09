@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Why Florida Homeowners Need a 4-Point and Wind Mitigation Inspection"
-snippet: "Home insurance in Florida is increasingly difficult to obtain without the right inspections. Learn how 4-Point and Wind Mitigation reports directly impact your coverage and premiums."
+snippet: "Florida home insurance is hard to get without the right inspections. Learn how 4-Point and Wind Mitigation reports affect your coverage and premiums."
 image: {
   src: "/assets/blog/blog-01.webp",
   alt: "Florida home insurance inspection documents"
@@ -10,7 +10,7 @@ publishDate: "2023-11-08 11:39"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.jpg",
+  src: "/assets/blog/blog-details-01.webp",
   alt: "Inspector reviewing 4-point and wind mitigation inspection forms",
 }
 authorImg: {

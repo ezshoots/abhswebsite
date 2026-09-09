@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Florida Roof Inspection: What Inspectors Look For and Why It Matters"
-snippet: "In Southwest Florida, the roof is the most scrutinized component of any home — by inspectors, insurers, and buyers alike. Here is what a thorough roof inspection actually covers."
+snippet: "In Southwest Florida the roof is the most scrutinized part of any home, by inspectors and insurers alike. Here is what a thorough roof inspection covers."
 image: {
   src: "/assets/blog/blog-01.webp",
   alt: "Inspector examining a Florida tile roof"
@@ -10,7 +10,7 @@ publishDate: "2023-11-14 11:39"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.jpg",
+  src: "/assets/blog/blog-details-01.webp",
   alt: "Rooftop inspection in Southwest Florida",
 }
 authorImg: {

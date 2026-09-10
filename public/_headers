@@ -1,0 +1,16 @@
+# Cloudflare Pages custom headers (https://developers.cloudflare.com/pages/configuration/headers/)
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# Hashed build output: safe to cache for a year
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Site images and fonts are versioned by deploy; revalidate weekly
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

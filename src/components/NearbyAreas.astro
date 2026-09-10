@@ -1,0 +1,62 @@
+---
+// Cross-links between neighboring service-area pages so each city page
+// is reachable from the cities around it, not only from the dropdown.
+interface Props {
+  current: string;
+}
+const { current } = Astro.props;
+
+const AREAS: Record<string, { name: string; county: string }> = {
+  'north-port': { name: 'North Port', county: 'Sarasota County' },
+  'venice': { name: 'Venice', county: 'Sarasota County' },
+  'sarasota': { name: 'Sarasota', county: 'Sarasota County' },
+  'englewood': { name: 'Englewood', county: 'Sarasota County' },
+  'port-charlotte': { name: 'Port Charlotte', county: 'Charlotte County' },
+  'punta-gorda': { name: 'Punta Gorda', county: 'Charlotte County' },
+  'fort-myers': { name: 'Fort Myers', county: 'Lee County' },
+  'lehigh-acres': { name: 'Lehigh Acres', county: 'Lee County' },
+};
+
+const NEIGHBORS: Record<string, string[]> = {
+  'north-port': ['venice', 'port-charlotte', 'englewood', 'sarasota'],
+  'venice': ['north-port', 'sarasota', 'englewood', 'port-charlotte'],
+  'sarasota': ['venice', 'north-port', 'englewood'],
+  'englewood': ['venice', 'north-port', 'port-charlotte', 'punta-gorda'],
+  'port-charlotte': ['punta-gorda', 'north-port', 'englewood', 'fort-myers'],
+  'punta-gorda': ['port-charlotte', 'north-port', 'fort-myers', 'englewood'],
+  'fort-myers': ['lehigh-acres', 'punta-gorda', 'port-charlotte'],
+  'lehigh-acres': ['fort-myers', 'punta-gorda', 'port-charlotte'],
+};
+
+const here = AREAS[current];
+const links = (NEIGHBORS[current] ?? []).map((slug) => ({ slug, ...AREAS[slug] }));
+---
+
+{links.length > 0 && (
+  <section class="bg-white dark:bg-dark py-12 lg:py-16" aria-labelledby="nearby-areas-heading">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl">
+        <h2 id="nearby-areas-heading" class="mb-3 text-2xl font-bold text-dark dark:text-white">
+          Also Serving Communities Near {here.name}
+        </h2>
+        <p class="mb-6 text-base text-body-color dark:text-dark-6">
+          Above and Beyond Home Solutions is based in North Port and covers Sarasota, Charlotte and Lee County. The same
+          licensed inspector, the same report, wherever the home is.
+        </p>
+        <ul class="flex flex-wrap gap-3">
+          {links.map((l) => (
+            <li>
+              <a
+                href={`/home-inspector-${l.slug}`}
+                class="inline-flex items-center gap-2 rounded-full border border-stroke bg-white px-4 py-2 text-sm font-medium text-dark transition-colors hover:border-primary hover:text-primary dark:border-dark-3 dark:bg-dark-2 dark:text-white"
+              >
+                Home Inspector in {l.name}, FL
+                <span class="text-xs text-body-color dark:text-dark-6">{l.county}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+)}

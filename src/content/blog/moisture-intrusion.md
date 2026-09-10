@@ -1,6 +1,7 @@
 ---
 draft: false
 title: "Moisture Intrusion: Why It's a Problem in Both New and Old Homes and What Home Inspection Services Catch First"
+seoTitle: "Moisture Intrusion in Florida Homes: What Inspections Catch First"
 snippet: "New or decades old, Florida homes are prone to moisture intrusion. Here is how it starts, where it hides, and what an inspection catches first."
 image: {
   src: "/assets/blog/blog-10.webp",

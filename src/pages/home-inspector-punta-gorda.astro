@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import CTAsection from '../components/CTAsection.astro';
+import NearbyAreas from '../components/NearbyAreas.astro';
 import Layout from '../layouts/Layout.astro';
 
 const services = [
@@ -93,7 +94,7 @@ const faqSchema = JSON.stringify({
 
 <Layout
   title="Home Inspector in Punta Gorda, FL | Above and Beyond Home Solutions"
-  description="Licensed home inspector serving Punta Gorda, FL. General inspections, 4-point, wind mitigation, sewer scope & home watch. InterNACHI certified, same-day reports."
+  description="Licensed home inspector in Punta Gorda, FL. General inspections, 4-point, wind mitigation, sewer scope and home watch. InterNACHI certified, same-day report."
 >
   <script is:inline type="application/ld+json">
   {
@@ -288,6 +289,8 @@ const faqSchema = JSON.stringify({
       </div>
     </div>
   </section>
+
+  <NearbyAreas current="punta-gorda" />
 
   <CTAsection />
 </Layout>

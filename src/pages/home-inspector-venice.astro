@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import CTAsection from '../components/CTAsection.astro';
+import NearbyAreas from '../components/NearbyAreas.astro';
 import Layout from '../layouts/Layout.astro';
 
 const services = [
@@ -288,6 +289,8 @@ const faqSchema = JSON.stringify({
       </div>
     </div>
   </section>
+
+  <NearbyAreas current="venice" />
 
   <CTAsection />
 </Layout>

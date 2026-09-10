@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import CTAsection from '../components/CTAsection.astro';
+import NearbyAreas from '../components/NearbyAreas.astro';
 import Layout from '../layouts/Layout.astro';
 
 const services = [
@@ -56,11 +57,48 @@ const commonIssues = [
     detail: 'Federal Pacific Stab-Lok panels are common in Sarasota homes from the 1960s–1980s. We identify these and other wiring hazards that most insurance carriers refuse to cover.',
   },
 ];
+
+const faqs = [
+  {
+    q: "Do I need a 4-point inspection to get homeowners insurance in Sarasota?",
+    a: "If the home is more than 20 years old, plan on it. Citizens Property Insurance requires a 4-point inspection for homes over 20 years old, completed within the last 12 months, and most private Florida carriers follow similar rules. Much of Sarasota's housing stock in Gulf Gate, Sarasota Springs and the older parts of Palmer Ranch is well past that mark. We complete 4-point reports in the insurer-accepted format, usually as an add-on to a full inspection.",
+  },
+  {
+    q: "Who issues building permits for a home in Sarasota?",
+    a: "It depends on where the property sits. The City of Sarasota Building Division handles permits inside city limits. Unincorporated Sarasota County, which includes most of Siesta Key, Palmer Ranch and Fruitville, is handled by Sarasota County Planning and Development Services. Longboat Key has its own town building department. Each keeps a separate permit portal, so check the right one when a roof, water heater or addition looks newer than the house. The inspection documents the current physical condition; the permit record tells you whether the work was done on the books.",
+  },
+  {
+    q: "Does a Sarasota condo need a milestone inspection, and is that the same as a home inspection?",
+    a: "They are different things. Florida Statute 553.899 requires condominium and cooperative buildings of three or more habitable stories to have a milestone structural inspection by a licensed engineer or architect when the building turns 30, or 25 if it sits within three miles of the coastline, and every ten years after that. The association arranges it and the report is yours to request before you buy. Our inspection covers your unit and the systems you are responsible for, and we spell out what belongs to the association so you can negotiate with the right party.",
+  },
+  {
+    q: "How did Hurricanes Helene and Milton affect Sarasota homes?",
+    a: "Helene's surge in September 2024 flooded barrier island and bayfront neighborhoods even though the storm passed well offshore, and Milton made landfall on Siesta Key on October 9, 2024 as a Category 3 with roof and tree damage across the county. When we inspect a home that was in the surge or wind zone, we look for water lines, replaced drywall and cabinetry, fresh paint over lower walls, roof repairs, and whether that work shows up in the permit record. Ask the seller for the insurance claim history and the flood zone designation before you close.",
+  },
+  {
+    q: "Are Sarasota homes on city water or a private well?",
+    a: "Inside the city and across most of the urban county, homes are on public water and sewer. Head east of Interstate 75 toward Myakka and the older rural parcels, and private wells and septic systems become common. If the home is on a well, we recommend water testing before you buy. We can collect samples during the inspection and send them to a lab for analysis.",
+  },
+  {
+    q: "Who actually performs the inspection?",
+    a: "Yevgen Zakarukin, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. You get the same inspector, the same standards, and a direct line to the person who was on your roof and in your attic, with a full digital report the same day in most cases.",
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
 ---
 
 <Layout
   title="Home Inspector in Sarasota, FL | Above and Beyond Home Solutions"
-  description="Licensed home inspector serving Sarasota, FL. Thorough inspections for buyers, sellers & investors. 4-point, wind mitigation, sewer scope & more. Same-day reports."
+  description="Licensed home inspector in Sarasota, FL. Thorough inspections for buyers, sellers and investors. 4-point, wind mitigation, sewer scope. Same-day reports."
 >
   <script is:inline type="application/ld+json">
   {
@@ -87,6 +125,8 @@ const commonIssues = [
     "url": "https://abovebeyondhomesolutions.com/home-inspector-sarasota"
   }
   </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
 
   <Breadcrumb as="p">
     <Fragment slot="title">Home Inspector in Sarasota, FL</Fragment>
@@ -225,6 +265,30 @@ const commonIssues = [
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Sarasota Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions Sarasota buyers and condo owners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NearbyAreas current="sarasota" />
 
   <CTAsection />
 </Layout>

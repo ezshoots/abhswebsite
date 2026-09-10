@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import CTAsection from '../components/CTAsection.astro';
+import NearbyAreas from '../components/NearbyAreas.astro';
 import Layout from '../layouts/Layout.astro';
 
 const services = [
@@ -56,11 +57,48 @@ const commonIssues = [
     detail: 'Air conditioning is non-negotiable in Lehigh Acres. We test HVAC systems for proper operation, check refrigerant levels, inspect ductwork, and note the age and condition. That all matters when you\'re figuring out what you\'re walking into after closing.',
   },
 ];
+
+const faqs = [
+  {
+    q: "Do I need a 4-point inspection to get homeowners insurance in Lehigh Acres?",
+    a: "If the home is more than 20 years old, plan on it. Citizens Property Insurance requires a 4-point inspection for homes over 20 years old, completed within the last 12 months, and most private Florida carriers follow similar rules. Lehigh Acres has a large stock of 1970s through 1990s homes and a wave of 2004 to 2006 builds that are now reaching that mark. We complete 4-point reports in the insurer-accepted format, usually as an add-on to a full inspection.",
+  },
+  {
+    q: "Is my Lehigh Acres home on a private well and septic system?",
+    a: "Most likely. Lehigh Acres was platted into small lots in the 1950s and 1960s without central utilities, and the majority of homes still rely on a private well and a septic system. We strongly recommend water testing before you buy. We can collect samples during the inspection and send them to a lab for bacteria, nitrates and other contaminants. We note the septic tank and drain field location and any visible warning signs; a full septic evaluation with a pump-out is a separate specialist service.",
+  },
+  {
+    q: "Should I worry about Chinese drywall in a Lehigh Acres home?",
+    a: "If the home was built between roughly 2004 and 2008, yes. Lehigh Acres saw enormous construction volume in those years and Lee County received some of the highest concentrations of defective imported drywall in the country. The signs are blackened or corroded copper on the air conditioner coils and wiring, a sulfur odor, and repeated AC coil failures. We check for those indicators and note drywall markings where visible. Laboratory confirmation and remediation are separate specialist services.",
+  },
+  {
+    q: "Who issues building permits in Lehigh Acres?",
+    a: "Lehigh Acres is unincorporated, so Lee County Community Development issues all building permits. Parcel records are searchable through the Lee County Property Appraiser and permit history through the county's online portal. When a roof, water heater, lanai enclosure or addition looks newer than the house, checking that it was permitted is worth the five minutes.",
+  },
+  {
+    q: "Is an inspection worth it on a brand-new Lehigh Acres home?",
+    a: "Yes. Municipal inspections during construction are pass-fail code checks, not a quality review for the buyer. In newly built Lehigh Acres homes we regularly find missing attic insulation, poor lot drainage, HVAC duct problems and flashing errors. An independent inspection before closing, and an 11-month warranty inspection before the builder warranty expires, both pay for themselves.",
+  },
+  {
+    q: "Who actually performs the inspection?",
+    a: "Yevgen Zakarukin, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. You get the same inspector, the same standards, and a direct line to the person who was on your roof and in your attic, with a full digital report the same day in most cases.",
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
 ---
 
 <Layout
   title="Home Inspector in Lehigh Acres, FL | Above and Beyond Home Solutions"
-  description="Licensed home inspector serving Lehigh Acres, FL. General inspections, 4-point, wind mitigation, sewer scope & more. InterNACHI certified, same-day reports. Call (239) 416-3505."
+  description="Licensed home inspector serving Lehigh Acres, FL. General inspections, 4-point, wind mitigation, sewer scope & more. InterNACHI certified, same-day reports."
 >
   <script is:inline type="application/ld+json">
   {
@@ -87,6 +125,8 @@ const commonIssues = [
     "url": "https://abovebeyondhomesolutions.com/home-inspector-lehigh-acres"
   }
   </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
 
   <Breadcrumb as="p">
     <Fragment slot="title">Home Inspector in Lehigh Acres, FL</Fragment>
@@ -225,6 +265,30 @@ const commonIssues = [
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Lehigh Acres Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions Lehigh Acres buyers and homeowners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NearbyAreas current="lehigh-acres" />
 
   <CTAsection />
 </Layout>

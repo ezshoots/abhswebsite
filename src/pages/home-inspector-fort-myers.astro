@@ -1,6 +1,7 @@
 ---
 import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import CTAsection from '../components/CTAsection.astro';
+import NearbyAreas from '../components/NearbyAreas.astro';
 import Layout from '../layouts/Layout.astro';
 
 const services = [
@@ -56,11 +57,48 @@ const commonIssues = [
     detail: 'Air conditioning is non-negotiable in Fort Myers. We test HVAC systems for proper operation, check refrigerant levels, inspect ductwork, and note the age and condition. That information matters a lot when you\'re budgeting for what comes after closing.',
   },
 ];
+
+const faqs = [
+  {
+    q: "Do I need a 4-point inspection to get homeowners insurance in Fort Myers?",
+    a: "If the home is more than 20 years old, plan on it. Citizens Property Insurance requires a 4-point inspection for homes over 20 years old, completed within the last 12 months, and most private Florida carriers follow similar rules. A large share of Fort Myers homes built during the 2004 to 2006 boom are now crossing that line. We complete 4-point reports in the insurer-accepted format, usually as an add-on to a full inspection.",
+  },
+  {
+    q: "Should I worry about Chinese drywall in a Fort Myers home?",
+    a: "If the home was built or remodeled between roughly 2004 and 2008, yes, it is worth checking. Lee County received some of the highest concentrations of defective imported drywall in the country during that boom. The telltale signs are blackened or corroded copper on air conditioner coils and electrical wiring, a sulfur or rotten-egg odor, and a history of repeated AC coil failures. We check for those indicators and note drywall manufacturer markings where they are visible. Laboratory confirmation and remediation are separate specialist services.",
+  },
+  {
+    q: "What did Hurricane Ian do to Fort Myers homes, and how do you check for it?",
+    a: "Ian made landfall on September 28, 2022 as a Category 4 storm. Storm surge in the city of Fort Myers exceeded seven feet, and coastal areas saw twelve feet or more. Three years later we still see homes with surge lines behind baseboards, replaced lower drywall and cabinets, and repairs that never went through permitting. We document moisture readings in the lower walls, look for mismatched materials and fresh paint, and compare what we see against the permit record. Ask for the insurance claim history and an elevation certificate if the home is in a flood zone.",
+  },
+  {
+    q: "Who issues building permits in Fort Myers?",
+    a: "Inside city limits, the City of Fort Myers Community Development Department issues permits. Unincorporated areas around the city, and neighborhoods like San Carlos Park and Buckingham, fall under Lee County Community Development. Lee County's property appraiser records and the county permit portal are both searchable online, and checking them is a cheap way to avoid inheriting someone else's unpermitted roof or enclosure.",
+  },
+  {
+    q: "You are based in North Port. Do you really serve Fort Myers?",
+    a: "Yes. We cover Fort Myers, Lehigh Acres and the surrounding parts of Lee County alongside Sarasota and Charlotte County. Scheduling works the same way through the online calendar, and you get the same licensed inspector and the same report.",
+  },
+  {
+    q: "Who actually performs the inspection?",
+    a: "Yevgen Zakarukin, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. You get the same inspector, the same standards, and a direct line to the person who was on your roof and in your attic, with a full digital report the same day in most cases.",
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
 ---
 
 <Layout
   title="Home Inspector in Fort Myers, FL | Above and Beyond Home Solutions"
-  description="Licensed home inspector serving Fort Myers, FL. General inspections, 4-point, wind mitigation, sewer scope & more. InterNACHI certified, same-day reports. Call (239) 416-3505."
+  description="Licensed home inspector serving Fort Myers, FL. General inspections, 4-point, wind mitigation, sewer scope & more. InterNACHI certified, same-day reports."
 >
   <script is:inline type="application/ld+json">
   {
@@ -87,6 +125,8 @@ const commonIssues = [
     "url": "https://abovebeyondhomesolutions.com/home-inspector-fort-myers"
   }
   </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
 
   <Breadcrumb as="p">
     <Fragment slot="title">Home Inspector in Fort Myers, FL</Fragment>
@@ -225,6 +265,30 @@ const commonIssues = [
       </div>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Fort Myers Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions Fort Myers buyers and homeowners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NearbyAreas current="fort-myers" />
 
   <CTAsection />
 </Layout>

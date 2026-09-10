@@ -11,7 +11,11 @@ interface Props {
   image?: string;
 }
 
-const { description, title, image = 'https://abovebeyondhomesolutions.com/assets/og-image.webp' } = Astro.props;
+const DEFAULT_OG = 'https://abovebeyondhomesolutions.com/assets/og-image.jpg';
+const { description, title, image = DEFAULT_OG } = Astro.props;
+// Social crawlers need absolute URLs; pages may pass a site-relative path.
+const imageUrl = new URL(image, 'https://abovebeyondhomesolutions.com').href;
+const isDefaultOg = imageUrl === DEFAULT_OG;
 ---
 
 <!DOCTYPE html>
@@ -41,12 +45,14 @@ const { description, title, image = 'https://abovebeyondhomesolutions.com/assets
     <meta property="og:description" content={description.length > 125 ? description.slice(0, 122) + '...' : description} />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={image} />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:site" content="@abovebeyondhomesolutions" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description.length > 125 ? description.slice(0, 122) + '...' : description} />
-    <meta property="twitter:image" content={image} />
+    <meta property="og:image" content={imageUrl} />
+    {isDefaultOg && <meta property="og:image:width" content="1200" />}
+    {isDefaultOg && <meta property="og:image:height" content="630" />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@abovebeyondhomesolutions" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description.length > 125 ? description.slice(0, 122) + '...' : description} />
+    <meta name="twitter:image" content={imageUrl} />
     <link rel="canonical" href={Astro.url} />
     <title>{title}</title>
     <script is:inline type="application/ld+json">
@@ -61,7 +67,7 @@ const { description, title, image = 'https://abovebeyondhomesolutions.com/assets
       "image": [
         "https://abovebeyondhomesolutions.com/assets/hero/hero-1920.webp",
         "https://abovebeyondhomesolutions.com/assets/about/about-image-01.webp",
-        "https://abovebeyondhomesolutions.com/assets/og-image.webp"
+        "https://abovebeyondhomesolutions.com/assets/og-image.jpg"
       ],
       "priceRange": "$475 - $950",
       "telephone": "+12394163505",

@@ -7,6 +7,7 @@ image: {
   alt: "New construction home inspection in Southwest Florida"
 }
 publishDate: "2023-11-16 11:39"
+updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {

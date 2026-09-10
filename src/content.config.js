@@ -20,6 +20,10 @@ const blogCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.string().transform((str) => new Date(str)),
+    // Optional: set when a post is refreshed; drives dateModified and sitemap lastmod.
+    updatedDate: z.string().optional().transform((str) => (str ? new Date(str) : undefined)),
+    // Optional: shorter <title> for search results when the headline runs long.
+    seoTitle: z.string().optional(),
     author: z.string().default('Pimjolabs'),
     comments: z.string(),
     views: z.string(),

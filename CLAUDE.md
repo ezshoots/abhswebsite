@@ -11,7 +11,7 @@ Formatting is handled by Prettier. There are no lint or test commands configured
 
 ## Gotchas
 
-**Blog post frontmatter is rigid.** Every field in the `src/content/config.js`
+**Blog post frontmatter is rigid.** Every field in the `src/content.config.js`
 schema is required: `draft`, `title`, `snippet`, `image`, `bigImg`, `authorImg`,
 `publishDate`, `author`, `comments`, `views`, `category`, `tags`, `postDetails`,
 `quotes`.

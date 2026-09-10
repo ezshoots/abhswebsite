@@ -11,8 +11,8 @@ updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.webp",
-  alt: "Home inspector on a roof in Florida",
+  src: "/assets/blog/attic-trusses-blown-insulation-north-port.webp",
+  alt: "Attic trusses and blown-in insulation inspected during a Southwest Florida home inspection",
 }
 authorImg: {
   src: "/assets/blog/author-01.png",

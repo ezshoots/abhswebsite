@@ -11,8 +11,8 @@ updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.webp",
-  alt: "Inspector checking for moisture behind walls in Southwest Florida",
+  src: "/assets/blog/attic-duct-moisture-staining-florida.webp",
+  alt: "Moisture staining beneath an attic duct in a humid Florida home",
 }
 authorImg: {
   src: "/assets/blog/author-01.png",

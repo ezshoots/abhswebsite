@@ -11,8 +11,8 @@ updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.webp",
-  alt: "Inspector reviewing 4-point and wind mitigation inspection forms",
+  src: "/assets/blog/water-heater-polybutylene-push-fit-fittings.webp",
+  alt: "Polybutylene supply line and push-fit fittings at a water heater, a common 4-point inspection finding",
 }
 authorImg: {
   src: "/assets/blog/author-01.png",

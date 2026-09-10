@@ -11,8 +11,8 @@ updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.webp",
-  alt: "Home watch professional checking on a Florida home",
+  src: "/assets/blog/attic-condensation-drip-stains-florida.webp",
+  alt: "Condensation drip stains under an attic refrigerant line found during an inspection",
 }
 authorImg: {
   src: "/assets/blog/author-01.png",

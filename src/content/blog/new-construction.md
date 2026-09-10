@@ -11,8 +11,8 @@ updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.webp",
-  alt: "Inspector reviewing new construction framing in Cape Coral Florida",
+  src: "/assets/blog/above-beyond-inspector-drone-new-construction.webp",
+  alt: "Above and Beyond Home Solutions inspector with a drone at a Southwest Florida home",
 }
 authorImg: {
   src: "/assets/blog/author-01.png",

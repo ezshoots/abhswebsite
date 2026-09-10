@@ -12,8 +12,8 @@ updatedDate: "2026-06-26 09:00"
 category: "related"
 author: "Above and Beyond Home Solutions"
 bigImg: {
-  src: "/assets/blog/blog-details-01.webp",
-  alt: "Air handler and condenser inspection in Fort Myers Florida",
+  src: "/assets/blog/air-handler-corroded-refrigerant-line-florida.webp",
+  alt: "Corroded refrigerant line and condensate drain on an aging Florida air handler",
 }
 authorImg: {
   src: "/assets/blog/author-01.png",

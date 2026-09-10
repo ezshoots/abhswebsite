@@ -74,6 +74,10 @@ const menuitems = [
         <div>
           <button
             id="navbarToggler"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
             class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
           >
             <span
@@ -148,7 +152,7 @@ const menuitems = [
           </nav>
         </div>
         <div class="justify-end pr-16 flex items-center lg:pr-0">
-          <button class="inline-flex cursor-pointer items-center" id="themeSwitcher" >
+          <button type="button" aria-label="Toggle dark mode" class="inline-flex cursor-pointer items-center" id="themeSwitcher">
             <span class={`hidden dark:block ${Astro.url.pathname === '/' ? 'text-white' : 'text-dark dark:text-white'}`}>
               <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

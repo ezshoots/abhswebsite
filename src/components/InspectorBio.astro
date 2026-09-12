@@ -2,15 +2,26 @@
 import { INSPECTOR, BUSINESS } from '../lib/business.js';
 
 const stats = [
-  INSPECTOR.yearsExperience ? { value: `${INSPECTOR.yearsExperience}+`, label: 'Years inspecting Florida homes' } : null,
-  INSPECTOR.inspectionsCompleted ? { value: `${INSPECTOR.inspectionsCompleted.toLocaleString()}+`, label: 'Inspections completed' } : null,
+  INSPECTOR.yearsExperience
+    ? { value: `${INSPECTOR.yearsExperience}+`, label: 'Years inspecting Florida homes' }
+    : null,
+  INSPECTOR.inspectionsCompleted
+    ? {
+        value: `${INSPECTOR.inspectionsCompleted.toLocaleString()}+`,
+        label: 'Inspections completed',
+      }
+    : null,
+  { value: '10 yrs', label: 'Environmental consulting in construction' },
   { value: 'Same day', label: 'Report delivery in most cases' },
   { value: '100%', label: 'Inspections performed by the owner' },
 ].filter(Boolean);
 ---
 
 <!-- ====== Inspector Bio Section Start -->
-<section id="inspector" class="scroll-mt-24 bg-white pt-16 pb-16 dark:bg-dark lg:pt-[100px] lg:pb-[100px]">
+<section
+  id="inspector"
+  class="scroll-mt-24 bg-white pb-16 pt-16 dark:bg-dark lg:pb-[100px] lg:pt-[100px]"
+>
   <div class="container">
     <div class="-mx-4 flex flex-wrap items-center">
       <div class="w-full px-4 lg:w-5/12">
@@ -27,46 +38,87 @@ const stats = [
       </div>
 
       <div class="w-full px-4 lg:w-7/12 lg:pl-12">
-        <span class="mb-3 block text-sm font-semibold uppercase tracking-wide text-primary">Meet Your Inspector</span>
-        <h2 class="mb-4 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-[40px] sm:leading-[1.2]">
+        <span class="mb-3 block text-sm font-semibold uppercase tracking-wide text-primary"
+          >Meet Your Inspector</span
+        >
+        <h2
+          class="mb-4 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-[40px] sm:leading-[1.2]"
+        >
           {INSPECTOR.name}, Owner and Licensed Home Inspector
         </h2>
         <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Above and Beyond Home Solutions is owner-operated. {INSPECTOR.firstName} performs every inspection personally, from
-          the roof and attic to the crawlspace and electrical panel, and writes every report. The person you speak with
-          when you book is the person who shows up, and the person who answers your questions after you have read the findings.
+          When you hire Above and Beyond Home Solutions, you hire a professional.
+        </p>
+        <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
+          Every inspection is performed by the owner and operator himself, not passed down to hired
+          help. One set of eyes on the roof, in the attic, in the crawlspace and at the electrical
+          panel, and the same person writing the report. No rotating subcontractors, no handoffs, no
+          gaps between what was seen and what gets documented. The inspector who books your job is
+          the one at your door, and the one who picks up the phone when you're reading the findings
+          and want something explained in plain terms.
+        </p>
+        <p class="mb-5 text-base leading-relaxed text-body-color dark:text-dark-6">
+          Behind the license is ten years as an environmental consultant in construction: walking
+          buildings mid-build and mid-demolition, testing for moisture, mold and air quality, and
+          documenting exactly where water went wrong. That background shapes how the work gets done.
+          It's the reason the small items get flagged, not just the obvious ones. The hairline stain
+          at a ceiling seam. The breaker running warm. The roof detail that starts leaking two rainy
+          seasons from now instead of this one.
         </p>
         <p class="mb-8 text-base leading-relaxed text-body-color dark:text-dark-6">
-          Based in North Port and working only in Sarasota and Charlotte County, {INSPECTOR.firstName} inspects the housing stock
-          this area actually has: 1970s and 1980s block homes, post-Ian roofs, new builds in Wellen Park, canal-front
-          properties and seasonal homes that sit empty for months. Florida Home Inspector License {INSPECTOR.license}.
+          Based in North Port, with most years spent across SW Florida. Every one of these homes has
+          its own weak spots, and we know where to look. Older block construction from the 1970s and
+          80s. Roofs replaced after Hurricane Ian. New builds in Wellen Park. Canal-front
+          properties. Seasonal homes that sit closed up for months at a time. Service extends
+          throughout Southwest Florida, Lee County included, and the standard doesn't change with
+          the drive. No inspection gets cut short to make the next appointment. If the attic needs
+          another twenty minutes, it gets another twenty minutes.
         </p>
 
         <ul class="mb-8 grid gap-3 sm:grid-cols-2">
-          {INSPECTOR.credentials.map((c) => (
-            <li class="flex items-start gap-3 text-base text-dark dark:text-white">
-              <svg class="mt-1 h-5 w-5 flex-shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42L8.5 12.09l6.79-6.8a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span>{c}</span>
-            </li>
-          ))}
+          {
+            INSPECTOR.credentials.map((c) => (
+              <li class="flex items-start gap-3 text-base text-dark dark:text-white">
+                <svg
+                  class="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42L8.5 12.09l6.79-6.8a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>{c}</span>
+              </li>
+            ))
+          }
         </ul>
 
         <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {stats.map((s) => (
-            <div class="rounded-lg bg-gray-1 p-4 text-center dark:bg-dark-2">
-              <span class="block text-xl font-bold text-dark dark:text-white">{s.value}</span>
-              <span class="block text-xs text-body-color dark:text-dark-6">{s.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((s) => (
+              <div class="rounded-lg bg-gray-1 p-4 text-center dark:bg-dark-2">
+                <span class="block text-xl font-bold text-dark dark:text-white">{s.value}</span>
+                <span class="block text-xs text-body-color dark:text-dark-6">{s.label}</span>
+              </div>
+            ))
+          }
         </div>
 
         <div class="flex flex-wrap gap-4">
-          <a href="/schedule" class="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-base font-medium text-white hover:bg-blue-dark">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-base font-medium text-white hover:bg-blue-dark"
+          >
             Schedule an Inspection
           </a>
-          <a href={`tel:${BUSINESS.phone}`} class="inline-flex items-center justify-center rounded-md border border-stroke px-7 py-3 text-base font-medium text-dark hover:border-primary hover:text-primary dark:border-dark-3 dark:text-white">
+          <a
+            href={`tel:${BUSINESS.phone}`}
+            class="inline-flex items-center justify-center rounded-md border border-stroke px-7 py-3 text-base font-medium text-dark hover:border-primary hover:text-primary dark:border-dark-3 dark:text-white"
+          >
             Call {BUSINESS.phoneDisplay}
           </a>
         </div>

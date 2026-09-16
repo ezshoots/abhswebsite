@@ -1,20 +1,24 @@
 ---
 import { INSPECTOR, BUSINESS } from '../lib/business.js';
 
-const stats = [
-  INSPECTOR.yearsExperience
-    ? { value: `${INSPECTOR.yearsExperience}+`, label: 'Years inspecting Florida homes' }
-    : null,
-  INSPECTOR.inspectionsCompleted
-    ? {
-        value: `${INSPECTOR.inspectionsCompleted.toLocaleString()}+`,
-        label: 'Inspections completed',
-      }
-    : null,
+const stats: { value: string; label: string }[] = [];
+
+if (INSPECTOR.yearsExperience) {
+  stats.push({ value: `${INSPECTOR.yearsExperience}+`, label: 'Years inspecting Florida homes' });
+}
+
+if (INSPECTOR.inspectionsCompleted) {
+  stats.push({
+    value: `${INSPECTOR.inspectionsCompleted.toLocaleString()}+`,
+    label: 'Inspections completed',
+  });
+}
+
+stats.push(
   { value: '10 yrs', label: 'Environmental consulting in construction' },
   { value: 'Same day', label: 'Report delivery in most cases' },
-  { value: '100%', label: 'Inspections performed by the owner' },
-].filter(Boolean);
+  { value: '100%', label: 'Inspections performed by the owner' }
+);
 ---
 
 <!-- ====== Inspector Bio Section Start -->

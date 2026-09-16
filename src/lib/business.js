@@ -18,7 +18,9 @@ export const INSPECTOR = {
   jobTitle: 'Owner and Licensed Home Inspector',
   url: 'https://abovebeyondhomesolutions.com/about/#inspector',
   license: 'HI16270',
+  /** @type {number | null} */
   yearsExperience: null,
+  /** @type {number | null} */
   inspectionsCompleted: null,
   photo: '/assets/about/about-image-01.webp',
   credentials: [

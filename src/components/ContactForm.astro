@@ -172,7 +172,7 @@ const errorClass = 'mt-1.5 hidden text-sm font-medium text-red-500';
   if (form instanceof HTMLFormElement) {
     const status = form.querySelector('[data-form-status]');
     const button = form.querySelector('[data-submit]');
-    const errorSlots = form.querySelectorAll('[data-error-for]');
+    const errorSlots = form.querySelectorAll<HTMLElement>('[data-error-for]');
 
     const OK_CLASS = 'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300';
     const BAD_CLASS = 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-300';
@@ -181,14 +181,16 @@ const errorClass = 'mt-1.5 hidden text-sm font-medium text-red-500';
       errorSlots.forEach((slot) => {
         slot.textContent = '';
         slot.classList.add('hidden');
-        const field = form.elements.namedItem(slot.dataset.errorFor);
+        const name = slot.dataset.errorFor;
+        if (!name) return;
+        const field = form.elements.namedItem(name);
         if (field instanceof HTMLElement) field.removeAttribute('aria-invalid');
       });
     };
 
-    const showErrors = (errors) => {
-      let first = null;
-      Object.entries(errors).forEach(([name, message]) => {
+    const showErrors = (errors: Record<string, string>) => {
+      let first: HTMLElement | null = null;
+      for (const [name, message] of Object.entries(errors)) {
         const slot = form.querySelector(`[data-error-for="${name}"]`);
         if (slot) {
           slot.textContent = message;
@@ -199,11 +201,11 @@ const errorClass = 'mt-1.5 hidden text-sm font-medium text-red-500';
           field.setAttribute('aria-invalid', 'true');
           if (!first) first = field;
         }
-      });
+      }
       if (first) first.focus();
     };
 
-    const setStatus = (message, ok) => {
+    const setStatus = (message: string, ok: boolean) => {
       if (!status) return;
       status.textContent = message;
       status.className =

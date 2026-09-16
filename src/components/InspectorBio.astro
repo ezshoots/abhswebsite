@@ -101,6 +101,25 @@ stats.push(
           }
         </ul>
 
+        <div class="mb-8 flex flex-wrap items-center gap-x-8 gap-y-6">
+          <a
+            href="https://www.bbb.org/us/fl/north-port/profile/home-inspections/above-and-beyond-home-solutions-llc-0653-90436242/#sealclick"
+            target="_blank"
+            rel="nofollow noopener"
+          >
+            <img
+              src="https://seal-westflorida.bbb.org/seals/blue-seal-250-52-whitetxt-bbb-90436242.png"
+              alt="Above and Beyond Home Solutions, LLC BBB Business Review"
+              width="250"
+              height="52"
+              loading="lazy"
+              class="h-auto max-w-full"
+            />
+          </a>
+
+          <div id="mni-membership-639251404828051450"></div>
+        </div>
+
         <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {
             stats.map((s) => (
@@ -131,3 +150,54 @@ stats.push(
   </div>
 </section>
 <!-- ====== Inspector Bio Section End -->
+
+<style is:global>
+  /* The chamber widget injects its markup after load, so these rules cannot be
+     scoped and the container has to hold its own space to avoid layout shift. */
+  #mni-membership-639251404828051450 {
+    width: 190px;
+    min-height: 150px;
+  }
+
+  #mni-membership-639251404828051450 .mn-widget-member-name,
+  #mni-membership-639251404828051450 .mn-widget-member-text {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: #637381;
+  }
+
+  #mni-membership-639251404828051450 .mn-widget-member-name {
+    color: #111928;
+  }
+
+  html.dark #mni-membership-639251404828051450 .mn-widget-member-name {
+    color: #ffffff;
+  }
+
+  html.dark #mni-membership-639251404828051450 .mn-widget-member-text {
+    color: #9ca3af;
+  }
+
+  #mni-membership-639251404828051450 .mn-widget-member-logo {
+    display: inline-block;
+    height: 90px;
+    width: auto;
+  }
+</style>
+
+<script
+  is:inline
+  type="text/javascript"
+  src="https://northportchamber.chambermaster.com/Content/Script/Member.js"></script>
+<script is:inline type="text/javascript">
+  /* `secure: true` is required: left to its own detection the widget builds an
+     http:// JSONP URL on any non-https page, which the browser blocks, and the
+     seal silently never renders. Harmless in production, which is https anyway.
+     Keep these as block comments: the HTML minifier strips newlines, so a //
+     comment would comment out this whole script in the production build. */
+  new MNI.Widgets.Member('mni-membership-639251404828051450', {
+    member: 4374,
+    secure: true,
+    styleTemplate: '#@id{text-align:center;position:relative}',
+  }).create();
+</script>

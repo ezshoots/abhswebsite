@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [Sewer Scope, Lateral Sewer, Home Inspection, Plumbing]
 postDetails: {
   paraOne: "A standard home inspection evaluates the visible and accessible plumbing inside the home — supply lines, drain lines, fixtures, and the water heater. What it does not include is the underground lateral sewer line that runs from the home to the municipal sewer main or septic system at the street. This underground pipe is entirely the homeowner's responsibility from the point where it exits the foundation to the point where it connects to the public system. Replacing a failed or root-infiltrated sewer lateral can cost anywhere from several thousand dollars to over twenty thousand dollars depending on depth, access, and the length of the run.",

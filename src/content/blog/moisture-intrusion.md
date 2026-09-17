@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "Eugene, Above and Beyond Home Solutions",
 }
-comments: "05"
-views: "05"
 tags: [Moisture Intrusion, Home Inspection Services, Mold, New Construction, Sarasota County, Venice, North Port]
 postDetails: {
   paraOne: "Florida is beautiful. The weather, the sunsets, the fact that you can be at the beach in twenty minutes. But that same warm, humid air that makes Sarasota County living so appealing? It is also really good at sneaking moisture into places it should not be. Behind your walls. Under your floors. Inside your attic. Moisture intrusion is one of those problems that likes to stay hidden until it becomes impossible to ignore, and by then it has usually gotten expensive. The good news is that home inspection services exist precisely to catch it early, before it turns into a repair bill that ruins your week.",

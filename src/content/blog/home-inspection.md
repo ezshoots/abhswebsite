@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [Home Inspection, Buyers, Southwest Florida, Inspection Process]
 postDetails: {
   paraOne: "A home inspection typically takes two to four hours, depending on the size and condition of the property. The inspector walks the entire home, evaluating all visible and accessible systems and components from the roof to the foundation. In Southwest Florida, there are regional conditions that add importance to certain areas of the inspection — roof condition after years of UV exposure and storm seasons, moisture intrusion from heavy rain and high humidity, HVAC performance in year-round heat, and signs of pest activity or damage. Knowing what an inspector covers, what they do not cover, and how to interpret the results helps you get the most value from the process.",

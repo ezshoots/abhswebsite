@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [New Construction, Home Inspection, Buyers, Cape Coral, Fort Myers]
 postDetails: {
   paraOne: "One of the most common misconceptions in real estate is that new construction homes do not need an independent inspection. The reasoning goes: the home is brand new, it passed all the required municipal inspections, and the builder is providing a warranty — so what could go wrong? The answer, based on what inspectors actually find in newly built homes, is quite a lot. Building a house involves dozens of subcontractors, tight schedules, and inspections that cover code compliance rather than the level of detail a buyer deserves to know before taking possession.",

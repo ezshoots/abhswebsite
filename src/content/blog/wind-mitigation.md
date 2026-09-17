@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [4-Point Inspection, Wind Mitigation, Florida Insurance, Home Inspection]
 postDetails: {
   paraOne: "If you own a home in Florida — or are in the process of buying one — you have likely heard that homeowners insurance is harder to get than it used to be. Many carriers have exited the Florida market, and those that remain are increasingly selective about the properties they will insure. Two inspection reports have become central to this process: the 4-Point Inspection and the Wind Mitigation Inspection. Understanding what each one covers, why insurers require them, and how they affect your premiums can save you thousands of dollars and prevent your policy from being denied or cancelled.",

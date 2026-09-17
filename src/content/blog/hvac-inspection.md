@@ -19,8 +19,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [HVAC Inspection, Air Conditioning, Florida Home, 4-Point Inspection]
 postDetails: {
   paraOne: "In most parts of the country, the HVAC system runs seasonally. In Southwest Florida, air conditioning runs virtually year-round — often 10 to 12 months out of 12. This continuous use accelerates wear on every component: the compressor, condenser coils, air handler, blower motor, refrigerant lines, and ductwork. It also means that HVAC failure is not a seasonal inconvenience here — it is a health and habitability issue. Indoor temperatures in a Florida home with a failed AC system can reach dangerous levels within hours on a summer day. Understanding what an inspector evaluates and what red flags to watch for can help buyers and homeowners stay ahead of costly failures.",

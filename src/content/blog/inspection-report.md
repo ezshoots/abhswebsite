@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [Inspection Report, Buyers, Real Estate, Home Inspection]
 postDetails: {
   paraOne: "After a home inspection, you receive a report that can feel overwhelming — dozens of photos, condition descriptions, and findings organized by system. Many first-time buyers make the mistake of either panicking at the length of the report or dismissing it as routine without reading it carefully. The truth is somewhere in the middle. Understanding how to sort findings by severity, separate real concerns from maintenance notes, and decide which items are worth negotiating helps you use the report as the tool it is designed to be.",

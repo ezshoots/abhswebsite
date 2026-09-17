@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [Roof Inspection, Florida Roof, Wind Mitigation, Home Inspection]
 postDetails: {
   paraOne: "No single component of a Florida home receives more attention during an inspection than the roof. It is the first line of defense against the state's intense UV exposure, daily summer thunderstorms, and hurricane-force winds. It is also the component most closely scrutinized by insurance carriers when determining whether to write a homeowners policy and at what premium. Understanding what an inspector evaluates on a Florida roof — and what the findings mean for insurance, repair planning, and negotiation — is valuable knowledge for any buyer or homeowner in Southwest Florida.",

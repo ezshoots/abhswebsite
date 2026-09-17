@@ -13,14 +13,26 @@ Formatting is handled by Prettier. There are no lint or test commands configured
 
 **Blog post frontmatter is rigid.** Every field in the `src/content.config.js`
 schema is required: `draft`, `title`, `snippet`, `image`, `bigImg`, `authorImg`,
-`publishDate`, `author`, `comments`, `views`, `category`, `tags`, `postDetails`,
-`quotes`.
+`publishDate`, `author`, `category`, `tags`, `postDetails`, `quotes`.
+
+Optional fields: `updatedDate` (drives `dateModified` and sitemap lastmod),
+`seoTitle` (shorter `<title>` when the headline runs long), and
+`externalSource` for press features that point at an outside article.
+`externalSource` takes `publisher`, `title`, `url`, and optional `intro` and
+`linkText`; it renders a linked callout under the headline, a closing link
+after the last paragraph, and a `citation` node in the BlogPosting schema. See
+`src/content/blog/redfin-new-construction-upgrades.md`.
 
 **`postDetails` has a fixed shape**: five paragraphs and two section titles,
 rendered in a fixed layout by `src/pages/blog/[slug].astro`. The structure
 cannot be changed without editing that route.
 
-Blog post images go in `public/assets/blog/`.
+**Paragraphs cannot contain links or markup.** The route renders every
+`postDetails` field as escaped text, so inline HTML shows up literally. Links
+need a dedicated frontmatter field and a rendered element in the route.
+
+Blog post images go in `public/assets/blog/`. Existing images are landscape
+WebP, either 1200x900 or 1200x634 for `bigImg` and 800x500 for cards.
 
 ## Contact form
 

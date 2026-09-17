@@ -21,12 +21,24 @@ const blogCollection = defineCollection({
     }),
     publishDate: z.string().transform((str) => new Date(str)),
     // Optional: set when a post is refreshed; drives dateModified and sitemap lastmod.
-    updatedDate: z.string().optional().transform((str) => (str ? new Date(str) : undefined)),
+    updatedDate: z
+      .string()
+      .optional()
+      .transform((str) => (str ? new Date(str) : undefined)),
     // Optional: shorter <title> for search results when the headline runs long.
     seoTitle: z.string().optional(),
+    // Optional: for posts that point at an outside article (press features, guest
+    // contributions). Renders a linked callout at the top of the post.
+    externalSource: z
+      .object({
+        publisher: z.string(),
+        title: z.string(),
+        url: z.string().url(),
+        intro: z.string().optional(),
+        linkText: z.string().optional(),
+      })
+      .optional(),
     author: z.string().default('Pimjolabs'),
-    comments: z.string(),
-    views: z.string(),
     category: z.string(),
     tags: z.array(z.string()),
     postDetails: z.object({

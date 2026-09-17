@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [Home Watch, Snowbird, Vacant Home, Southwest Florida]
 postDetails: {
   paraOne: "Southwest Florida is home to one of the largest seasonal resident populations in the country. Hundreds of thousands of snowbirds and part-time residents leave their homes unoccupied for months at a time — often from late spring through early fall — during the very period when Florida's heat, humidity, and storm season create the highest risk of property damage. A home sitting vacant for four to six months is vulnerable in ways that are easy to underestimate until something goes wrong.",

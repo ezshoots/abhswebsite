@@ -18,8 +18,6 @@ authorImg: {
   src: "/assets/blog/author-01.png",
   alt: "author",
 }
-comments: "05"
-views: "05"
 tags: [Air Quality, Mold Inspection, Florida, Moisture Testing]
 postDetails: {
   paraOne: "Florida's climate is ideal for outdoor living — but it also creates conditions where moisture problems develop faster than in most other states. High year-round humidity, intense summer rain, and periodic flooding from storms create multiple pathways for water to enter a home. When moisture accumulates in walls, attics, under flooring, or in HVAC systems, mold can begin growing within 24 to 48 hours under the right conditions. For homebuyers, existing homeowners, and especially anyone purchasing a home after a hurricane or flood event, understanding indoor air quality and moisture conditions is not optional — it is essential.",

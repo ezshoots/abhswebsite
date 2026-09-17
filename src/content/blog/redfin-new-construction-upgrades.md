@@ -9,7 +9,7 @@ image: {
 }
 publishDate: "2026-09-17 09:00"
 category: "related"
-author: "Above and Beyond Home Solutions"
+author: "Yevgen Zakarukin, CPI"
 bigImg: {
   src: "/assets/blog/redfin-feature-new-construction-upgrades.webp",
   alt: "Buyers walking up to a new construction home with a Redfin for sale sign in the yard",

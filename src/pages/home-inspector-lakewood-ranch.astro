@@ -1,0 +1,296 @@
+---
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
+import CTAsection from '../components/CTAsection.astro';
+import NearbyAreas from '../components/NearbyAreas.astro';
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'General Home Inspection',
+    description: 'Full inspection covering roof, structure, electrical, plumbing, HVAC, interior, and exterior. Detailed digital report with photos delivered the same day.',
+    href: '/generalhomeinspection',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+  },
+  {
+    title: '4-Point & Wind Mitigation',
+    description: 'Newer Lakewood Ranch homes often qualify for strong wind mitigation credits, and the original 1990s neighborhoods now need 4-point reports. We handle both in the insurer-accepted format.',
+    href: '/4pointandwind',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+  },
+  {
+    title: 'Lateral Sewer Scope',
+    description: 'High-resolution camera inspection of your sewer lateral. Useful on resales in established villages where mature landscaping and settling can affect underground lines.',
+    href: '/services/lateral-sewer-scope',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`,
+  },
+  {
+    title: 'Home Watch Services',
+    description: 'Regular property checks with photo reports while you\'re away. A good fit for seasonal owners in Lakewood Ranch\'s 55+ and golf communities.',
+    href: '/services/home-watch',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+  },
+];
+
+const commonIssues = [
+  {
+    issue: 'New Construction Defects',
+    detail: 'A brand new home is not a perfect home. On new builds we regularly find missing insulation, loose or unsealed roof penetrations, reversed hot and cold lines, miswired outlets, and incomplete attic work that the final walkthrough never catches.',
+  },
+  {
+    issue: 'Builder Warranty Deadlines',
+    detail: 'Most builders offer a one-year workmanship warranty. An inspection a few months before it expires gives you a documented list of defects to submit while the builder is still responsible for fixing them.',
+  },
+  {
+    issue: 'Stucco & Window Water Intrusion',
+    detail: 'Stucco cracks and poorly sealed window and door openings are the most common path for water into a Florida wall. We probe stucco, check sealant at every opening, and use moisture meters to find problems before they show up inside.',
+  },
+  {
+    issue: 'Aging 1990s & Early 2000s Systems',
+    detail: 'The first Lakewood Ranch villages are now 25 to 30 years old. Original roofs, water heaters, AC systems, and polybutylene or early CPVC plumbing are reaching the point where insurers and buyers start asking hard questions.',
+  },
+  {
+    issue: 'Drainage, Grading & Pond Lots',
+    detail: 'Many homes back onto lakes and retention ponds. We look at lot grading, gutter discharge, and soil against the foundation, since water that sits near the slab leads to moisture, pest, and settling problems.',
+  },
+  {
+    issue: 'HVAC Performance in the Heat',
+    detail: 'Large, open floor plans put a heavy load on air conditioning systems. We test HVAC equipment for proper operation, check condensate drainage, and note age and remaining service life so there are no surprises.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Should I get an inspection on a brand new Lakewood Ranch home?',
+    a: 'Yes. County building inspectors check for code minimums at specific stages, not for workmanship or finish quality, and they are not working for you. A third-party inspection before closing, or before your one-year builder warranty ends, catches defects while the builder is still obligated to correct them. It is one of the most common inspections we perform in Lakewood Ranch.',
+  },
+  {
+    q: 'Is Lakewood Ranch in Manatee County or Sarasota County?',
+    a: 'Both. Lakewood Ranch is a master-planned community that crosses the Manatee and Sarasota county line, with most of the original villages on the Manatee side and newer areas like Waterside to the south in Sarasota County. That matters for permit records: work on the Manatee side is permitted through Manatee County, and work on the Sarasota side through Sarasota County. We point you to the right office when a roof or addition needs to be verified.',
+  },
+  {
+    q: 'Do newer Lakewood Ranch homes qualify for wind mitigation discounts?',
+    a: 'Usually, and often substantial ones. Homes built under the Florida Building Code, which took effect in 2002, typically have roof deck attachment, roof-to-wall connections, and opening protection that earn credits. Florida law (section 627.0629, Florida Statutes) requires insurers to offer those discounts, but only if the features are documented on a wind mitigation report.',
+  },
+  {
+    q: 'Do you inspect homes in Lakewood Ranch 55+ and golf communities?',
+    a: 'Yes. We inspect single-family homes, villas, and attached homes throughout Lakewood Ranch, including the country club and active adult neighborhoods. For attached homes we focus on everything inside the unit plus the accessible portions of the systems that serve it, and we note items that may fall under HOA responsibility.',
+  },
+  {
+    q: 'Who actually performs the inspection?',
+    a: 'Eugene, the owner of Above and Beyond Home Solutions, personally performs every inspection under Florida Home Inspector License HI16270. Same inspector every time, same-day digital report, and straight answers about what matters and what does not.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+  }))
+});
+---
+
+<Layout
+  title="Home Inspector in Lakewood Ranch, FL | Above and Beyond Home Solutions"
+  description="Licensed home inspector serving Lakewood Ranch, FL. New construction, general inspections, 4-point, wind mitigation & home watch. InterNACHI certified, same-day reports."
+>
+  <script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Home Inspection in Lakewood Ranch, FL",
+    "serviceType": "Home Inspection",
+    "description": "Professional home inspections serving Lakewood Ranch, Florida. New construction and resale home inspections, 4-point, wind mitigation, lateral sewer scope, and home watch services. InterNACHI certified inspector, same-day digital reports.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "@id": "https://abovebeyondhomesolutions.com/#business",
+      "name": "Above and Beyond Home Solutions, LLC",
+      "url": "https://abovebeyondhomesolutions.com",
+      "telephone": "+12394163505"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Lakewood Ranch",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Florida"
+      }
+    },
+    "url": "https://abovebeyondhomesolutions.com/home-inspector-lakewood-ranch"
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline set:html={faqSchema} />
+
+  <Breadcrumb as="p">
+    <Fragment slot="title">Home Inspector in Lakewood Ranch, FL</Fragment>
+  </Breadcrumb>
+
+  <!-- Hero -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          Manatee &amp; Sarasota County · Lakewood Ranch, FL
+        </span>
+        <h1 class="mb-5 text-4xl font-extrabold tracking-tight text-dark dark:text-white sm:text-5xl">
+          Home Inspector in Lakewood Ranch, FL
+        </h1>
+        <p class="mb-8 text-lg leading-relaxed text-body-color dark:text-dark-6">
+          Above and Beyond Home Solutions provides thorough, same-day home inspections throughout Lakewood Ranch. From brand new construction in the newest villages to resale homes in the original 1990s neighborhoods, Eugene, the owner and licensed inspector (HI16270), personally performs every inspection and knows what to look for in this community.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+          >
+            Book Your Lakewood Ranch Inspection
+          </a>
+          <a
+            href="tel:+12394163505"
+            class="inline-flex items-center justify-center rounded-md border border-primary/30 px-8 py-4 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary/5"
+          >
+            Call (239) 416-3505
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {[
+          { label: 'InterNACHI Certified', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>` },
+          { label: 'License #HI16270', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>` },
+          { label: 'Same-Day Reports', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>` },
+          { label: 'Locally Owned', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>` },
+        ].map(item => (
+          <div class="flex flex-col items-center gap-2 rounded-xl bg-white dark:bg-dark p-4 text-center shadow-sm">
+            <svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
+            <span class="text-sm font-semibold text-dark dark:text-white">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Inspection Services in Lakewood Ranch
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          From new construction and resale inspections to insurance reports, sewer scopes, and seasonal home monitoring. Everything Lakewood Ranch homeowners need, handled by one team.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {services.map(service => (
+          <a
+            href={service.href}
+            class="group flex flex-col rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark-2 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/30"
+          >
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={service.icon} />
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{service.title}</h3>
+            <p class="flex-1 text-sm text-body-color dark:text-dark-6">{service.description}</p>
+            <span class="mt-4 text-sm font-semibold text-primary">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Issues -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Common Issues Found in Lakewood Ranch Homes
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          A mix of brand new construction and homes that are now 25 to 30 years old means Lakewood Ranch inspections cover a wide range of conditions.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {commonIssues.map(item => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-primary flex-shrink-0"></div>
+              <h3 class="font-semibold text-dark dark:text-white">{item.issue}</h3>
+            </div>
+            <p class="text-sm text-body-color dark:text-dark-6">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Inspect in Lakewood Ranch -->
+  <section class="bg-white dark:bg-dark py-16 lg:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-6 text-3xl font-bold text-dark dark:text-white">
+          Why Home Inspections Matter in Lakewood Ranch
+        </h2>
+        <div class="space-y-4 text-base leading-relaxed text-body-color dark:text-dark-6">
+          <p>
+            Lakewood Ranch is one of the best-selling master-planned communities in the country, and it shows. New villages, new builders, and new homes are going up every year alongside neighborhoods that have been settled since the 1990s. That range is exactly why a thorough inspection matters here.
+          </p>
+          <p>
+            Buyers of new construction often assume a new home does not need an inspection. In practice, production building schedules move fast, and the county's code inspections are not a quality review. We regularly find items the builder should correct at no cost to you, and our same-day report gives you a clear, photo-documented list to hand to your builder before closing or before the warranty runs out.
+          </p>
+          <p>
+            In the older villages, the conversation shifts to age. Roofs, water heaters, and air conditioning systems installed when these homes were built are at or past their typical service life, and insurers are paying attention. A 4-point inspection shows where those systems stand, and a wind mitigation inspection can capture premium credits the home already qualifies for.
+          </p>
+          <p>
+            One practical note: Lakewood Ranch crosses the Manatee and Sarasota county line, so permit history lives with whichever county the home sits in. When an inspection turns up a newer roof or an addition, checking the permit with the right county confirms the work was done properly. We point you to the right one.
+          </p>
+          <p>
+            We serve all of Lakewood Ranch, on both sides of the county line, along with the surrounding Sarasota and Manatee County communities. Our <a href="/generalhomeinspection" class="text-primary hover:underline">general home inspection</a>, <a href="/4pointandwind" class="text-primary hover:underline">4-point and wind mitigation inspections</a>, <a href="/services/lateral-sewer-scope" class="text-primary hover:underline">lateral sewer scope</a>, and <a href="/services/home-watch" class="text-primary hover:underline">home watch service</a> cover the whole Lakewood Ranch area.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a
+            href="/schedule"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+          >
+            Schedule Your Lakewood Ranch Inspection
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-50 dark:bg-dark-2 py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl">
+          Lakewood Ranch Home Inspection FAQs
+        </h2>
+        <p class="text-base text-body-color dark:text-dark-6">
+          The questions Lakewood Ranch buyers and homeowners ask us most.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl space-y-6">
+        {faqs.map(faq => (
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+            <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
+            <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NearbyAreas current="lakewood-ranch" />
+
+  <CTAsection />
+</Layout>

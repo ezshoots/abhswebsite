@@ -10,6 +10,7 @@ const AREAS: Record<string, { name: string; county: string }> = {
   'north-port': { name: 'North Port', county: 'Sarasota County' },
   'venice': { name: 'Venice', county: 'Sarasota County' },
   'sarasota': { name: 'Sarasota', county: 'Sarasota County' },
+  'lakewood-ranch': { name: 'Lakewood Ranch', county: 'Manatee & Sarasota County' },
   'englewood': { name: 'Englewood', county: 'Sarasota County' },
   'port-charlotte': { name: 'Port Charlotte', county: 'Charlotte County' },
   'punta-gorda': { name: 'Punta Gorda', county: 'Charlotte County' },
@@ -20,7 +21,8 @@ const AREAS: Record<string, { name: string; county: string }> = {
 const NEIGHBORS: Record<string, string[]> = {
   'north-port': ['venice', 'port-charlotte', 'englewood', 'sarasota'],
   'venice': ['north-port', 'sarasota', 'englewood', 'port-charlotte'],
-  'sarasota': ['venice', 'north-port', 'englewood'],
+  'sarasota': ['lakewood-ranch', 'venice', 'north-port', 'englewood'],
+  'lakewood-ranch': ['sarasota', 'venice', 'north-port'],
   'englewood': ['venice', 'north-port', 'port-charlotte', 'punta-gorda'],
   'port-charlotte': ['punta-gorda', 'north-port', 'englewood', 'fort-myers'],
   'punta-gorda': ['port-charlotte', 'north-port', 'fort-myers', 'englewood'],

@@ -108,7 +108,8 @@ const shingleTabs = shingleEdges.slice(1).flatMap((bottom, i) =>
           class="mx-auto mt-8 w-full max-w-[300px] sm:max-w-[355px] lg:mx-0 lg:my-auto lg:max-w-[560px] lg:pt-10"
         >
           <svg
-            viewBox="-44 0 328 200"
+            viewBox="-44 -50 328 250"
+            overflow="visible"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             class="w-full"
@@ -277,6 +278,8 @@ const shingleTabs = shingleEdges.slice(1).flatMap((bottom, i) =>
             </g>
             <g transform="translate(120 22.5) scale(1.3)">
               <g class="gull">
+                <!-- Larger invisible hit area so the easter egg is tappable on phones -->
+                <rect x="-14" y="-19" width="28" height="22" fill="transparent"></rect>
                 <g stroke="rgba(55,88,249,0.7)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
                   <path class="gull-legs" d="M-1 -3.6 L-1.4 0 M1.6 -3.6 L1.8 0" fill="none"></path>
                   <path d="M-7 -7.4 L-11.5 -9 L-10.6 -6.2 Z" fill="rgba(55,88,249,0.15)"></path>
@@ -469,6 +472,53 @@ const shingleTabs = shingleEdges.slice(1).flatMap((bottom, i) =>
       opacity: 1;
     }
   }
+  /* Easter egg: click the perched gull and it flies off, then comes back. */
+  #hero-house.gull-perched .gull {
+    cursor: pointer;
+  }
+  #hero-house.assembled.gull-returning .gull {
+    animation: gull-fly 2.2s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  #hero-house.assembled.gull-returning .gull-wings-spread {
+    animation:
+      gull-flap 0.28s ease-in-out 7 alternate,
+      gull-hide 0.15s linear 2s forwards;
+  }
+  #hero-house.assembled.gull-returning .gull-wing-folded,
+  #hero-house.assembled.gull-returning .gull-legs {
+    animation: gull-show 0.15s linear 2s forwards;
+  }
+  #hero-house.assembled.gull-leaving .gull {
+    animation: gull-takeoff 2.2s cubic-bezier(0.45, 0, 0.7, 0.7) forwards;
+  }
+  #hero-house.assembled.gull-leaving .gull-wings-spread {
+    animation: gull-flap-fast 0.18s ease-in-out infinite alternate;
+  }
+  #hero-house.assembled.gull-leaving .gull-wing-folded,
+  #hero-house.assembled.gull-leaving .gull-legs {
+    animation: none;
+  }
+  @keyframes gull-takeoff {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    15% {
+      transform: translate(6px, -12px);
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(125px, -52px);
+    }
+  }
+  @keyframes gull-flap-fast {
+    to {
+      transform: scaleY(-0.5);
+    }
+  }
 </style>
 
 <script>
@@ -484,6 +534,21 @@ const shingleTabs = shingleEdges.slice(1).flatMap((bottom, i) =>
       { threshold: 0.15 }
     );
     observer.observe(house);
+
+    const gull = house.querySelector('.gull');
+    gull?.addEventListener('animationend', (event) => {
+      if (event.target !== gull) return;
+      if (event.animationName.startsWith('gull-fly')) {
+        house.classList.add('gull-perched');
+      } else if (event.animationName.startsWith('gull-takeoff')) {
+        setTimeout(() => house.classList.replace('gull-leaving', 'gull-returning'), 3000);
+      }
+    });
+    gull?.addEventListener('click', () => {
+      if (!house.classList.contains('gull-perched')) return;
+      house.classList.remove('gull-perched', 'gull-returning');
+      house.classList.add('gull-leaving');
+    });
   }
 </script>
 <!-- ====== Features Section End -->

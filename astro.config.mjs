@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import fs from 'node:fs';
@@ -32,8 +32,13 @@ function gitLastmod(route) {
 export default defineConfig({
   site: 'https://abovebeyondhomesolutions.com',
   output: 'static',
+  // Astro 7 defaults to 'jsx', which drops the line break between text and an
+  // inline tag ("By <span>" renders "ByAbove"). true keeps the v6 behavior.
+  compressHTML: true,
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
-    tailwind(),
     compress(),
     sitemap({
       serialize(item) {

@@ -155,7 +155,7 @@ const faqSchema = JSON.stringify({
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/schedule"
-            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-xs transition-all duration-300 hover:-translate-y-px hover:bg-blue-dark hover:shadow-md"
           >
             Book Your North Port Inspection
           </a>
@@ -180,7 +180,7 @@ const faqSchema = JSON.stringify({
           { label: 'Same-Day Reports', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>` },
           { label: 'Locally Owned', icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>` },
         ].map(item => (
-          <div class="flex flex-col items-center gap-2 rounded-xl bg-white dark:bg-dark p-4 text-center shadow-sm">
+          <div class="flex flex-col items-center gap-2 rounded-xl bg-white dark:bg-dark p-4 text-center shadow-xs">
             <svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={item.icon} />
             <span class="text-sm font-semibold text-dark dark:text-white">{item.label}</span>
           </div>
@@ -204,7 +204,7 @@ const faqSchema = JSON.stringify({
         {services.map(service => (
           <a
             href={service.href}
-            class="group flex flex-col rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark-2 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/30"
+            class="group flex flex-col rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark-2 p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/30"
           >
             <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" set:html={service.icon} />
@@ -231,9 +231,9 @@ const faqSchema = JSON.stringify({
       </div>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {commonIssues.map(item => (
-          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-xs">
             <div class="mb-3 flex items-center gap-3">
-              <div class="h-2.5 w-2.5 rounded-full bg-primary flex-shrink-0"></div>
+              <div class="h-2.5 w-2.5 rounded-full bg-primary shrink-0"></div>
               <h3 class="font-semibold text-dark dark:text-white">{item.issue}</h3>
             </div>
             <p class="text-sm text-body-color dark:text-dark-6">{item.detail}</p>
@@ -270,7 +270,7 @@ const faqSchema = JSON.stringify({
         <div class="mt-8">
           <a
             href="/schedule"
-            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-[1px] hover:bg-blue-dark hover:shadow-md"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-xs transition-all duration-300 hover:-translate-y-px hover:bg-blue-dark hover:shadow-md"
           >
             Schedule Your North Port Inspection
           </a>
@@ -292,7 +292,7 @@ const faqSchema = JSON.stringify({
       </div>
       <div class="mx-auto max-w-3xl space-y-6">
         {faqs.map(faq => (
-          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-sm">
+          <div class="rounded-xl border border-stroke bg-white dark:border-dark-3 dark:bg-dark p-6 shadow-xs">
             <h3 class="mb-2 text-lg font-semibold text-dark dark:text-white">{faq.q}</h3>
             <p class="text-base text-body-color dark:text-dark-6">{faq.a}</p>
           </div>

@@ -54,7 +54,7 @@ const bundles = [
     <div class="mb-10 flex justify-center lg:mb-14">
       <a
         href="/schedule"
-        class="inline-flex items-center justify-center gap-3 rounded-xl bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-[2px] hover:bg-[#2563EB] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60 sm:px-10 sm:py-5 sm:text-xl dark:focus-visible:ring-blue-400/40"
+        class="inline-flex items-center justify-center gap-3 rounded-xl bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:bg-[#2563EB] hover:shadow-lg focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-300/60 sm:px-10 sm:py-5 sm:text-xl dark:focus-visible:ring-blue-400/40"
       >
         Schedule Your Inspection
         <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -77,11 +77,11 @@ const bundles = [
 
     <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
       {bundles.map((bundle) => (
-        <div class={`relative flex flex-col rounded-2xl border shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${bundle.popular ? 'border-primary/60 bg-white ring-2 ring-primary/30 hover:ring-primary/50 dark:bg-dark/80' : 'border-black/5 bg-white/70 dark:border-white/10 dark:bg-dark/40'}`}>
+        <div class={`relative flex flex-col rounded-2xl border shadow-xs backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${bundle.popular ? 'border-primary/60 bg-white ring-2 ring-primary/30 hover:ring-primary/50 dark:bg-dark/80' : 'border-black/5 bg-white/70 dark:border-white/10 dark:bg-dark/40'}`}>
 
           {bundle.popular && (
             <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <span class="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-widest text-white shadow">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-widest text-white shadow-sm">
                 <svg class="h-3 w-3" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                   <path d="M6 1l1.236 2.504L10 3.82l-2 1.948.472 2.752L6 7.1 3.528 8.52 4 5.768 2 3.82l2.764-.316L6 1z" />
                 </svg>
@@ -133,7 +133,7 @@ const bundles = [
             <div class="mt-8">
               <a
                 href="/schedule"
-                class={`flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 ${bundle.popular ? 'bg-primary text-white hover:bg-blue-700 focus-visible:ring-primary/50' : 'bg-dark/5 text-dark hover:bg-primary hover:text-white dark:bg-white/10 dark:text-white dark:hover:bg-primary focus-visible:ring-primary/40'}`}
+                class={`flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold shadow-xs transition-all duration-300 ease-in-out hover:-translate-y-px hover:shadow-md focus-visible:outline-hidden focus-visible:ring-2 ${bundle.popular ? 'bg-primary text-white hover:bg-blue-700 focus-visible:ring-primary/50' : 'bg-dark/5 text-dark hover:bg-primary hover:text-white dark:bg-white/10 dark:text-white dark:hover:bg-primary focus-visible:ring-primary/40'}`}
               >
                 Book This Package
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">

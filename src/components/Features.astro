@@ -232,10 +232,10 @@ const features = [
         {
           features.map((feature) => (
             <article>
-              <div class="group h-full rounded-2xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primary/20 dark:border-white/10 dark:bg-dark/40">
+              <div class="group h-full rounded-2xl border border-black/5 bg-white/70 p-6 shadow-xs backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-primary/20 dark:border-white/10 dark:bg-dark/40">
                 <div class="mb-5 inline-flex items-center gap-4">
                   <div class="relative grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 ring-1 ring-primary/20 transition-transform duration-300 group-hover:scale-[1.03]">
-                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent opacity-70" />
+                    <div class="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/20 to-transparent opacity-70" />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="relative h-6 w-6 text-primary"
@@ -263,7 +263,7 @@ const features = [
                 <a
                   href={feature.ref}
                   aria-label={`Learn more about ${feature.title}`}
-                  class="inline-flex items-center gap-2 text-sm font-semibold text-dark transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 dark:text-white"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-dark transition-colors hover:text-primary focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/40 dark:text-white"
                 >
                   {feature.refTitle}
                   <span

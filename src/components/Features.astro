@@ -57,6 +57,13 @@ const features = [
     ],
   },
 ];
+
+// Shingle courses for the house illustration, clipped to the roof triangle.
+const shingleRows = [33.5, 45, 56.5, 68, 79.5];
+const shingleEdges = [22, ...shingleRows, 91];
+const shingleTabs = shingleEdges.slice(1).flatMap((bottom, i) =>
+  Array.from({ length: 18 }, (_, k) => ({ x: 18 + (i % 2) * 6 + k * 12, top: shingleEdges[i], bottom }))
+);
 ---
 
 <!-- ====== Features Section Start -->
@@ -241,20 +248,25 @@ const features = [
                 stroke-width="0.8"></line>
             </g>
             <g class="house-roof">
+              <defs>
+                <clipPath id="roof-clip">
+                  <polygon points="18,91 120,22 222,91"></polygon>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#roof-clip)">
+                {shingleRows.map((y) => (
+                  <line x1="18" y1={y} x2="222" y2={y} stroke="rgba(55,88,249,0.3)" stroke-width="0.9" />
+                ))}
+                {shingleTabs.map(({ x, top, bottom }) => (
+                  <line x1={x} y1={top} x2={x} y2={bottom} stroke="rgba(55,88,249,0.18)" stroke-width="0.7" />
+                ))}
+              </g>
               <polygon
                 points="18,91 120,22 222,91"
                 stroke="rgba(55,88,249,0.65)"
                 stroke-width="1.5"
                 fill="rgba(55,88,249,0.06)"
                 stroke-linejoin="round"></polygon>
-              <rect
-                x="158"
-                y="42"
-                width="16"
-                height="28"
-                stroke="rgba(55,88,249,0.35)"
-                stroke-width="1.2"
-                fill="rgba(55,88,249,0.04)"></rect>
               <line
                 x1="18"
                 y1="91"
@@ -262,6 +274,20 @@ const features = [
                 y2="91"
                 stroke="rgba(55,88,249,0.15)"
                 stroke-width="0.8"></line>
+            </g>
+            <g transform="translate(120 22.5) scale(1.3)">
+              <g class="gull">
+                <g stroke="rgba(55,88,249,0.7)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="gull-legs" d="M-1 -3.6 L-1.4 0 M1.6 -3.6 L1.8 0" fill="none"></path>
+                  <path d="M-7 -7.4 L-11.5 -9 L-10.6 -6.2 Z" fill="rgba(55,88,249,0.15)"></path>
+                  <ellipse cx="0" cy="-7" rx="7" ry="3.4" fill="#f8fafc"></ellipse>
+                  <circle cx="6.2" cy="-10.4" r="2.6" fill="#f8fafc"></circle>
+                  <path class="gull-wing-folded" d="M-6.5 -7.6 Q-1 -11 4 -8.4 Q-1 -7 -6.5 -7.6 Z" fill="rgba(55,88,249,0.25)"></path>
+                  <path class="gull-wings-spread" d="M-13 -15 Q-6 -17.5 0 -8.5 Q6 -17.5 13 -15" fill="none" stroke-width="1.1"></path>
+                </g>
+                <path d="M8.6 -10.6 L12 -9.9 L8.6 -9.4 Z" fill="#f59e0b"></path>
+                <circle cx="7" cy="-11" r="0.55" fill="rgba(15,23,42,0.85)"></circle>
+              </g>
             </g>
           </svg>
         </div>
@@ -388,6 +414,60 @@ const features = [
   #hero-house.assembled .palm-crown {
     opacity: 1;
     transform: none;
+  }
+  .gull {
+    opacity: 0;
+  }
+  .gull-wing-folded,
+  .gull-legs {
+    opacity: 0;
+  }
+  .gull-wings-spread {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+  #hero-house.assembled .gull {
+    animation: gull-fly 2.2s cubic-bezier(0.2, 0.7, 0.3, 1) 2.4s both;
+  }
+  #hero-house.assembled .gull-wings-spread {
+    animation:
+      gull-flap 0.28s ease-in-out 2.4s 7 alternate,
+      gull-hide 0.15s linear 4.4s forwards;
+  }
+  #hero-house.assembled .gull-wing-folded,
+  #hero-house.assembled .gull-legs {
+    animation: gull-show 0.15s linear 4.4s forwards;
+  }
+  @keyframes gull-fly {
+    0% {
+      opacity: 0;
+      transform: translate(-150px, -45px);
+    }
+    12% {
+      opacity: 1;
+    }
+    80% {
+      transform: translate(-4px, -7px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes gull-flap {
+    to {
+      transform: scaleY(-0.5);
+    }
+  }
+  @keyframes gull-hide {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes gull-show {
+    to {
+      opacity: 1;
+    }
   }
 </style>
 

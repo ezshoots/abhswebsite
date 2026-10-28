@@ -10,8 +10,9 @@ export const BUSINESS = {
   license: 'HI16270',
 };
 
-// The owner performs every inspection. Fill in `yearsExperience` and
-// `inspectionsCompleted` when confirmed; the bio omits them while null.
+// The owner performs every inspection. Fill in `inspectionsCompleted` when
+// confirmed; the bio omits it while null. The 10 years of environmental
+// consulting is written into InspectorBio.astro directly.
 export const INSPECTOR = {
   name: 'Yevgen Zakarukin',
   firstName: 'Yevgen',
@@ -19,7 +20,7 @@ export const INSPECTOR = {
   url: 'https://abovebeyondhomesolutions.com/about/#inspector',
   license: 'HI16270',
   /** @type {number | null} */
-  yearsExperience: null,
+  yearsExperience: 5,
   /** @type {number | null} */
   inspectionsCompleted: null,
   photo: '/assets/about/about-image-01.webp',

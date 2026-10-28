@@ -32,6 +32,9 @@ function gitLastmod(route) {
 export default defineConfig({
   site: 'https://abovebeyondhomesolutions.com',
   output: 'static',
+  // Cloudflare Pages 308-redirects /about to /about/; internal links must use
+  // the slash form so they hit the canonical URL directly.
+  trailingSlash: 'always',
   // Astro 7 defaults to 'jsx', which drops the line break between text and an
   // inline tag ("By <span>" renders "ByAbove"). true keeps the v6 behavior.
   compressHTML: true,

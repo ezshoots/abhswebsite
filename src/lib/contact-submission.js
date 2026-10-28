@@ -235,7 +235,7 @@ function wantsHtml(request) {
 }
 
 function htmlPage(request, heading, body, status) {
-  const back = new URL(request.url).origin + '/contact';
+  const back = new URL(request.url).origin + '/contact/';
   return new Response(
     `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

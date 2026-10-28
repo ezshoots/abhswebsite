@@ -49,7 +49,7 @@ const links = (NEIGHBORS[current] ?? []).map((slug) => ({ slug, ...AREAS[slug] }
           {links.map((l) => (
             <li>
               <a
-                href={`/home-inspector-${l.slug}`}
+                href={`/home-inspector-${l.slug}/`}
                 class="inline-flex items-center gap-2 rounded-full border border-stroke bg-white px-4 py-2 text-sm font-medium text-dark transition-colors hover:border-primary hover:text-primary dark:border-dark-3 dark:bg-dark-2 dark:text-white"
               >
                 Home Inspector in {l.name}, FL
